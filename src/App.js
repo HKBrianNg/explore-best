@@ -12,7 +12,7 @@ import Products from "./components/products"
 function App() {
 
   useEffect(() => {
-    document.title = 'explore-best v1.0.1'
+    document.title = 'explore-best v1.0.2'
   }, [])
 
   return (
