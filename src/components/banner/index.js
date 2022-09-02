@@ -1,11 +1,7 @@
-import { useMediaQuery, Typography } from '@mui/material'
 import { BannerContainer, BannerContent, BannerTitle, BannerDescription, BannerImage } from '../../styles/banner'
-import { useTheme } from '@mui/material/styles'
 
 
 function Banner() {
-    const theme = useTheme()
-    const isMobile = useMediaQuery(theme.breakpoints.down('md'))
 
     return (
         <BannerContainer>
