@@ -1,7 +1,7 @@
 import { Slide } from "@mui/material";
 import { Box } from "@mui/system";
 import { useEffect, useRef, useState } from "react";
-import { MessageText, PromotionsContainer } from "../../styles/promotions";
+import { MessageText, PromotionsContainer } from "./styles";
 
 const messages = [
     "message 1",

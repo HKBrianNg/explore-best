@@ -3,8 +3,8 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import PersonIcon from '@mui/icons-material/Person'
 import { ListItemButton, ListItemIcon, Divider } from '@mui/material'
-import { StyledList } from '../../styles/navbar'
-import { ActionIconsContainerMobile, ActionIconsContainerDesktop } from '../../styles/navbar'
+import { StyledList } from './styles'
+import { ActionIconsContainerMobile, ActionIconsContainerDesktop } from './styles'
 import { Colors } from '../../styles/theme'
 
 

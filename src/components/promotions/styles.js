@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material'
 import { styled } from '@mui/material/styles'
-import { Colors } from '../theme'
+import { Colors } from '../../styles/theme'
 
 
 export const PromotionsContainer = styled(Box)(({ theme }) => ({

@@ -1,4 +1,4 @@
-import { BannerContainer, BannerContent, BannerTitle, BannerDescription, BannerImage } from '../../styles/banner'
+import { BannerContainer, BannerContent, BannerTitle, BannerDescription, BannerImage } from './styles'
 
 
 function Banner() {

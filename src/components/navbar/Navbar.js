@@ -3,7 +3,7 @@ import { useTheme } from '@mui/material/styles'
 import SearchIcon from '@mui/icons-material/Search';
 import MenuIcon from '@mui/icons-material/Menu';
 import Actions from './actions'
-import { Logo, StyledList } from '../../styles/navbar'
+import { Logo, StyledList } from './styles'
 import { Colors } from '../../styles/theme'
 
 

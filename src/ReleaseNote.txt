@@ -1,0 +1,6 @@
+Version Date        Description
+1.0.0   2022/9/1    Project setup
+1.0.1   2022/9/1    Navbar
+1.0.2   2022/9/2    Banner
+1.0.3   2022/9/2    Promotion
+1.0.4   2022/9/3    Product
