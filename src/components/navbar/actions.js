@@ -3,8 +3,8 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import PersonIcon from '@mui/icons-material/Person'
 import { ListItemButton, ListItemIcon, Divider } from '@mui/material'
-import { MyList } from '../../styles/appbar'
-import { ActionIconsContainerMobile, ActionIconsContainerDesktop } from '../../styles/appbar'
+import { StyledList } from '../../styles/navbar'
+import { ActionIconsContainerMobile, ActionIconsContainerDesktop } from '../../styles/navbar'
 import { Colors } from '../../styles/theme'
 
 
@@ -13,12 +13,12 @@ function Actions({ isMobile }) {
 
     return (
         <Component>
-            <MyList type='row'>
+            <StyledList type='row'>
                 <ListItemButton sx={{ justifyContent: 'center' }}>
                     <ListItemIcon
                         sx={{
                             display: 'flex', justifyContent: 'center',
-                            color: isMobile && Colors.secondary
+                            color: Colors.white,
                         }}>
                         <ShoppingCartIcon />
                     </ListItemIcon>
@@ -28,7 +28,7 @@ function Actions({ isMobile }) {
                     <ListItemIcon
                         sx={{
                             display: 'flex', justifyContent: 'center',
-                            color: isMobile && Colors.secondary
+                            color: Colors.white,
                         }}>
                         <FavoriteIcon />
                     </ListItemIcon>
@@ -38,13 +38,13 @@ function Actions({ isMobile }) {
                     <ListItemIcon
                         sx={{
                             display: 'flex', justifyContent: 'center',
-                            color: isMobile && Colors.secondary
+                            color: Colors.white,
                         }}>
                         <PersonIcon />
                     </ListItemIcon>
                 </ListItemButton>
                 <Divider orientation="vertical" flexItem />
-            </MyList>
+            </StyledList>
         </Component>
     )
 
