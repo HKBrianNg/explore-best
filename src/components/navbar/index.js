@@ -4,16 +4,17 @@ import SearchIcon from '@mui/icons-material/Search';
 import MenuIcon from '@mui/icons-material/Menu';
 import Actions from './actions'
 import { Logo, StyledList } from '../../styles/navbar'
+import { Colors } from '../../styles/theme'
 
 
 const Mobile = ({ isMobile }) => {
     return (
         <>
-            <IconButton>
+            <IconButton sx={{ color: Colors.white }}>
                 <MenuIcon />
             </IconButton>
             <Logo textAlign={"center"} >Explore-Best</Logo>
-            <IconButton>
+            <IconButton sx={{ color: Colors.white }}>
                 <SearchIcon />
             </IconButton>
             <Actions isMobile={isMobile} />
@@ -32,7 +33,7 @@ const Desktop = ({ isMobile }) => {
                 <ListItemText primary="Products" />
                 <ListItemText primary="Contact Us" />
                 <ListItemButton>
-                    <ListItemIcon>
+                    <ListItemIcon sx={{ color: Colors.white }}>
                         <SearchIcon />
                     </ListItemIcon>
                 </ListItemButton>
