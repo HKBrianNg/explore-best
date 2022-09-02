@@ -6,10 +6,10 @@ import AppbarMobile from './appbarMobile'
 
 function Appbar() {
     const theme = useTheme()
-    const matches = useMediaQuery(theme.breakpoints.down('md'))
+    const isMobile = useMediaQuery(theme.breakpoints.down('md'))
     return (
         <>
-            {matches ? <AppbarMobile /> : <AppbarDesktop />}
+            {isMobile ? <AppbarMobile isMobile={isMobile} /> : <AppbarDesktop isMobile={isMobile} />}
         </>
     )
 }

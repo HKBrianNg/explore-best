@@ -1,8 +1,22 @@
-import React from 'react'
+import { AppbarContainer, AppbarHeader } from '../../styles/appbar'
+import { IconButton } from '@mui/material'
+import SearchIcon from '@mui/icons-material/Search';
+import Actions from './actions'
+import MenuIcon from '@mui/icons-material/Menu';
 
-function AppbarMobile({ matches }) {
+
+function AppbarMobile({ isMobile }) {
     return (
-        <h1>mobile</h1>
+        <AppbarContainer >
+            <IconButton>
+                <MenuIcon />
+            </IconButton>
+            <AppbarHeader textAlign={"center"} >Explore-Best</AppbarHeader>
+            <IconButton>
+                <SearchIcon />
+            </IconButton>
+            <Actions isMobile={isMobile} />
+        </AppbarContainer>
     )
 }
 
