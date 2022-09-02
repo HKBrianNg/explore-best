@@ -2,14 +2,16 @@ import { Button, Container } from "@mui/material"
 import CssBaseline from "@mui/material/CssBaseline"
 import { ThemeProvider } from '@mui/system'
 import { useEffect } from "react"
-import Appbar from "./components/appbar"
 import { theme } from './styles/theme/index'
+import Appbar from "./components/appbar"
+import Banner from "./components/banner"
+import Promotions from "./components/promotions"
 
 
 function App() {
 
   useEffect(() => {
-    document.title = 'explore-best'
+    document.title = 'explore-best v1.0.1'
   }, [])
 
   return (
@@ -17,7 +19,8 @@ function App() {
       <CssBaseline />
       <Container maxWidth="xl">
         <Appbar />
-        <Button variant="contained" color="secondary">test</Button>
+        <Banner />
+        <Promotions />
       </Container>
     </ThemeProvider>
   )
