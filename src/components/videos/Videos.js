@@ -2,6 +2,7 @@ import { Box, Card, CardHeader, CardMedia, CardContent, Avatar, IconButton, Typo
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { Colors } from '../../styles/theme/index'
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useVideoContext } from '../../context/VideoContext'
 import CircularProgress from '@mui/material/CircularProgress'
 
@@ -9,6 +10,8 @@ function Videos() {
     const { videos, setVideos, getVideosAPI } = useVideoContext()
     const [errorMessage, setErrorMessage] = useState('')
     const [isLoading, setIsLoading] = useState(false)
+    const navigate = useNavigate()
+
 
     useEffect(() => {
         getVideos()
@@ -24,8 +27,8 @@ function Videos() {
         setIsLoading(false)
     }
 
-    const openVideo = () => {
-
+    const openVideo = (videoId) => {
+        navigate(`/video/${videoId}`, { replace: true })
     }
 
     return (
