@@ -5,13 +5,14 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useVideoContext } from '../../context/VideoContext'
 import CircularProgress from '@mui/material/CircularProgress'
+import { useAppContext } from '../../context/AppContext';
 
 function Videos() {
     const { videos, setVideos, getVideosAPI } = useVideoContext()
     const [errorMessage, setErrorMessage] = useState('')
     const [isLoading, setIsLoading] = useState(false)
     const navigate = useNavigate()
-
+    const { selectedCategory, selectedSubCategory } = useAppContext()
 
     useEffect(() => {
         getVideos()
@@ -31,12 +32,13 @@ function Videos() {
         navigate(`/video/${videoId}`, { replace: true })
     }
 
+    const data = videos.filter((video) => (video.category === selectedCategory && video.subCategory === selectedSubCategory))
     return (
         <>
             {isLoading && <Box sx={{ display: 'flex' }}><CircularProgress /></Box>}
             {errorMessage && <Typography variant="h6" component="h6" align='left' color='red' m={1} >{errorMessage}</Typography>}
             <Box sx={{ flexGrow: 1, padding: 1, display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
-                {videos.map((item, i) => (
+                {data.map((item, i) => (
                     <Card key={i} sx={{ maxWidth: 250, padding: 2 }}>
                         <CardMedia
                             component="img"
