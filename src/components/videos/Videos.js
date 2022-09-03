@@ -1,13 +1,10 @@
-import { useMediaQuery, Box } from '@mui/material'
-import { useTheme } from '@mui/material/styles'
 import { products as data } from '../../data/products'
-import { Card, CardHeader, CardMedia, CardContent, Avatar, IconButton, Typography } from '@mui/material';
-import { deepOrange } from '@mui/material/colors';
+import { Box, Card, CardHeader, CardMedia, CardContent, Avatar, IconButton, Typography } from '@mui/material';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import { Colors } from '../../styles/theme/index'
 
-function Products() {
-    const theme = useTheme()
-    const isMobile = useMediaQuery(theme.breakpoints.down('md'))
+
+function Videos() {
 
     const openVideo = () => {
 
@@ -25,8 +22,8 @@ function Products() {
                         alt={item.title}
                         onClick={() => openVideo(item.videoId)}
                     />
-                    <CardHeader sx={{ color: deepOrange[600], }}
-                        avatar={<Avatar sx={{ bgcolor: deepOrange[600], width: 56, height: 56 }}>Save</Avatar>}
+                    <CardHeader sx={{ color: Colors.deep_orange, }}
+                        avatar={<Avatar sx={{ bgcolor: Colors.deep_orange, width: 56, height: 56 }}>Save</Avatar>}
                         action={<IconButton aria-label="settings"><MoreVertIcon /></IconButton>}
                         title={item.title}
                         subheader={item.publishedAt}
@@ -44,4 +41,4 @@ function Products() {
     )
 }
 
-export default Products
+export default Videos

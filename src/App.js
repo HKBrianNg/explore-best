@@ -1,30 +1,18 @@
-import { Container } from "@mui/material"
-import CssBaseline from "@mui/material/CssBaseline"
-import { ThemeProvider } from '@mui/system'
 import { useEffect } from "react"
-import { theme } from './styles/theme/index'
-import Navbar from "./components/navbar/Navbar"
-import Banner from "./components/banner/Banner"
-import Promotions from "./components/promotions/Promotions"
-import Products from "./components/products/Products"
+import { Routes, Route } from 'react-router-dom'
+import Home from './components/home/Home'
 
 
 function App() {
 
   useEffect(() => {
-    document.title = 'explore-best v1.0.2'
+    document.title = 'explore-best v1.0.3'
   }, [])
 
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Container maxWidth="xl">
-        <Navbar />
-        <Banner />
-        <Promotions />
-        <Products />
-      </Container>
-    </ThemeProvider>
+    <Routes>
+      <Route path="/" element={<Home />} />
+    </Routes>
   )
 }
 
