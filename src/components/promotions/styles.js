@@ -3,7 +3,7 @@ import { styled } from '@mui/material/styles'
 import { Colors } from '../../styles/theme'
 
 
-export const PromotionsContainer = styled(Box)(({ theme }) => ({
+export const PromotionBox = styled(Box)(({ theme }) => ({
     [theme.breakpoints.up("md")]: {
         padding: '40px 0px 40px 0px',
     },
@@ -14,7 +14,7 @@ export const PromotionsContainer = styled(Box)(({ theme }) => ({
     background: Colors.secondary
 }))
 
-export const MessageText = styled(Typography)(({ theme }) => ({
+export const MessageTypography = styled(Typography)(({ theme }) => ({
     fontFamily: '"Montez", "cursive"',
     [theme.breakpoints.up("md")]: {
         fontSize: "3rem",

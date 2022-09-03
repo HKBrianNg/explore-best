@@ -4,7 +4,7 @@ import { Colors } from '../../styles/theme'
 import "@fontsource/montez"
 
 
-export const Logo = styled(Typography)(() => ({
+export const LogoTypography = styled(Typography)(() => ({
     padding: '4px',
     flexGrow: 1,
     fontSize: '3em',
@@ -12,7 +12,7 @@ export const Logo = styled(Typography)(() => ({
     color: Colors.secondary,
 }))
 
-export const StyledList = styled(List)(({ type }) => ({
+export const MenuList = styled(List)(({ type }) => ({
     display: type === "row" ? "flex" : "block",
     flexGrow: 3,
     justifyContent: "center",

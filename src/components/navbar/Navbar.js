@@ -3,7 +3,7 @@ import { useTheme } from '@mui/material/styles'
 import SearchIcon from '@mui/icons-material/Search';
 import MenuIcon from '@mui/icons-material/Menu';
 import Actions from './actions'
-import { Logo, StyledList } from './styles'
+import { LogoTypography, MenuList } from './styles'
 import { Colors } from '../../styles/theme'
 
 
@@ -13,7 +13,9 @@ const Mobile = ({ isMobile }) => {
             <IconButton sx={{ color: Colors.white }}>
                 <MenuIcon />
             </IconButton>
-            <Logo textAlign={"center"} >Explore-Best</Logo>
+            <LogoTypography textAlign={"center"} >
+                Explore-Best
+            </LogoTypography>
             <IconButton sx={{ color: Colors.white }}>
                 <SearchIcon />
             </IconButton>
@@ -26,8 +28,10 @@ const Desktop = ({ isMobile }) => {
 
     return (
         <>
-            <Logo>Explore-Best</Logo>
-            <StyledList type='row'>
+            <LogoTypography>
+                Explore-Best
+            </LogoTypography>
+            <MenuList type='row'>
                 <ListItemText primary="Home" />
                 <ListItemText primary="Category" />
                 <ListItemText primary="Products" />
@@ -37,7 +41,7 @@ const Desktop = ({ isMobile }) => {
                         <SearchIcon />
                     </ListItemIcon>
                 </ListItemButton>
-            </StyledList>
+            </MenuList>
             <Actions isMobile={isMobile} />
         </>
     )

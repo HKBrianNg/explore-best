@@ -3,7 +3,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import PersonIcon from '@mui/icons-material/Person'
 import { ListItemButton, ListItemIcon, Divider } from '@mui/material'
-import { StyledList } from './styles'
+import { MenuList } from './styles'
 import { ActionIconsContainerMobile, ActionIconsContainerDesktop } from './styles'
 import { Colors } from '../../styles/theme'
 
@@ -13,7 +13,7 @@ function Actions({ isMobile }) {
 
     return (
         <Component>
-            <StyledList type='row'>
+            <MenuList type='row'>
                 <ListItemButton sx={{ justifyContent: 'center' }}>
                     <ListItemIcon
                         sx={{
@@ -44,7 +44,7 @@ function Actions({ isMobile }) {
                     </ListItemIcon>
                 </ListItemButton>
                 <Divider orientation="vertical" flexItem />
-            </StyledList>
+            </MenuList>
         </Component>
     )
 

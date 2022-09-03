@@ -1,7 +1,7 @@
 import { Slide } from "@mui/material";
 import { Box } from "@mui/system";
 import { useEffect, useRef, useState } from "react";
-import { MessageText, PromotionsContainer } from "./styles";
+import { PromotionBox, MessageTypography } from "./styles";
 
 const messages = [
     "message 1",
@@ -33,7 +33,7 @@ function Promotions() {
     }, [])
 
     return (
-        <PromotionsContainer ref={containerRef}>
+        <PromotionBox ref={containerRef}>
             <Slide
                 container={containerRef.current}
                 direction={show ? 'left' : 'right'}
@@ -43,15 +43,13 @@ function Promotions() {
                 }}
                 in={show}
             >
-
                 <Box display='flex' justifyContent='center'>
-                    <MessageText>
+                    <MessageTypography>
                         {messages[messageIndex]}
-                    </MessageText>
+                    </MessageTypography>
                 </Box>
             </Slide>
-
-        </PromotionsContainer>
+        </PromotionBox>
     );
 }
 

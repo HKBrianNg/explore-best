@@ -1,18 +1,20 @@
-import { BannerContainer, BannerContent, BannerTitle, BannerDescription, BannerImage } from './styles'
+import { BannerBox, StyledImg, ContentWrapperBox, TitleTypography, DescriptionTypography } from './styles'
 
 
 function Banner() {
 
     return (
-        <BannerContainer>
-            <BannerImage src="/images/banner/dog.png" />
-            <BannerContent>
-                <BannerTitle variant='h5'>Awesome Exercise You Should Know</BannerTitle>
-                <BannerDescription variant='subtitle'>
+        <BannerBox>
+            <StyledImg src="/images/banner/dog.png" />
+            <ContentWrapperBox>
+                <TitleTypography>
+                    Awesome Exercise You Should Know
+                </TitleTypography>
+                <DescriptionTypography>
                     Explore the most effective exercise
-                </BannerDescription>
-            </BannerContent>
-        </BannerContainer>
+                </DescriptionTypography>
+            </ContentWrapperBox>
+        </BannerBox>
     )
 }
 
