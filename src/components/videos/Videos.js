@@ -2,9 +2,22 @@ import { products as data } from '../../data/products'
 import { Box, Card, CardHeader, CardMedia, CardContent, Avatar, IconButton, Typography } from '@mui/material';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { Colors } from '../../styles/theme/index'
-
+import { useEffect } from 'react';
+import { useVideoContext } from '../../context/VideoContext'
 
 function Videos() {
+    const { videos, setVideos, getVideosAPI } = useVideoContext()
+
+
+    useEffect(() => {
+        try {
+            const data = getVideosAPI()
+            console.log("data:", data)
+        } catch (error) {
+            console.log(error.message)
+        }
+    }, [])
+
 
     const openVideo = () => {
 
