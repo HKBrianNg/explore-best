@@ -6,7 +6,7 @@ import Home from './components/home/Home'
 function App() {
 
   useEffect(() => {
-    document.title = 'explore-best v1.0.3'
+    document.title = 'explore-best v1.0.5'
   }, [])
 
   return (
