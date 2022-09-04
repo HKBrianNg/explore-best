@@ -27,7 +27,7 @@ function Banner() {
     const { selectedCategory } = useAppContext()
     const data = bannerData.filter((item) => (item.category === selectedCategory))
 
-    console.log("data:", data)
+    // console.log("data:", data)
 
     return (
         <BannerBox>

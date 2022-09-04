@@ -1,42 +1,67 @@
 import { Chip, Box } from '@mui/material'
+import { useEffect, useState } from 'react'
 import { useAppContext } from '../../context/AppContext'
+
+const initialSubCategories = [
+    {
+        category: "IT",
+        subCategory: [
+            { id: "1", name: "AppService" },
+            { id: "2", name: "DevOps" },
+            { id: "3", name: "CICD" },
+            { id: "4", name: "IDE" },
+            { id: "5", name: "GitHub" },
+            { id: "6", name: "Docker" },
+            { id: "7", name: "React" },
+            { id: "8", name: "MERN" },
+            { id: "9", name: "Microservices" }
+        ]
+    },
+    {
+        category: "Fitness",
+        subCategory: [
+            { id: "1", name: "Fitness1" }
+        ]
+    },
+    {
+        category: "English",
+        subCategory: [
+            { id: "1", name: "English1" }
+        ]
+    }
+]
 
 
 function SubCategory() {
-    const { selectedCategory, setSelectedSubCategory } = useAppContext()
+    // eslint-disable-next-line
+    const [allSubCategories, setAllSubCategories] = useState(initialSubCategories)
+    const { selectedCategory, selectedSubCategory, setSelectedSubCategory } = useAppContext()
 
-    const handleClick = (value) => {
-        setSelectedSubCategory(value)
+    const handleClick = (name) => {
+        setSelectedSubCategory(name)
     }
 
+    useEffect(() => {
+        selectedCategory === 'IT' && setSelectedSubCategory('AppService')
+        selectedCategory === 'Fitness' && setSelectedSubCategory('Fitness1')
+        selectedCategory === 'English' && setSelectedSubCategory('English1')
+        // eslint-disable-next-line
+    }, [selectedCategory])
+
+    const data = allSubCategories.filter(
+        (item) => (item.category === selectedCategory))
+
     return (
-        <>
-            {selectedCategory === 'IT' &&
-                <Box m={2}>
-                    <Chip onClick={(e) => handleClick('AppService')} label="APPSERVICE" size='medium' variant='outlined' />
-                    <Chip onClick={(e) => handleClick('DevOps')} label="DEVOPS" size='medium' variant="outlined" />
-                    <Chip onClick={(e) => handleClick('CICD')} label="CICD" size='medium' variant="outlined" />
-                    <Chip onClick={(e) => handleClick('IDE')} label="IDE" size='medium' variant="outlined" />
-                    <Chip onClick={(e) => handleClick('GitHub')} label="GITHUB" size='medium' variant="outlined" />
-                    <Chip onClick={(e) => handleClick('Docker')} label="DOCKER" size='medium' variant="outlined" />
-                    <Chip onClick={(e) => handleClick('React')} label="REACT" size='medium' variant="outlined" />
-                    <Chip onClick={(e) => handleClick('MERN')} label="MERN" size='medium' variant="outlined" />
-                    <Chip onClick={(e) => handleClick('Microservices')} label="MICROSERVICES" size='medium' variant="outlined" />
-                </Box>
-            }
-            {
-                selectedCategory === 'Fitness' &&
-                <Box m={2}>
-                    <Chip onClick={(e) => handleClick('Fitness1')} label="Fitness1" size='medium' variant='outlined' />
-                </Box>
-            }
-            {
-                selectedCategory === 'English' &&
-                <Box m={2}>
-                    <Chip onClick={(e) => handleClick('English1')} label="English1" size='medium' variant='outlined' />
-                </Box>
-            }
-        </>
+        <Box m={2}>
+            {data[0].subCategory.map((item) => (
+                <Chip
+                    key={item.id}
+                    onClick={() => handleClick(item.name)}
+                    label={item.name}
+                    variant={selectedSubCategory === item.name ? "filled" : "outlined"}
+                />
+            ))}
+        </Box>
     )
 }
 
