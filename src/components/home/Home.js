@@ -12,7 +12,6 @@ function Home() {
         <>
             <Navbar />
             <Container maxWidth="xl">
-                <Category />
                 <Grid container spacing={1}
                     direction='row'
                     justifyContent='flex-start'
@@ -20,6 +19,7 @@ function Home() {
                     wrap="wrap"
                 >
                     <Grid item xs={12} md={3}>
+                        <Category />
                         <SubCategory />
                         <Banner />
                     </Grid>

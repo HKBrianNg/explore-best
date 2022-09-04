@@ -1,4 +1,4 @@
-import { Chip, Toolbar } from '@mui/material'
+import { Chip, Box } from '@mui/material'
 import { useAppContext } from '../../context/AppContext'
 import { allCategories } from '../../constant';
 
@@ -11,7 +11,7 @@ function Category() {
     }
 
     return (
-        <Toolbar variant='dense'>
+        <Box m={1} sx={{ display: 'flex', flexWrap: 'wrap' }}>
             {allCategories.map((item) => (
                 <Chip
                     key={item.id}
@@ -22,7 +22,8 @@ function Category() {
                     sx={{ m: '1px' }}
                 />
             ))}
-        </Toolbar>
+        </Box>
+
     )
 }
 

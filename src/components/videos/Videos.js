@@ -37,7 +37,7 @@ function Videos() {
         <>
             {isLoading && <Box sx={{ display: 'flex' }}><CircularProgress /></Box>}
             {errorMessage && <Typography variant="h6" component="h6" align='left' color='red' m={1} >{errorMessage}</Typography>}
-            <Box sx={{ flexGrow: 1, padding: 1, display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <Box sx={{ flexGrow: 1, padding: 1, display: 'flex', justifyContent: 'flex-start', flexWrap: 'wrap' }}>
                 {data.map((item, i) => (
                     <Card key={i} sx={{ maxWidth: 250, padding: 2 }}>
                         <CardMedia

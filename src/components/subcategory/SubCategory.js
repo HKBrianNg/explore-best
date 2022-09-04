@@ -72,7 +72,7 @@ function SubCategory() {
         (item) => (item.category === selectedCategory))
 
     return (
-        <Box m={2}>
+        <Box m={1}>
             {data[0].subCategory.map((item) => (
                 <Chip
                     key={item.id}

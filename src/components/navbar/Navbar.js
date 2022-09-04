@@ -1,12 +1,12 @@
-import { useMediaQuery, AppBar, Toolbar, IconButton, ListItemText, ListItemButton, ListItemIcon } from '@mui/material'
+import { useMediaQuery, AppBar, Toolbar, IconButton, ListItemText, ListItemButton, ListItemIcon, Typography, List } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 import SearchIcon from '@mui/icons-material/Search';
 import MenuIcon from '@mui/icons-material/Menu';
 import Actions from './actions'
 import { Colors } from '../../styles/theme'
 import { styled } from '@mui/material/styles'
-import { Typography, List } from '@mui/material'
 import "@fontsource/montez"
+import { Link } from 'react-router-dom';
 
 
 const LogoTypography = styled(Typography)(() => ({
@@ -16,13 +16,6 @@ const LogoTypography = styled(Typography)(() => ({
     fontFamily: '"Montez","cursive"',
     color: Colors.secondary,
 }))
-
-const MenuList = styled(List)(({ type }) => ({
-    display: type === "row" ? "flex" : "block",
-    flexGrow: 3,
-    justifyContent: "center",
-    alignItems: "center",
-}));
 
 
 const Mobile = ({ isMobile }) => {
@@ -49,17 +42,22 @@ const Desktop = ({ isMobile }) => {
             <LogoTypography>
                 Explore-Best
             </LogoTypography>
-            <MenuList type='row'>
-                <ListItemText primary="Home" />
-                <ListItemText primary="Category" />
-                <ListItemText primary="Products" />
-                <ListItemText primary="Contact Us" />
+            <List type='row' sx={{
+                display: "flex",
+                flexGrow: 8,
+                justifyContent: "flex-start",
+                alignItems: "center",
+            }}
+            >
+                <Link to='/' style={{ color: Colors.white, textDecoration: 'none' }}>
+                    <ListItemText primary="Home" />
+                </Link>
                 <ListItemButton>
-                    <ListItemIcon sx={{ color: Colors.white }}>
+                    <ListItemIcon sx={{ color: Colors.white, ml: '30px' }}>
                         <SearchIcon />
                     </ListItemIcon>
                 </ListItemButton>
-            </MenuList>
+            </List>
             <Actions isMobile={isMobile} />
         </>
     )
