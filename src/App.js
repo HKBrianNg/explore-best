@@ -11,7 +11,7 @@ import { AppContextProvider } from './context/AppContext'
 function App() {
 
   useEffect(() => {
-    document.title = 'explore-best v1.0.13'
+    document.title = 'explore-best v1.0.14'
   }, [])
 
   return (

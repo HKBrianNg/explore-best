@@ -4,29 +4,31 @@ import SubCategory from "../subcategory/SubCategory"
 import Banner from "../banner/Banner"
 import Promotions from "../promotions/Promotions"
 import Videos from "../videos/Videos"
-import { Grid } from '@mui/material'
+import { Container, Grid } from '@mui/material'
 
 
 function Home() {
     return (
         <>
             <Navbar />
-            <Category />
-            <Grid container spacing={1}
-                direction='row'
-                justifyContent='flex-start'
-                alignItems='flex-start'
-                wrap="wrap"
-            >
-                <Grid item xs={12} md={4}>
-                    <SubCategory />
+            <Container maxWidth="xl">
+                <Category />
+                <Grid container spacing={1}
+                    direction='row'
+                    justifyContent='flex-start'
+                    alignItems='flex-start'
+                    wrap="wrap"
+                >
+                    <Grid item xs={12} md={3}>
+                        <SubCategory />
+                        <Banner />
+                    </Grid>
+                    <Grid item xs={12} md={9}>
+                        <Videos />
+                    </Grid>
                 </Grid>
-                <Grid item xs={12} md={8}>
-                    <Banner />
-                </Grid>
-            </Grid>
-            <Promotions />
-            <Videos />
+                <Promotions />
+            </Container>
         </>
     )
 }
