@@ -16,3 +16,4 @@ Version Date        Description
 1.0.14  2022/9/4    Show Banner below SubCategory and show video list on right side
 1.0.15  2022/9/4    Store category in constant.js, and add Golf, Car, & House categories
 1.0.16  2022/9/5    Remove Product, Category, Contact Us from menu. Enable home menu item. Fix category overflow issue in mobile mode.
+1.0.17  2022/9/5    Re-size video image, remove Save icon

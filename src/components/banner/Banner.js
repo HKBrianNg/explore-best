@@ -16,7 +16,7 @@ function Banner() {
                     {data[0].title}
                 </Typography>
                 <img src={data[0].bannericon} alt={data[0].name} style={{ width: "100%" }} />
-                <Typography variant='subtitle1'>
+                <Typography variant='subtitle2'>
                     {data[0].description}
                 </Typography>
             </Box>

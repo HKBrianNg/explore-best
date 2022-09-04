@@ -1,4 +1,4 @@
-import { Box, Card, CardHeader, CardMedia, CardContent, Avatar, IconButton, Typography } from '@mui/material';
+import { Box, Card, CardHeader, CardMedia, CardContent, IconButton, Typography } from '@mui/material';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { Colors } from '../../styles/theme/index'
 import { useEffect, useState } from 'react';
@@ -39,20 +39,20 @@ function Videos() {
             {errorMessage && <Typography variant="h6" component="h6" align='left' color='red' m={1} >{errorMessage}</Typography>}
             <Box sx={{ flexGrow: 1, padding: 1, display: 'flex', justifyContent: 'flex-start', flexWrap: 'wrap' }}>
                 {data.map((item, i) => (
-                    <Card key={i} sx={{ maxWidth: 250, padding: 2 }}>
+                    <Card key={i} sx={{ maxWidth: 270, padding: 2 }}>
+                        <CardHeader sx={{ color: Colors.deep_orange, }}
+                            action={<IconButton><MoreVertIcon /></IconButton>}
+                            titleTypographyProps={{ variant: "h5" }}
+                            title={item.title}
+                            subheader={item.publishedAt}
+                        />
                         <CardMedia
                             component="img"
-                            height="200"
-                            width="400"
+                            height="100"
+                            width="270"
                             image={item.thumbnailUrl}
                             alt={item.title}
                             onClick={() => openVideo(item.videoId)}
-                        />
-                        <CardHeader sx={{ color: Colors.deep_orange, }}
-                            avatar={<Avatar sx={{ bgcolor: Colors.deep_orange, width: 56, height: 56 }}>Save</Avatar>}
-                            action={<IconButton aria-label="settings"><MoreVertIcon /></IconButton>}
-                            title={item.title}
-                            subheader={item.publishedAt}
                         />
                         <CardContent>
                             <Typography variant="body2" color="text.secondary">
