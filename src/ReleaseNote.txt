@@ -14,3 +14,4 @@ Version Date        Description
 1.0.12  2022/9/4    Highlight the selected category and SubCategory (1st SubCategory as default)
 1.0.13  2022/9/4    Merged style.js into component itself
 1.0.14  2022/9/4    Show Banner below SubCategory and show video list on right side
+1.0.15  2022/9/4    Store category in constant.js, and add Golf, Car, & House categories

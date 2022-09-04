@@ -28,6 +28,24 @@ const initialSubCategories = [
         subCategory: [
             { id: "1", name: "English1" }
         ]
+    },
+    {
+        category: "Golf",
+        subCategory: [
+            { id: "1", name: "Golf1" }
+        ]
+    },
+    {
+        category: "Car",
+        subCategory: [
+            { id: "1", name: "Car1" }
+        ]
+    },
+    {
+        category: "House",
+        subCategory: [
+            { id: "1", name: "House1" }
+        ]
     }
 ]
 
@@ -45,6 +63,8 @@ function SubCategory() {
         selectedCategory === 'IT' && setSelectedSubCategory('AppService')
         selectedCategory === 'Fitness' && setSelectedSubCategory('Fitness1')
         selectedCategory === 'English' && setSelectedSubCategory('English1')
+        selectedCategory === 'Golf' && setSelectedSubCategory('Golf1')
+        selectedCategory === 'Car' && setSelectedSubCategory('Car1')
         // eslint-disable-next-line
     }, [selectedCategory])
 
@@ -59,6 +79,7 @@ function SubCategory() {
                     onClick={() => handleClick(item.name)}
                     label={item.name}
                     variant={selectedSubCategory === item.name ? "filled" : "outlined"}
+                    sx={{ m: '1px' }}
                 />
             ))}
         </Box>
