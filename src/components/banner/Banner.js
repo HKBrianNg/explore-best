@@ -14,6 +14,12 @@ const bannerData = [
         icon: "/images/banner/dogAndbird.png",
         title: "Awesome Exercise You Should Know",
         description: "Explore the most effective exercise"
+    },
+    {
+        category: "English",
+        icon: "/images/banner/English.jpg",
+        title: "Awesome English Lessons You Should Know",
+        description: "Explore the most effective English learning"
     }
 ]
 
