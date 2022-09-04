@@ -7,18 +7,15 @@ import Promotions from "../promotions/Promotions"
 import Videos from "../videos/Videos"
 
 
-
 function Home() {
     return (
         <>
-            <Container maxWidth="xl">
-                <Navbar />
-                <Category />
-                <SubCategory />
-                <Banner />
-                <Promotions />
-                <Videos />
-            </Container>
+            <Navbar />
+            <Category />
+            <SubCategory />
+            <Banner />
+            <Promotions />
+            <Videos />
         </>
     )
 }
