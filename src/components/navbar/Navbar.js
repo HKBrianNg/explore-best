@@ -3,8 +3,26 @@ import { useTheme } from '@mui/material/styles'
 import SearchIcon from '@mui/icons-material/Search';
 import MenuIcon from '@mui/icons-material/Menu';
 import Actions from './actions'
-import { LogoTypography, MenuList } from './styles'
 import { Colors } from '../../styles/theme'
+import { styled } from '@mui/material/styles'
+import { Typography, List } from '@mui/material'
+import "@fontsource/montez"
+
+
+const LogoTypography = styled(Typography)(() => ({
+    padding: '4px',
+    flexGrow: 1,
+    fontSize: '3em',
+    fontFamily: '"Montez","cursive"',
+    color: Colors.secondary,
+}))
+
+const MenuList = styled(List)(({ type }) => ({
+    display: type === "row" ? "flex" : "block",
+    flexGrow: 3,
+    justifyContent: "center",
+    alignItems: "center",
+}));
 
 
 const Mobile = ({ isMobile }) => {

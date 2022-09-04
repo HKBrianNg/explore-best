@@ -12,3 +12,4 @@ Version Date        Description
 1.0.10  2022/9/4    Move SubCategory to left side of Banner
 1.0.11  2022/9/4    Display SubCategory based on selected category
 1.0.12  2022/9/4    Highlight the selected category and SubCategory (1st SubCategory as default)
+1.0.13  2022/9/4    Merged style.js into component itself
