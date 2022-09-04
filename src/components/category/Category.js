@@ -1,4 +1,4 @@
-import { Stack, Chip, Toolbar, AppBar } from '@mui/material'
+import { Stack, Chip, Toolbar } from '@mui/material'
 import ImportantDevicesIcon from '@mui/icons-material/ImportantDevices';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import { useAppContext } from '../../context/AppContext'

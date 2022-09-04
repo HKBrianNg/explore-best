@@ -52,7 +52,7 @@ function Navbar() {
     const isMobile = useMediaQuery(theme.breakpoints.down('md'))
     return (
         <>
-            <AppBar position="sticky" variant='dense' disableGutters>
+            <AppBar position="sticky" variant='dense'>
                 <Toolbar>
                     {isMobile ? <Mobile isMobile={isMobile} /> : <Desktop isMobile={isMobile} />}
                 </Toolbar>

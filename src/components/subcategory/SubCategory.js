@@ -1,4 +1,4 @@
-import { Stack, Chip, Toolbar } from '@mui/material'
+import { Chip, Box } from '@mui/material'
 import { useAppContext } from '../../context/AppContext'
 
 
@@ -43,19 +43,17 @@ function SubCategory() {
 
 
     return (
-        <Toolbar>
-            <Stack direction="row" spacing={1}>
-                <Chip onClick={handleAppService} label="APPSERVICE" size='medium' variant='outlined' />
-                <Chip onClick={handleDevOps} label="DEVOPS" size='medium' variant="outlined" />
-                <Chip onClick={handleCICD} label="CICD" size='medium' variant="outlined" />
-                <Chip onClick={handleIDE} label="IDE" size='medium' variant="outlined" />
-                <Chip onClick={handleGithub} label="GITHUB" size='medium' variant="outlined" />
-                <Chip onClick={handleDocker} label="DOCKER" size='medium' variant="outlined" />
-                <Chip onClick={handleReact} label="REACT" size='medium' variant="outlined" />
-                <Chip onClick={handleMERN} label="MERN" size='medium' variant="outlined" />
-                <Chip onClick={handleMicroServices} label="MICROSERVICES" size='medium' variant="outlined" />
-            </Stack>
-        </Toolbar>
+        <Box>
+            <Chip onClick={handleAppService} label="APPSERVICE" size='medium' variant='outlined' />
+            <Chip onClick={handleDevOps} label="DEVOPS" size='medium' variant="outlined" />
+            <Chip onClick={handleCICD} label="CICD" size='medium' variant="outlined" />
+            <Chip onClick={handleIDE} label="IDE" size='medium' variant="outlined" />
+            <Chip onClick={handleGithub} label="GITHUB" size='medium' variant="outlined" />
+            <Chip onClick={handleDocker} label="DOCKER" size='medium' variant="outlined" />
+            <Chip onClick={handleReact} label="REACT" size='medium' variant="outlined" />
+            <Chip onClick={handleMERN} label="MERN" size='medium' variant="outlined" />
+            <Chip onClick={handleMicroServices} label="MICROSERVICES" size='medium' variant="outlined" />
+        </Box>
     )
 }
 
