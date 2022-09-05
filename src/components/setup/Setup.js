@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from '../../components/navbar/Navbar'
-import { Container, Grid, Box } from '@mui/material'
+import { Container, Grid } from '@mui/material'
 
 const Sidebar = () => {
     return (

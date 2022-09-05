@@ -1,6 +1,6 @@
 import { Box, Card, CardHeader, CardMedia, CardContent, IconButton, Typography, CardActions } from '@mui/material';
 import { Colors } from '../../styles/theme/index'
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useVideoContext } from '../../context/VideoContext'
 import { useAppContext } from '../../context/AppContext';
 import EditIcon from '@mui/icons-material/Edit';
@@ -20,10 +20,10 @@ function Videos() {
         navigate(`/video/add/${id}`, { replace: true })
     }
 
-    const deleteVideo = (id) => {
-        //delete 
-        setSelectedId(id)
-    }
+    // const deleteVideo = (id) => {
+
+    //     setSelectedId(id)
+    // }
 
     const data = videos.filter((video) => (video.category === selectedCategory && video.subCategory === selectedSubCategory))
     return (
