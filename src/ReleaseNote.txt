@@ -20,4 +20,5 @@ Version Date        Description
 1.0.18  2022/9/5    Add google map page and detect my current geographic location
 1.0.19  2022/9/5    Link navbar logo to home page
 1.0.20  2022/9/5    Remove shopping cart. Add video setup page.
-1.0.21  2022/9/6    Add setup menu and video setup
+1.0.21  2022/9/6    Replace Add by Map function. Add About page.
+1.0.22  2022/9/6    Add setup menu and video setup

@@ -21,14 +21,14 @@ const LogoTypography = styled(Typography)(() => ({
 const Mobile = ({ isMobile }) => {
     return (
         <>
+            <IconButton sx={{ color: Colors.white }}>
+                <MenuIcon />
+            </IconButton>
             <Link to='/' style={{ color: Colors.secondary, textDecoration: 'none', }}>
-                <IconButton sx={{ color: Colors.white }}>
-                    <MenuIcon />
-                </IconButton>
+                <LogoTypography textAlign={"center"} >
+                    Explore-Best
+                </LogoTypography>
             </Link>
-            <LogoTypography textAlign={"center"} >
-                Explore-Best
-            </LogoTypography>
             <IconButton sx={{ color: Colors.white }}>
                 <SearchIcon />
             </IconButton>
@@ -56,8 +56,8 @@ const Desktop = ({ isMobile }) => {
                 <Link to='/' style={{ color: Colors.white, textDecoration: 'none', }}>
                     <ListItemText primary="Home" primaryTypographyProps={{ mr: 2 }} />
                 </Link>
-                <Link to='/map' style={{ color: Colors.white, textDecoration: 'none' }}>
-                    <ListItemText primary="Map" />
+                <Link to='/about' style={{ color: Colors.white, textDecoration: 'none' }}>
+                    <ListItemText primary="About" />
                 </Link>
                 <ListItemButton>
                     <ListItemIcon sx={{ color: Colors.white, ml: '30px' }}>

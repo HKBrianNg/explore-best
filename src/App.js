@@ -3,6 +3,7 @@ import { useEffect } from "react"
 import { Routes, Route } from 'react-router-dom'
 import { theme } from './styles/theme/index'
 import Home from './components/home/Home'
+import About from './components/about/About'
 import Map from './components/map/Map'
 import PlayVideo from './components/videos/PlayVideo'
 import VideoSetup from './components/setup/VideoSetup'
@@ -16,7 +17,7 @@ import { MapContextProvider } from './context/MapContext'
 function App() {
 
   useEffect(() => {
-    document.title = 'explore-best v1.0.20'
+    document.title = 'explore-best v1.0.21'
   }, [])
 
   return (
@@ -28,6 +29,7 @@ function App() {
             <MapContextProvider>
               <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
                 <Route path="/map" element={<Map />} />
                 <Route path="/video/:id" element={<PlayVideo />} />
                 <Route path="/video/add/:id" element={<VideoSetup />} />

@@ -1,5 +1,5 @@
 import SettingsIcon from '@mui/icons-material/Settings';
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import MapIcon from '@mui/icons-material/Map';
 import PersonIcon from '@mui/icons-material/Person'
 import { ListItemButton, ListItemIcon, Divider } from '@mui/material'
 import { Colors } from '../../styles/theme'
@@ -56,8 +56,8 @@ function Actions({ isMobile }) {
                             display: 'flex', justifyContent: 'center',
                             color: Colors.white,
                         }}>
-                        <Link to='/video/add/0' style={{ color: Colors.white, textDecoration: 'none', }}>
-                            <AddCircleOutlineIcon />
+                        <Link to='/map' style={{ color: Colors.white, textDecoration: 'none', }}>
+                            <MapIcon />
                         </Link>
                     </ListItemIcon>
                 </ListItemButton>
