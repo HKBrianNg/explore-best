@@ -1,11 +1,11 @@
-
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
-import FavoriteIcon from '@mui/icons-material/Favorite'
+import SettingsIcon from '@mui/icons-material/Settings';
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import PersonIcon from '@mui/icons-material/Person'
 import { ListItemButton, ListItemIcon, Divider } from '@mui/material'
 import { Colors } from '../../styles/theme'
 import { styled } from '@mui/material/styles'
 import { Box, List } from '@mui/material'
+import { Link } from 'react-router-dom'
 
 
 const MenuList = styled(List)(({ type }) => ({
@@ -44,7 +44,9 @@ function Actions({ isMobile }) {
                             display: 'flex', justifyContent: 'center',
                             color: Colors.white,
                         }}>
-                        <ShoppingCartIcon />
+                        <Link to='/setup' style={{ color: Colors.white, textDecoration: 'none', }}>
+                            <SettingsIcon />
+                        </Link>
                     </ListItemIcon>
                 </ListItemButton>
                 <Divider orientation="vertical" flexItem />
@@ -54,7 +56,9 @@ function Actions({ isMobile }) {
                             display: 'flex', justifyContent: 'center',
                             color: Colors.white,
                         }}>
-                        <FavoriteIcon />
+                        <Link to='/video/add/0' style={{ color: Colors.white, textDecoration: 'none', }}>
+                            <AddCircleOutlineIcon />
+                        </Link>
                     </ListItemIcon>
                 </ListItemButton>
                 <Divider orientation="vertical" flexItem />
@@ -69,7 +73,7 @@ function Actions({ isMobile }) {
                 </ListItemButton>
                 <Divider orientation="vertical" flexItem />
             </MenuList>
-        </Component>
+        </Component >
     )
 
 }

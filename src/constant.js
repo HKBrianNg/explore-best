@@ -6,6 +6,12 @@ import ElectricCarIcon from '@mui/icons-material/ElectricCar';
 import CabinIcon from '@mui/icons-material/Cabin';
 
 
+export const SysMsg = [
+    "000-No topic data. System fails to start.",
+    "001-Please decode video Id first.",
+    "002-No user data."
+]
+
 export const allCategories = [
     {
         id: "1",
@@ -54,5 +60,54 @@ export const allCategories = [
         bannericon: "/images/banner/house.jpg",
         title: "Awesome House You Should Know",
         description: "Explore the beautiful houses"
+    }
+]
+
+
+export const allSubCategories = [
+    {
+        category: "IT",
+        subCategory: [
+            { id: "1", name: "AppService" },
+            { id: "2", name: "DevOps" },
+            { id: "3", name: "CICD" },
+            { id: "4", name: "IDE" },
+            { id: "5", name: "GitHub" },
+            { id: "6", name: "Docker" },
+            { id: "7", name: "React" },
+            { id: "8", name: "MERN" },
+            { id: "9", name: "Microservices" },
+            { id: "10", name: "Firebase" }
+        ]
+    },
+    {
+        category: "Fitness",
+        subCategory: [
+            { id: "1", name: "Fitness1" }
+        ]
+    },
+    {
+        category: "English",
+        subCategory: [
+            { id: "1", name: "English1" }
+        ]
+    },
+    {
+        category: "Golf",
+        subCategory: [
+            { id: "1", name: "Golf1" }
+        ]
+    },
+    {
+        category: "Car",
+        subCategory: [
+            { id: "1", name: "Car1" }
+        ]
+    },
+    {
+        category: "House",
+        subCategory: [
+            { id: "1", name: "House1" }
+        ]
     }
 ]

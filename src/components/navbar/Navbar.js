@@ -2,11 +2,11 @@ import { useMediaQuery, AppBar, Toolbar, IconButton, ListItemText, ListItemButto
 import { useTheme } from '@mui/material/styles'
 import SearchIcon from '@mui/icons-material/Search';
 import MenuIcon from '@mui/icons-material/Menu';
-import Actions from './actions'
 import { Colors } from '../../styles/theme'
 import { styled } from '@mui/material/styles'
 import "@fontsource/montez"
 import { Link } from 'react-router-dom';
+import Actions from './actions';
 
 
 const LogoTypography = styled(Typography)(() => ({

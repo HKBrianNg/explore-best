@@ -5,6 +5,7 @@ const videoContext = createContext()
 
 export const VideoContextProvider = ({ children }) => {
     const [videos, setVideos] = useState([])
+    const [selectedId, setSelectedId] = useState("0")
     const url = "https://learning-bn-api.herokuapp.com"
 
     const getVideoAPI = async (id) => {
@@ -57,7 +58,8 @@ export const VideoContextProvider = ({ children }) => {
         <videoContext.Provider value={{
             videos, setVideos,
             getVideoAPI, getVideosAPI,
-            createVideoAPI, deleteVideoAPI, updateVideoAPI
+            createVideoAPI, deleteVideoAPI, updateVideoAPI,
+            selectedId, setSelectedId
         }}>
             {children}
         </videoContext.Provider>
