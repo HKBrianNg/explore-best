@@ -49,8 +49,11 @@ const Desktop = ({ isMobile }) => {
                 alignItems: "center",
             }}
             >
-                <Link to='/' style={{ color: Colors.white, textDecoration: 'none' }}>
-                    <ListItemText primary="Home" />
+                <Link to='/' style={{ color: Colors.white, textDecoration: 'none', }}>
+                    <ListItemText primary="Home" primaryTypographyProps={{ mr: 2 }} />
+                </Link>
+                <Link to='/map' style={{ color: Colors.white, textDecoration: 'none' }}>
+                    <ListItemText primary="Map" />
                 </Link>
                 <ListItemButton>
                     <ListItemIcon sx={{ color: Colors.white, ml: '30px' }}>
