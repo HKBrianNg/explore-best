@@ -15,15 +15,17 @@ const LogoTypography = styled(Typography)(() => ({
     fontSize: '3em',
     fontFamily: '"Montez","cursive"',
     color: Colors.secondary,
+    marginRight: '20px'
 }))
-
 
 const Mobile = ({ isMobile }) => {
     return (
         <>
-            <IconButton sx={{ color: Colors.white }}>
-                <MenuIcon />
-            </IconButton>
+            <Link to='/' style={{ color: Colors.secondary, textDecoration: 'none', }}>
+                <IconButton sx={{ color: Colors.white }}>
+                    <MenuIcon />
+                </IconButton>
+            </Link>
             <LogoTypography textAlign={"center"} >
                 Explore-Best
             </LogoTypography>
@@ -39,9 +41,11 @@ const Desktop = ({ isMobile }) => {
 
     return (
         <>
-            <LogoTypography>
-                Explore-Best
-            </LogoTypography>
+            <Link to='/' style={{ color: Colors.secondary, textDecoration: 'none', }}>
+                <LogoTypography>
+                    Explore-Best
+                </LogoTypography>
+            </Link>
             <List type='row' sx={{
                 display: "flex",
                 flexGrow: 8,

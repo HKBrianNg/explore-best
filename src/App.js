@@ -13,7 +13,7 @@ import { MapContextProvider } from './context/MapContext'
 function App() {
 
   useEffect(() => {
-    document.title = 'explore-best v1.0.18'
+    document.title = 'explore-best v1.0.19'
   }, [])
 
   return (
