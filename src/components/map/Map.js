@@ -206,11 +206,6 @@ function Map() {
                     alignItems='flex-start'
                     wrap="wrap"
                 >
-                    {/* <Grid item xs={12} md={3}>
-                        <Category />
-                        <SubCategory />
-                        <Banner />
-                    </Grid> */}
                     <Grid item xs={12} md={12} >
                         <Stack direction={{ xs: 'column', md: 'row' }}>
                             <AutocompleteMui size='small' disablePortal options={styleList} value={value}
@@ -297,7 +292,6 @@ function Map() {
                         </Box>
                     </Grid>
                 </Grid>
-                <Promotions />
             </Container>
         </>
     )
