@@ -1,11 +1,11 @@
-import NewNavbar from '../navbar/NewNavbar'
+import Navbar from '../navbar/Navbar'
 import { Container, Grid } from '@mui/material'
 
 
 function About() {
     return (
         <>
-            <NewNavbar />
+            <Navbar />
             <Container maxWidth='xl'>
                 <Grid container spacing={0.5} direction="row" justifyContent="flex-start" alignItems="flex-start">
                     <Grid item xs={12} md={8}>

@@ -1,4 +1,4 @@
-import NewNavbar from "../navbar/NewNavbar"
+import Navbar from "../navbar/Navbar"
 import { useState, useCallback } from 'react'
 import { GoogleMap, InfoWindow, Marker, useLoadScript, Autocomplete, Circle } from '@react-google-maps/api'
 import { Container, Grid, Autocomplete as AutocompleteMui, TextField, IconButton, Stack, Box, Typography } from '@mui/material'
@@ -197,7 +197,7 @@ function Map() {
 
     return (
         <>
-            <NewNavbar />
+            <Navbar />
             <Container maxWidth="xl">
                 <Grid container spacing={1} mt={4}
                     direction='row'

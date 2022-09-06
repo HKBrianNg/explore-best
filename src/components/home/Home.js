@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import NewNavbar from "../navbar/NewNavbar"
+import Navbar from "../navbar/Navbar"
 import Category from "../category/Category"
 import SubCategory from "../subcategory/SubCategory"
 import Banner from "../banner/Banner"
@@ -38,7 +38,7 @@ function Home() {
 
     return (
         <>
-            <NewNavbar />
+            <Navbar />
             <Container maxWidth="xl">
                 {isLoading && <Box sx={{ display: 'flex' }}><CircularProgress /></Box>}
                 {errorMessage && <Typography variant="h6" component="h6" align='left' color='red' m={1} >{errorMessage}</Typography>}
