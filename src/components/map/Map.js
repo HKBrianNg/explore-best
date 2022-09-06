@@ -1,7 +1,4 @@
 import Navbar from "../navbar/Navbar"
-import Category from "../category/Category"
-import SubCategory from "../subcategory/SubCategory"
-import Banner from "../banner/Banner"
 import Promotions from "../promotions/Promotions"
 import { useState, useCallback } from 'react'
 import { GoogleMap, InfoWindow, Marker, useLoadScript, Autocomplete, Circle } from '@react-google-maps/api'
@@ -85,8 +82,6 @@ function Map() {
     const { zoom, setZoom, centerCoord, setCenterCoord,
         markers, setMarkers, selected, setSelected } = useMapContext()
 
-
-    // const center = useMemo(() => ({ lat: centerCoord.lat, lng: centerCoord.lng }), [centerCoord])
     const onLoad = (autoC) => {
         setAutocomplete(autoC)
     }
@@ -211,32 +206,34 @@ function Map() {
                     alignItems='flex-start'
                     wrap="wrap"
                 >
-                    <Grid item xs={12} md={3}>
+                    {/* <Grid item xs={12} md={3}>
                         <Category />
                         <SubCategory />
                         <Banner />
-                    </Grid>
-                    <Grid item xs={12} md={9}>
-                        <Stack direction='row'>
+                    </Grid> */}
+                    <Grid item xs={12} md={12} >
+                        <Stack direction={{ xs: 'column', md: 'row' }}>
                             <AutocompleteMui size='small' disablePortal options={styleList} value={value}
-                                onChange={handleMapStyleChange} sx={{ width: 160, margin: 1, padding: 0, }}
+                                onChange={handleMapStyleChange} sx={{ width: 220, margin: 1, padding: 0, }}
                                 renderInput={(params) => <TextField {...params} label="Map Styles" />}
                             />
-                            <TextField variant="outlined" type='number' label='Zoom' size='small' value={zoom} onChange={handleZoomChanged}
-                                sx={{ width: 80, margin: 1, padding: 0 }}
-                                InputProps={{ inputProps: { max: 22, min: 0 } }} />
-                            <TextField variant="outlined" type='number' label='Center Latitude' size='small' value={centerCoord.lat} onChange={handleLatChanged}
-                                sx={{ width: 120, margin: 1, padding: 0 }}
-                                InputProps={{ inputProps: { max: 89, min: -89 } }} />
-                            <TextField variant="outlined" type='number' label='Center Longtitude' size='small' value={centerCoord.lng} onChange={handleLngChanged}
-                                sx={{ width: 120, margin: 1, padding: 0 }}
-                                InputProps={{ inputProps: { max: 180, min: -179 } }} />
+                            <Box display={{ xs: 'none', md: 'flex' }}>
+                                <TextField variant="outlined" type='number' label='Zoom' size='small' value={zoom} onChange={handleZoomChanged}
+                                    sx={{ width: 80, margin: 1, padding: 0 }}
+                                    InputProps={{ inputProps: { max: 22, min: 0 } }} />
+                                <TextField variant="outlined" type='number' label='Center Latitude' size='small' value={centerCoord.lat} onChange={handleLatChanged}
+                                    sx={{ width: 120, margin: 1, padding: 0 }}
+                                    InputProps={{ inputProps: { max: 89, min: -89 } }} />
+                                <TextField variant="outlined" type='number' label='Center Longtitude' size='small' value={centerCoord.lng} onChange={handleLngChanged}
+                                    sx={{ width: 120, margin: 1, padding: 0 }}
+                                    InputProps={{ inputProps: { max: 180, min: -179 } }} />
+                            </Box>
                             <Box display='flex'>
                                 <Autocomplete onLoad={onLoad} onPlaceChanged={onPlaceChanged}
                                     options={{ fields: ["geometry", "icon", "name"] }}
                                 >
                                     <TextField variant="outlined" label='Places' size='small' value={searchValue} onChange={(e) => setSearchValue(e.target.value)}
-                                        sx={{ width: 300, margin: 1, padding: 0 }}
+                                        sx={{ width: 220, margin: 1, padding: 0 }}
                                         InputProps={{ inputProps: { max: 180, min: -179 }, }} />
                                 </Autocomplete>
                                 <IconButton size='small' onClick={clearMarkers} >
@@ -246,56 +243,58 @@ function Map() {
                         </Stack>
                         <div style={{ position: 'relative', cursor: 'pointer' }}>
                             <IconButton size='small' onClick={getMyLocation}
-                                sx={{ position: 'absolute', top: '1px', left: '180px', zIndex: 10, margin: 0, padding: 2, }}
+                                sx={{ position: 'absolute', top: '1px', left: '190px', zIndex: 10, margin: 0, padding: 2, }}
                             >
                                 <MyLocationIcon />
                             </IconButton>
                         </div>
-                        <GoogleMap
-                            mapContainerStyle={mapContainerStyle}
-                            center={centerCoord}
-                            zoom={zoom}
-                            options={mapOptions}
-                            onLoad={onMapLoad}
-                            onCenterChanged={handleCenterChanged}
-                            onClick={onMapClick}
-                            onZoomChanged={handleOnZoomChanged}
-                        >
-                            {markers.map((marker) => (
-                                <Marker
-                                    key={marker.time.toISOString()}
-                                    position={{ lat: marker.lat, lng: marker.lng }}
-                                    icon={{
-                                        url: "/cat.png",
-                                        scaledSize: new window.google.maps.Size(30, 30),
-                                        origin: new window.google.maps.Point(0, 0),
-                                        anchor: new window.google.maps.Point(15, 15)
-                                    }}
-                                    onClick={(e) => onMarkerClick(marker)}
-                                />
+                        <Box sx={{ xs: { width: 340 } }} >
+                            <GoogleMap
+                                mapContainerStyle={mapContainerStyle}
+                                center={centerCoord}
+                                zoom={zoom}
+                                options={mapOptions}
+                                onLoad={onMapLoad}
+                                onCenterChanged={handleCenterChanged}
+                                onClick={onMapClick}
+                                onZoomChanged={handleOnZoomChanged}
+                            >
+                                {markers.map((marker) => (
+                                    <Marker
+                                        key={marker.time.toISOString()}
+                                        position={{ lat: marker.lat, lng: marker.lng }}
+                                        icon={{
+                                            url: "/cat.png",
+                                            scaledSize: new window.google.maps.Size(30, 30),
+                                            origin: new window.google.maps.Point(0, 0),
+                                            anchor: new window.google.maps.Point(15, 15)
+                                        }}
+                                        onClick={(e) => onMarkerClick(marker)}
+                                    />
 
-                            ))}
-                            {markers.map((marker) => (
-                                <Circle key={marker.time.toISOString()} center={{ lat: marker.lat, lng: marker.lng }} radius={10000} options={closeOptions} />
-                            ))}
-                            {markers.map((marker) => (
-                                <Circle key={marker.time.toISOString()} center={{ lat: marker.lat, lng: marker.lng }} radius={20000} options={middleOptions} />
-                            ))}
-                            {markers.map((marker) => (
-                                <Circle key={marker.time.toISOString()} center={{ lat: marker.lat, lng: marker.lng }} radius={30000} options={farOptions} />
-                            ))}
-                            {selected && (
-                                <InfoWindow position={{ lat: selected.lat, lng: selected.lng }} onCloseClick={() => { setSelected(null) }}>
-                                    <Box>
-                                        <Typography variant='h5'>Marked&nbsp; {formatRelative(selected.time, new Date())}</Typography>
-                                        <Stack direction='row'>
-                                            <img src={selected.icon} alt="" style={{ width: '30px', height: '30px' }} />
-                                            <Typography variant='h5' ml={1}>{selected.name}</Typography>
-                                        </Stack>
-                                    </Box>
-                                </InfoWindow>
-                            )}
-                        </GoogleMap>
+                                ))}
+                                {markers.map((marker) => (
+                                    <Circle key={marker.time.toISOString()} center={{ lat: marker.lat, lng: marker.lng }} radius={10000} options={closeOptions} />
+                                ))}
+                                {markers.map((marker) => (
+                                    <Circle key={marker.time.toISOString()} center={{ lat: marker.lat, lng: marker.lng }} radius={20000} options={middleOptions} />
+                                ))}
+                                {markers.map((marker) => (
+                                    <Circle key={marker.time.toISOString()} center={{ lat: marker.lat, lng: marker.lng }} radius={30000} options={farOptions} />
+                                ))}
+                                {selected && (
+                                    <InfoWindow position={{ lat: selected.lat, lng: selected.lng }} onCloseClick={() => { setSelected(null) }}>
+                                        <Box>
+                                            <Typography variant='h5'>Marked&nbsp; {formatRelative(selected.time, new Date())}</Typography>
+                                            <Stack direction='row'>
+                                                <img src={selected.icon} alt="" style={{ width: '30px', height: '30px' }} />
+                                                <Typography variant='h5' ml={1}>{selected.name}</Typography>
+                                            </Stack>
+                                        </Box>
+                                    </InfoWindow>
+                                )}
+                            </GoogleMap>
+                        </Box>
                     </Grid>
                 </Grid>
                 <Promotions />
