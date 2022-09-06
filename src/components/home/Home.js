@@ -51,10 +51,10 @@ function Home() {
                     >
                         <Grid item xs={12} md={3}>
                             <Category />
-                            <SubCategory />
                             <Banner />
                         </Grid>
                         <Grid item xs={12} md={9}>
+                            <SubCategory />
                             <Videos />
                         </Grid>
                     </Grid>
