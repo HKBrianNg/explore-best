@@ -85,7 +85,7 @@ function NewNavbar(props) {
     }
 
     const drawer = (
-        <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+        <Box onClick={handleDrawerToggle} >
             <Logo textAlign={"center"}>
                 Explore-Best
             </Logo>
@@ -141,7 +141,7 @@ function NewNavbar(props) {
                                     </Link>
                                 ))}
                             </Box>
-                            <Search>
+                            <Search sx={{ display: { xs: 'none', md: 'flex' } }}>
                                 <SearchIconWrapper>
                                     <SearchIcon />
                                 </SearchIconWrapper>
@@ -150,6 +150,9 @@ function NewNavbar(props) {
                                     inputProps={{ 'aria-label': 'search' }}
                                 />
                             </Search>
+                            <IconButton sx={{ display: { xs: 'flex', md: 'none' }, color: Colors.white }}>
+                                <SearchIcon />
+                            </IconButton>
                             <Actions isMobile={isMobile} />
                         </Stack>
                     </Toolbar>
