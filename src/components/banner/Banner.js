@@ -12,7 +12,7 @@ function Banner() {
     return (
         <>
             <Box>
-                <Typography variant='h3'>
+                <Typography variant='h6'>
                     {data[0].title}
                 </Typography>
                 <img src={data[0].bannericon} alt={data[0].name} style={{ width: "100%" }} />

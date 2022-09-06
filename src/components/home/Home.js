@@ -52,13 +52,13 @@ function Home() {
                         <Grid item xs={12} md={3}>
                             <Category />
                             <Banner />
+                            <Promotions />
                         </Grid>
                         <Grid item xs={12} md={9}>
                             <SubCategory />
                             <Videos />
                         </Grid>
                     </Grid>
-                    <Promotions />
                 </>
                 }
             </Container>

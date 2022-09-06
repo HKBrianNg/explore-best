@@ -23,4 +23,5 @@ Version Date        Description
 1.0.21  2022/9/6    Replace Add by Map function. Add About page.
 1.0.22  2022/9/6    Fix map bug in mobile mode & remove left pannel
 1.0.23  2022/9/6    Move SubCategory to home page right pannel
-1.0.24  2022/9/6    Add setup menu and video setup
+1.0.24  2022/9/6    Change title to smaller font in banner component. Move promotion component to left panel in home page.
+1.0.25  2022/9/6    Add setup menu and video setup
