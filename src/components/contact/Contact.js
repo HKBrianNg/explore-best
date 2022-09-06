@@ -2,17 +2,17 @@ import NewNavbar from '../navbar/NewNavbar'
 import { Container, Grid } from '@mui/material'
 
 
-function About() {
+function Contact() {
     return (
         <>
             <NewNavbar />
             <Container maxWidth='xl'>
                 <Grid container spacing={0.5} direction="row" justifyContent="flex-start" alignItems="flex-start">
                     <Grid item xs={12} md={8}>
-                        <h1>About List</h1>
+                        <h1>Contact List</h1>
                     </Grid>
                     <Grid item xs={12} md={4}>
-                        <h1>About Form</h1>
+                        <h1>Contact Form</h1>
                     </Grid>
                 </Grid>
             </Container>
@@ -20,4 +20,4 @@ function About() {
     )
 }
 
-export default About
+export default Contact

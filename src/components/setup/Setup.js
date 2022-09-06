@@ -1,33 +1,19 @@
-import React from 'react'
-import Navbar from '../../components/navbar/Navbar'
 import { Container, Grid } from '@mui/material'
+import NewNavbar from '../navbar/NewNavbar'
 
-const Sidebar = () => {
-    return (
-        <>
-            <div>function 1</div>
-            <div>function 2</div>
-            <div>function 3</div>
-            <div>function 4</div>
-        </>
-    )
-}
 
 function Setup() {
     return (
         <>
-            <Navbar />
+            <NewNavbar />
             <Container maxWidth='xl'>
                 <Grid container spacing={0.5} direction="row" justifyContent="flex-start" alignItems="flex-start">
-                    <Grid item xs={12} md={1}>
-                        <Sidebar />
+                    <Grid item xs={12} md={8}>
+                        <h1>Setup List</h1>
                     </Grid>
-                    <Grid item xs={12} md={11}>
-                        <h1>
-                            selected function details
-                        </h1>
+                    <Grid item xs={12} md={4}>
+                        <h1>Setup Form</h1>
                     </Grid>
-
                 </Grid>
             </Container>
         </>

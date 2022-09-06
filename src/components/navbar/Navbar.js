@@ -46,13 +46,7 @@ const Desktop = ({ isMobile }) => {
                     Explore-Best
                 </LogoTypography>
             </Link>
-            <List type='row' sx={{
-                display: "flex",
-                flexGrow: 8,
-                justifyContent: "flex-start",
-                alignItems: "center",
-            }}
-            >
+            <List type='row' sx={{ display: "flex", flexGrow: 8, justifyContent: "flex-start", alignItems: "center", }}>
                 <Link to='/' style={{ color: Colors.white, textDecoration: 'none', }}>
                     <ListItemText primary="Home" primaryTypographyProps={{ mr: 2 }} />
                 </Link>

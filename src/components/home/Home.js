@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
-import Navbar from "../navbar/Navbar"
+import NewNavbar from "../navbar/NewNavbar"
 import Category from "../category/Category"
 import SubCategory from "../subcategory/SubCategory"
 import Banner from "../banner/Banner"
-import Promotions from "../promotions/Promotions"
+// import Promotions from "../promotions/Promotions"
 import Videos from "../videos/Videos"
 import { Container, Grid, Typography, Box } from '@mui/material'
 import CircularProgress from '@mui/material/CircularProgress'
@@ -38,21 +38,16 @@ function Home() {
 
     return (
         <>
-            <Navbar />
+            <NewNavbar />
             <Container maxWidth="xl">
                 {isLoading && <Box sx={{ display: 'flex' }}><CircularProgress /></Box>}
                 {errorMessage && <Typography variant="h6" component="h6" align='left' color='red' m={1} >{errorMessage}</Typography>}
                 {videos && <>
-                    <Grid container spacing={1}
-                        direction='row'
-                        justifyContent='flex-start'
-                        alignItems='flex-start'
-                        wrap="wrap"
-                    >
+                    <Grid container spacing={1} direction='row' justifyContent='flex-start' alignItems='flex-start' wrap="wrap" mt={3}>
                         <Grid item xs={12} md={3}>
                             <Category />
                             <Banner />
-                            <Promotions />
+                            {/* <Promotions /> */}
                         </Grid>
                         <Grid item xs={12} md={9}>
                             <SubCategory />
