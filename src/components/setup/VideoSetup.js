@@ -209,16 +209,14 @@ function VideoSetup() {
         <Box>
             <Paper elevation={3}>
                 <Stack direction='column' alignItems='center' justifyContent='center'>
-                    <Stack direction='row' alignItems='center' justifyContent='center'>
-                        <Autocomplete size='small' disablePortal options={categoryList} value={category}
-                            onChange={handleCategoryChange} sx={{ width: 220, margin: 1, padding: 0, }}
-                            renderInput={(params) => <TextField {...params} label="Category" />}
-                        />
-                        <Autocomplete size='small' disablePortal options={subCategoryList} value={subCategory}
-                            onChange={handleSubCategoryChange} sx={{ width: 220, margin: 1, padding: 0, }}
-                            renderInput={(params) => <TextField {...params} label="Sub Category" />}
-                        />
-                    </Stack>
+                    <Autocomplete size='small' disablePortal fullWidth options={categoryList} value={category}
+                        onChange={handleCategoryChange} sx={{ width: 220, margin: 1, padding: 0, }}
+                        renderInput={(params) => <TextField {...params} label="Category" />}
+                    />
+                    <Autocomplete size='small' disablePortal fullWidth options={subCategoryList} value={subCategory}
+                        onChange={handleSubCategoryChange} sx={{ width: 220, margin: 1, padding: 0, }}
+                        renderInput={(params) => <TextField {...params} label="Sub Category" />}
+                    />
                     <Button variant="contained" fullWidth disabled={isLoading} onClick={handleSearch}>Search</Button>
                 </Stack>
             </Paper>
