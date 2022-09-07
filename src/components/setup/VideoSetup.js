@@ -206,7 +206,7 @@ function VideoSetup() {
     ]
 
     const VideoSearch = (
-        <Box>
+        <Box sx={{ mb: 1 }}>
             <Paper elevation={3}>
                 <Stack direction='column' alignItems='center' justifyContent='center'>
                     <Autocomplete size='small' disablePortal fullWidth options={categoryList} value={category}
