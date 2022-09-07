@@ -6,8 +6,8 @@ import { allCategories } from '../../constant';
 function Category() {
     const { selectedCategory, setSelectedCategory } = useAppContext()
 
-    const handleClick = (name) => {
-        setSelectedCategory(name)
+    const handleClick = (label) => {
+        setSelectedCategory(label)
     }
 
     return (
@@ -16,9 +16,9 @@ function Category() {
                 <Chip
                     key={item.id}
                     icon={item.icon}
-                    onClick={() => handleClick(item.name)}
-                    label={item.name}
-                    variant={selectedCategory === item.name ? "filled" : "outlined"}
+                    onClick={() => handleClick(item.label)}
+                    label={item.label}
+                    variant={selectedCategory === item.label ? "filled" : "outlined"}
                     sx={{ m: '1px' }}
                 />
             ))}

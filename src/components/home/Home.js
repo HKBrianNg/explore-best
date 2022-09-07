@@ -3,7 +3,6 @@ import Navbar from "../navbar/Navbar"
 import Category from "../category/Category"
 import SubCategory from "../subcategory/SubCategory"
 import Banner from "../banner/Banner"
-// import Promotions from "../promotions/Promotions"
 import Videos from "../videos/Videos"
 import { Container, Grid, Typography, Box } from '@mui/material'
 import CircularProgress from '@mui/material/CircularProgress'
@@ -47,7 +46,6 @@ function Home() {
                         <Grid item xs={12} md={3}>
                             <Category />
                             <Banner />
-                            {/* <Promotions /> */}
                         </Grid>
                         <Grid item xs={12} md={9}>
                             <SubCategory />

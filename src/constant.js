@@ -15,7 +15,7 @@ export const SysMsg = [
 export const allCategories = [
     {
         id: "1",
-        name: "IT",
+        label: "IT",
         icon: <ImportantDevicesIcon />,
         bannericon: "/images/banner/dog.png",
         title: "Awesome Programming You Should Know",
@@ -23,7 +23,7 @@ export const allCategories = [
     },
     {
         id: "2",
-        name: "Fitness",
+        label: "Fitness",
         icon: <FitnessCenterIcon />,
         bannericon: "/images/banner/gym.jfif",
         title: "Awesome Exercise You Should Know",
@@ -31,7 +31,7 @@ export const allCategories = [
     },
     {
         id: "3",
-        name: "English",
+        label: "English",
         icon: <AbcIcon />,
         bannericon: "/images/banner/English.jpg",
         title: "Awesome English Lessons You Should Know",
@@ -39,7 +39,7 @@ export const allCategories = [
     },
     {
         id: "4",
-        name: "Golf",
+        label: "Golf",
         icon: <GolfCourseIcon />,
         bannericon: "/images/banner/Golf.jpg",
         title: "Awesome Golf Courses You Should Know",
@@ -47,7 +47,7 @@ export const allCategories = [
     },
     {
         id: "5",
-        name: "Car",
+        label: "Car",
         icon: <ElectricCarIcon />,
         bannericon: "/images/banner/Car.jpg",
         title: "Awesome Car You Should Know",
@@ -55,7 +55,7 @@ export const allCategories = [
     },
     {
         id: "6",
-        name: "House",
+        label: "House",
         icon: <CabinIcon />,
         bannericon: "/images/banner/house.jpg",
         title: "Awesome House You Should Know",
@@ -68,46 +68,46 @@ export const allSubCategories = [
     {
         category: "IT",
         subCategory: [
-            { id: "1", name: "AppService" },
-            { id: "2", name: "DevOps" },
-            { id: "3", name: "CICD" },
-            { id: "4", name: "IDE" },
-            { id: "5", name: "GitHub" },
-            { id: "6", name: "Docker" },
-            { id: "7", name: "React" },
-            { id: "8", name: "MERN" },
-            { id: "9", name: "Microservices" },
-            { id: "10", name: "Firebase" }
+            { id: "1", label: "AppService" },
+            { id: "2", label: "DevOps" },
+            { id: "3", label: "CICD" },
+            { id: "4", label: "IDE" },
+            { id: "5", label: "GitHub" },
+            { id: "6", label: "Docker" },
+            { id: "7", label: "React" },
+            { id: "8", label: "MERN" },
+            { id: "9", label: "Microservices" },
+            { id: "10", label: "Firebase" }
         ]
     },
     {
         category: "Fitness",
         subCategory: [
-            { id: "1", name: "Fitness1" }
+            { id: "1", label: "Fitness1" }
         ]
     },
     {
         category: "English",
         subCategory: [
-            { id: "1", name: "English1" }
+            { id: "1", label: "English1" }
         ]
     },
     {
         category: "Golf",
         subCategory: [
-            { id: "1", name: "Golf1" }
+            { id: "1", label: "Golf1" }
         ]
     },
     {
         category: "Car",
         subCategory: [
-            { id: "1", name: "Car1" }
+            { id: "1", label: "Car1" }
         ]
     },
     {
         category: "House",
         subCategory: [
-            { id: "1", name: "House1" }
+            { id: "1", label: "House1" }
         ]
     }
 ]

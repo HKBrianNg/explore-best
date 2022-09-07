@@ -28,4 +28,4 @@ Version Date        Description
 1.0.26  2022/9/6    Add a new Navbar with drawer support
 1.0.27  2022/9/6    Disable search input in mobile mode
 1.0.28  2022/9/6    Rename NewNavbar as Navbar
-1.0.29  2022/9/6    Add setup page and video setup component
+1.0.29  2022/9/6    Add setup page and video setup feature

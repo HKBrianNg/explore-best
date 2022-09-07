@@ -7,8 +7,8 @@ import { allSubCategories } from '../../constant'
 function SubCategory() {
     const { selectedCategory, selectedSubCategory, setSelectedSubCategory } = useAppContext()
 
-    const handleClick = (name) => {
-        setSelectedSubCategory(name)
+    const handleClick = (label) => {
+        setSelectedSubCategory(label)
     }
 
     useEffect(() => {
@@ -28,9 +28,9 @@ function SubCategory() {
             {data[0].subCategory.map((item) => (
                 <Chip
                     key={item.id}
-                    onClick={() => handleClick(item.name)}
-                    label={item.name}
-                    variant={selectedSubCategory === item.name ? "filled" : "outlined"}
+                    onClick={() => handleClick(item.label)}
+                    label={item.label}
+                    variant={selectedSubCategory === item.label ? "filled" : "outlined"}
                     sx={{ m: '1px' }}
                 />
             ))}
