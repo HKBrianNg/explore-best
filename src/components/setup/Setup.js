@@ -1,21 +1,21 @@
 import { useState } from 'react'
-import { Container, Grid, Box, Chip } from '@mui/material'
+import { Container, Grid, Box, Button, Toolbar } from '@mui/material'
 import Navbar from '../navbar/Navbar'
+import ProfileSetup from './ProfileSetup'
 import VideoSetup from './VideoSetup'
-import CategorySetup from './CategorySetup'
-import SubCategorySetup from './SubCategorySetup'
+import TopicSetup from './TopicSetup'
 
 
 const featureList = [
-    { id: "0", name: 'Category Setup' },
-    { id: "1", name: 'Sub Category Setup' },
-    { id: "2", name: 'Video Setup', }
+    { id: "0", name: 'Profile' },
+    { id: "1", name: 'Topic' },
+    { id: "2", name: 'Video', }
 ]
 
 
 
 function Setup() {
-    const [selectedFeature, setSelectedFeature] = useState('Video Setup')
+    const [selectedFeature, setSelectedFeature] = useState('Profile')
 
     const handleClick = (name) => {
         setSelectedFeature(name)
@@ -29,20 +29,24 @@ function Setup() {
                 <Grid container spacing={0.5} direction="row" justifyContent="flex-start" alignItems="flex-start">
                     <Grid item xs={12}>
                         <Box>
-                            {featureList.map((item) => (
-                                <Chip
-                                    key={item.id}
-                                    onClick={() => handleClick(item.name)}
-                                    label={item.name}
-                                    variant={selectedFeature === item.name ? "filled" : "outlined"}
-                                    sx={{ m: '1px' }}
-                                />
-                            ))}
+                            {
+                                featureList.map((item) => (
+                                    <Button
+                                        key={item.id}
+                                        variant={selectedFeature === item.name ? "contained" : "outlined"}
+                                        onClick={() => handleClick(item.name)}
+                                        sx={{ m: '2px' }}
+                                    >
+                                        {item.name}
+                                    </Button>
+                                ))
+                            }
                         </Box>
+
                     </Grid>
-                    {selectedFeature === 'Category Setup' && <CategorySetup />}
-                    {selectedFeature === 'Sub Category Setup' && <SubCategorySetup />}
-                    {selectedFeature === 'Video Setup' && <VideoSetup />}
+                    {selectedFeature === 'Profile' && <ProfileSetup />}
+                    {selectedFeature === 'Topic' && <TopicSetup />}
+                    {selectedFeature === 'Video' && <VideoSetup />}
                 </Grid>
             </Container>
         </>
