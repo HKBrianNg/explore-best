@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Container, Grid, Box, Button, Toolbar } from '@mui/material'
+import { Container, Grid, Box, Button } from '@mui/material'
 import Navbar from '../navbar/Navbar'
 import ProfileSetup from './ProfileSetup'
 import VideoSetup from './VideoSetup'

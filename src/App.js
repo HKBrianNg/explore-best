@@ -18,7 +18,7 @@ import { SubCategoryContextProvider } from './context/SubCategoryContext'
 function App() {
 
   useEffect(() => {
-    document.title = 'explore-best v1.0.32'
+    document.title = 'explore-best v1.0.33'
   }, [])
 
   return (
