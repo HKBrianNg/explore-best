@@ -50,7 +50,7 @@ function Home() {
             <Container maxWidth="xl">
                 {isLoading && <Box sx={{ display: 'flex' }}><CircularProgress /></Box>}
                 {sysMessage && <Typography variant="h6" component="h6" align='left' color='red' m={1} >{sysMessage}</Typography>}
-                {isReady && <>
+                {(topics && videos) && <>
                     <Grid container spacing={1} direction='row' justifyContent='flex-start' alignItems='flex-start' wrap="wrap" mt={3}>
                         <Grid item xs={12} md={3}>
                             <Category />

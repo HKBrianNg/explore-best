@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import Navbar from "../navbar/Navbar"
 import Category from "../category/Category"
-import SubCategory from "../subcategory/SubCategory"
+import SubCategory from "./SubCategory"
 import Videos from "../videos/Videos"
 import { Container, Grid, Typography, Box, TextField, Stack, Paper, Button } from '@mui/material'
 import CircularProgress from '@mui/material/CircularProgress'

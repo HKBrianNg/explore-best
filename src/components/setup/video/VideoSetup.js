@@ -6,7 +6,8 @@ import DeleteIcon from '@mui/icons-material/Delete'
 import EditIcon from '@mui/icons-material/Edit'
 import { DataGrid } from '@mui/x-data-grid';
 import { SysMsg } from '../../../constant'
-import { allCategories, allSubCategories } from '../../../constant'
+import { allCategories } from '../../../constant'
+import { useTopicContext } from '../../../context/TopicContext'
 
 const initialVideo = {
     id: "",
@@ -30,7 +31,18 @@ const ObjLabelToArray = (objList) => {
     return list
 }
 
+const ObjTopicsToArray = (objList) => {
+    var list = []
+    list.push("")
+    for (var i = 0; i < objList.length; i++) {
+        list.push(objList[i].subCategory);
+    }
+    return list
+}
+
 const categoryList = ObjLabelToArray(allCategories)
+
+
 
 function VideoSetup() {
     const [isEdit, setIsEdit] = useState(false)
@@ -42,6 +54,7 @@ function VideoSetup() {
     const [isLoading, setIsLoading] = useState(false)
     const [errorMessage, setErrorMessage] = useState("")
     const { getVideoAPI, getVideosAPI, updateVideoAPI, createVideoAPI, deleteVideoAPI } = useVideoContext()
+    const { topics } = useTopicContext()
 
 
     // functions
@@ -152,8 +165,8 @@ function VideoSetup() {
     }
 
     const handleCategoryChange = (event, newValue) => {
-        const data = allSubCategories.filter((item) => (item.category === newValue))
-        const listData = ObjLabelToArray(data[0].subCategory)
+        const data = topics.filter((item) => (item.category === newValue))
+        const listData = ObjTopicsToArray(data)
         setSubCategoryList(listData)
         setSubCategory(null)
         setCategory(newValue)

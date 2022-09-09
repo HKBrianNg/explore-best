@@ -6,7 +6,7 @@ import { Colors } from '../../styles/theme'
 import { styled } from '@mui/material/styles'
 import "@fontsource/montez"
 import { Link } from 'react-router-dom';
-import Actions from './actions';
+import Actions from '../navbar/actions';
 
 
 const LogoTypography = styled(Typography)(() => ({
