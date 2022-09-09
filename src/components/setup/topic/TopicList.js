@@ -8,24 +8,43 @@ import { useTopicContext } from '../../../context/TopicContext'
 
 function TopicList({ selectedCategory }) {
     const { setIsLoading, setSysMessage, setIsEdit } = useAppContext()
-    const { topics } = useTopicContext()
+    const { setTopic, topics, setTopics, getTopicAPI, deleteTopicAPI } = useTopicContext()
 
-    const getTopic = (id) => {
+    const getTopic = async (id) => {
         setIsLoading(true)
         setSysMessage("loading...")
-        setTimeout((id) => {
-            setIsLoading(false)
+        const { okStatus, data } = await getTopicAPI(id)
+        if (okStatus) {
+            setTopic(data)
             setSysMessage(null)
-        }, 2000)
+        }
+        else {
+            setSysMessage(data)
+        }
+        setIsLoading(false)
     }
 
-    const deleteTopic = (id) => {
+    const deleteTopic = async (id) => {
         setIsLoading(true)
         setSysMessage("deleting...")
-        setTimeout((id) => {
-            setIsLoading(false)
+        const { okStatus, data } = await deleteTopicAPI(id)
+        if (okStatus) {
+            const newTopics = topics.filter((item) => (item._id !== id))
+            setTopics(newTopics)
             setSysMessage(null)
-        }, 2000)
+        } else {
+            setSysMessage(data)
+        }
+        setIsLoading(false)
+    }
+
+    const handleEditClick = (id) => {
+        setIsEdit(true)
+        getTopic(id)
+    }
+
+    const handleDeleteClick = (id) => {
+        deleteTopic(id)
     }
 
     const columns = [
@@ -55,7 +74,7 @@ function TopicList({ selectedCategory }) {
         },
         { field: 'category', headerName: 'Category', width: 150, align: 'center', hide: false, headerClassName: 'super-app-theme--header', },
         { field: 'subCategory', headerName: 'Sub Category', width: 150, align: 'center', hide: false, headerClassName: 'super-app-theme--header', },
-        { field: 'id', headerName: 'SEQ', width: 30, align: 'center', hide: false, headerClassName: 'super-app-theme--header', },
+        { field: 'id', headerName: 'SEQ', width: 150, align: 'center', hide: false, headerClassName: 'super-app-theme--header', },
         { field: 'title', headerName: 'Title', width: 220, align: 'center', hide: false, headerClassName: 'super-app-theme--header', },
         { field: 'summary', headerName: 'Summary', width: 220, align: 'center', hide: false, headerClassName: 'super-app-theme--header', },
         { field: 'content', headerName: 'Content', width: 220, align: 'center', hide: false, headerClassName: 'super-app-theme--header', },
@@ -63,27 +82,13 @@ function TopicList({ selectedCategory }) {
         { field: '_id', headerName: '_ID', width: 220, align: 'center', hide: false, headerClassName: 'super-app-theme--header', }
     ]
 
-
     var topicData = []
-    console.log("data:", topics)
-    console.log("category:", selectedCategory)
     topicData = topics.filter((item) => (item.category === selectedCategory))
         .sort((a, b) => { return a.id - b.id })
 
-
-    const handleEditClick = (id) => {
-        getTopic(id)
-        setIsEdit(true)
-    }
-
-    const handleDeleteClick = (id) => {
-        deleteTopic(id)
-    }
-
-
     return (
         <>
-            <Box sx={{ height: 500, width: '100%', }}>
+            <Box sx={{ height: 450, width: '100%', }}>
                 <DataGrid
                     density='compact'
                     rows={topicData}

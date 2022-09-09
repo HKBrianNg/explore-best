@@ -1,7 +1,6 @@
-import { useState } from 'react'
 import { Box, Stack, Paper, TextField, Typography, Button } from '@mui/material'
 import { useAppContext } from '../../../context/AppContext'
-
+import { useTopicContext } from '../../../context/TopicContext'
 
 const initialTopic = {
     id: "",
@@ -14,25 +13,39 @@ const initialTopic = {
 }
 
 function TopicForm() {
-    const [topic, setTopic] = useState(initialTopic)
     const { isEdit, setIsEdit, isLoading, setIsLoading, setSysMessage } = useAppContext()
+    const { topic, setTopic, topics, setTopics, createTopicAPI, updateTopicAPI } = useTopicContext()
 
-    const updateTopic = () => {
+    const updateTopic = async (id) => {
         setIsLoading(true)
         setSysMessage("updating...")
-        setTimeout(() => {
-            setIsLoading(false)
+        const { okStatus, data } = await updateTopicAPI(topic, id)
+        if (okStatus) {
+            const newTopicData = topics.map((el) => (el._id === id ? topic : el))
+            setTopics(newTopicData)
+            setTopic(initialTopic)
+            setIsEdit(false)
             setSysMessage(null)
-        }, 2000)
+            setTopic(initialTopic)
+        } else {
+            setSysMessage(data)
+        }
+        setIsLoading(false)
     }
 
-    const createTopic = () => {
+    const createTopic = async () => {
         setIsLoading(true)
         setSysMessage("creating...")
-        setTimeout(() => {
-            setIsLoading(false)
+        const { okStatus, data } = await createTopicAPI(topic)
+        if (okStatus) {
+            setTopics(current => [...current, data])
+            setTopic(initialTopic)
+            setIsEdit(false)
             setSysMessage(null)
-        }, 2000)
+        } else {
+            setSysMessage(data)
+        }
+        setIsLoading(false)
     }
 
     const handleTopicChange = (event) => {
@@ -41,9 +54,8 @@ function TopicForm() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log("submit:", topic)
-        isEdit ? updateTopic() : createTopic()
-        setIsEdit(false)
+        console.log("submit topic:", topic)
+        isEdit ? updateTopic(topic._id) : createTopic()
     }
 
     const handleCancel = () => {
@@ -57,7 +69,7 @@ function TopicForm() {
                 <Stack direction='column' spacing={1} alignItems='center' justifyContent='center'>
                     <Typography variant='h5'>{isEdit ? "Edit Topic" : "Create Topic"}</Typography>
                     <Stack direction="row" spacing={1}>
-                        <TextField name="category" variant='outlined' label="Category" required size='small' onChange={handleTopicChange} value={topic.subCategory}></TextField>
+                        <TextField name="category" variant='outlined' label="Category" required size='small' onChange={handleTopicChange} value={topic.category}></TextField>
                         <TextField name="subCategory" variant='outlined' label="Sub Category" required size='small' onChange={handleTopicChange} value={topic.subCategory}></TextField>
                         <TextField name="id" variant='outlined' label="SEQ" required size='small' onChange={handleTopicChange} value={topic.id}></TextField>
                     </Stack>

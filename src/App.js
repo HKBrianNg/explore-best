@@ -18,7 +18,7 @@ import { TopicContextProvider } from './context/TopicContext'
 function App() {
 
   useEffect(() => {
-    document.title = 'explore-best v1.0.35'
+    document.title = 'explore-best v1.0.36'
   }, [])
 
   return (
