@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import { Autocomplete, Grid, Box, Typography, Button, Stack, TextField, Paper, IconButton, Tooltip } from '@mui/material'
-import { useVideoContext } from '../../context/VideoContext'
+import { useVideoContext } from '../../../context/VideoContext'
 import CircularProgress from '@mui/material/CircularProgress'
 import DeleteIcon from '@mui/icons-material/Delete'
 import EditIcon from '@mui/icons-material/Edit'
 import { DataGrid } from '@mui/x-data-grid';
-import { SysMsg } from '../../constant'
-import { allCategories, allSubCategories } from '../../constant'
+import { SysMsg } from '../../../constant'
+import { allCategories, allSubCategories } from '../../../constant'
 
 const initialVideo = {
     id: "",

@@ -33,3 +33,4 @@ Version Date        Description
 1.0.31  2022/9/7    In setup page, Add SubCategory setup feature
 1.0.32  2022/9/8    Change setup menu. Profile, Topic, and Video. Do not use chip as menu item.
 1.0.33  2022/9/8    Add Topic setup component.
+1.0.34  2022/9/8    Add Topic Context and its gettopics() restructure setup folder structure.

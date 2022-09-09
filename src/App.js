@@ -12,13 +12,13 @@ import { CssBaseline } from "@mui/material"
 import { VideoContextProvider } from "./context/VideoContext"
 import { AppContextProvider } from './context/AppContext'
 import { MapContextProvider } from './context/MapContext'
-import { SubCategoryContextProvider } from './context/SubCategoryContext'
+import { TopicContextProvider } from './context/TopicContext'
 
 
 function App() {
 
   useEffect(() => {
-    document.title = 'explore-best v1.0.33'
+    document.title = 'explore-best v1.0.34'
   }, [])
 
   return (
@@ -28,7 +28,7 @@ function App() {
         <AppContextProvider>
           <VideoContextProvider>
             <MapContextProvider>
-              <SubCategoryContextProvider>
+              <TopicContextProvider>
                 <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/about" element={<About />} />
@@ -37,7 +37,7 @@ function App() {
                   <Route path="/video/:id" element={<PlayVideo />} />
                   <Route path="/setup" element={<Setup />} />
                 </Routes>
-              </SubCategoryContextProvider>
+              </TopicContextProvider>
             </MapContextProvider>
           </VideoContextProvider>
         </AppContextProvider>

@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { Container, Grid, Box, Button } from '@mui/material'
 import Navbar from '../navbar/Navbar'
-import ProfileSetup from './ProfileSetup'
-import VideoSetup from './VideoSetup'
-import TopicSetup from './TopicSetup'
+import ProfileSetup from './profile/ProfileSetup'
+import VideoSetup from './video/VideoSetup'
+import TopicSetup from './topic/TopicSetup'
 
 
 const featureList = [
