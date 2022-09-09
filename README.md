@@ -110,3 +110,4 @@ Version Date        Description
 1.0.34  2022/9/8    Add Topic Context and its gettopics() restructure setup folder structure.
 1.0.35  2022/9/9    Split TopicSetup.js into TopicSetup.js TopicSearch.js, TopicForm.js, and TopicList.js
 1.0.36  2022/9/9    Add delete/update/create/searc API in TopicContext and TopicSetup.
+1.0.37  2022/9/9    Replace SubCategory.js by Topic.js (No hardcoded code for "SubCategory").
