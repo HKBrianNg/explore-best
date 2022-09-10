@@ -2,7 +2,7 @@ import { Grid, Stack, Box, Autocomplete, TextField, Paper, Button, Typography, T
 import { allCategories } from '../../constant'
 import CircularProgress from '@mui/material/CircularProgress'
 import { useState } from 'react'
-import { useSubCategoryContext } from '../../context/SubCategoryContext'
+import { useSubCategoryContext } from './SubCategoryContext'
 import { DataGrid } from '@mui/x-data-grid';
 import DeleteIcon from '@mui/icons-material/Delete'
 import EditIcon from '@mui/icons-material/Edit'
