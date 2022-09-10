@@ -108,7 +108,8 @@ Version Date        Description
 1.0.32  2022/9/8    Change setup menu. Profile, Topic, and Video. Do not use chip as menu item.
 1.0.33  2022/9/8    Add Topic setup component.
 1.0.34  2022/9/8    Add Topic Context and its gettopics() restructure setup folder structure.
-1.0.35  2022/9/9    Split TopicSetup.js into TopicSetup.js TopicSearch.js, TopicForm.js, and TopicList.js
+1.0.35  2022/9/9    Split TopicSetup.js into TopicSetup.js, TopicSearch.js, TopicForm.js, and TopicList.js
 1.0.36  2022/9/9    Add delete/update/create/searc API in TopicContext and TopicSetup.
 1.0.37  2022/9/9    Replace SubCategory.js by Topic.js (No hardcoded code for "SubCategory").
 1.0.38  2022/9/9    Obsolete old navbar. Change to use topics in VideoSetup.
+1.0.39  2022/9/9    Split VideoSetup.js into VideoSetup.js, VideoSearch.js, VideoForm.js, and VideoList.js 

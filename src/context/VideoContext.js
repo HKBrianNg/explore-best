@@ -2,8 +2,20 @@ import { useState, useContext, createContext } from 'react'
 import axios from 'axios'
 
 const videoContext = createContext()
-
+const initialVideo = {
+    id: "",
+    category: "",
+    subCategory: "",
+    source: "youtube#video",
+    videoUrl: "",
+    videoId: "",
+    publishedAt: "",
+    title: "",
+    description: "",
+    thumbnailUrl: ""
+}
 export const VideoContextProvider = ({ children }) => {
+    const [video, setVideo] = useState(initialVideo)
     const [videos, setVideos] = useState([])
     const url = "https://learning-bn-api.herokuapp.com"
 
@@ -55,6 +67,7 @@ export const VideoContextProvider = ({ children }) => {
 
     return (
         <videoContext.Provider value={{
+            video, setVideo,
             videos, setVideos,
             getVideoAPI, getVideosAPI,
             createVideoAPI, deleteVideoAPI, updateVideoAPI,
