@@ -14,6 +14,8 @@ function Videos() {
     }
 
     const data = videos.filter((video) => (video.category === selectedCategory && video.subCategory === selectedSubCategory))
+        .sort((a, b) => { return a.id - b.id })
+
     return (
         <>
             <Box sx={{ flexGrow: 1, padding: 1, display: 'flex', justifyContent: 'flex-start', flexWrap: 'wrap' }}>

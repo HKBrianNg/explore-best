@@ -117,3 +117,4 @@ Version Date        Description
 1.0.41  2022/9/10   Implement Login/Logout/Signup/ProtectedRoute with Firebase auth.
 1.0.42  2022/9/11   Fix Search failure in Map.js
 1.0.43  2022/9/11   Add tooltip for map, login, setup and Logo.
+1.0.44  2022/9/11   Sort video list. Host app in Firebase. 

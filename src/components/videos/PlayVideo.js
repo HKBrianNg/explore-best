@@ -1,7 +1,7 @@
 import Navbar from '../navbar/Navbar'
 import { useParams } from 'react-router-dom'
 import ReactPlayer from "react-player"
-import { Container } from '@mui/material'
+import { Container, Box } from '@mui/material'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 import { Link } from 'react-router-dom'
 import './PlayVideo.css'
@@ -15,13 +15,15 @@ function PlayVideo() {
     return (
         <>
             <Navbar />
-            <Link to='/'>
-                <ArrowBackIcon fontSize='large' />
-            </Link>
             <Container maxWidth="lg">
-                <div className='playerWrapper'>
-                    <ReactPlayer className='react-player' controls={true} url={videoUrl} height="75%" width="100%" />
-                </div>
+                <Box mt={2}>
+                    <Link to='/'>
+                        <ArrowBackIcon fontSize='large' />
+                    </Link>
+                    <div className='playerWrapper'>
+                        <ReactPlayer className='react-player' controls={true} url={videoUrl} height="75%" width="100%" />
+                    </div>
+                </Box>
             </Container>
         </>
     )
