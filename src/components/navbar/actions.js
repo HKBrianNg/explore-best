@@ -59,7 +59,9 @@ function Actions({ isMobile }) {
                             color: Colors.white,
                         }}>
                         <Link to='/setup' style={{ color: Colors.white, textDecoration: 'none', }}>
-                            <SettingsIcon />
+                            <Tooltip title="Setting">
+                                <SettingsIcon />
+                            </Tooltip>
                         </Link>
                     </ListItemIcon>
                 </ListItemButton>
@@ -71,7 +73,9 @@ function Actions({ isMobile }) {
                             color: Colors.white,
                         }}>
                         <Link to='/map' style={{ color: Colors.white, textDecoration: 'none', }}>
-                            <MapIcon />
+                            <Tooltip title="Google Map">
+                                <MapIcon />
+                            </Tooltip>
                         </Link>
                     </ListItemIcon>
                 </ListItemButton>
@@ -79,7 +83,7 @@ function Actions({ isMobile }) {
                 {user ?
                     <ListItemButton sx={{ justifyContent: 'center' }} onClick={handleAuth}>
                         <ListItemIcon sx={{ display: 'flex', justifyContent: 'center', color: Colors.white, }}>
-                            <Tooltip title="logout">
+                            <Tooltip title="Logout">
                                 <Avatar>{user.email.substring(0, 1)}</Avatar>
                             </Tooltip>
                         </ListItemIcon>
@@ -87,7 +91,7 @@ function Actions({ isMobile }) {
                     :
                     <ListItemButton sx={{ justifyContent: 'center' }} onClick={handleAuth}>
                         <ListItemIcon sx={{ display: 'flex', justifyContent: 'center', color: Colors.white, }}>
-                            <Tooltip title="login">
+                            <Tooltip title="Login">
                                 <PersonIcon />
                             </Tooltip>
                         </ListItemIcon>

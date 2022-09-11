@@ -1,5 +1,8 @@
 import { useState } from 'react'
-import { InputBase, useMediaQuery, Drawer, AppBar, Button, Stack, Typography, Divider, IconButton, Toolbar, Box, List, ListItem, ListItemButton, ListItemText } from '@mui/material'
+import {
+    InputBase, useMediaQuery, Drawer, AppBar, Button, Stack, Typography, Divider, IconButton, Toolbar,
+    Box, List, ListItem, ListItemButton, ListItemText, Tooltip
+} from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 import SearchIcon from '@mui/icons-material/Search'
 import { Colors } from '../../styles/theme'
@@ -86,9 +89,11 @@ function Navbar(props) {
 
     const drawer = (
         <Box onClick={handleDrawerToggle} >
-            <Logo textAlign={"center"}>
-                Explore-Best
-            </Logo>
+            <Tooltip title="Home">
+                <Logo textAlign={"center"}>
+                    Explore-Best
+                </Logo>
+            </Tooltip>
             <Divider />
             <List>
                 {navItems.map((item) => (
@@ -127,9 +132,11 @@ function Navbar(props) {
                         >
                             <Box>
                                 <Link to='/' style={{ color: Colors.secondary, textDecoration: 'none', }}>
-                                    <Logo textAlign={"center"}>
-                                        Explore-Best
-                                    </Logo>
+                                    <Tooltip title="Home">
+                                        <Logo textAlign={"center"}>
+                                            Explore-Best
+                                        </Logo>
+                                    </Tooltip>
                                 </Link>
                             </Box>
                             <Box sx={{ display: { xs: 'none', md: 'flex' }, }}>
