@@ -8,17 +8,22 @@ import Contact from './components/contact/Contact'
 import Map from './components/map/Map'
 import PlayVideo from './components/videos/PlayVideo'
 import Setup from './components/setup/Setup'
+import Login from './components/auth/Login'
+import Logout from './components/auth/Logout'
+import Signup from './components/auth/Signup'
+import ProtectedRoute from './components/auth/ProtectedRoute'
 import { CssBaseline } from "@mui/material"
 import { VideoContextProvider } from "./context/VideoContext"
 import { AppContextProvider } from './context/AppContext'
 import { MapContextProvider } from './context/MapContext'
 import { TopicContextProvider } from './context/TopicContext'
+import { AuthContextProvider } from './context/AuthContext'
 
 
 function App() {
 
   useEffect(() => {
-    document.title = 'explore-best v1.0.40'
+    document.title = 'explore-best v1.0.41'
   }, [])
 
   return (
@@ -26,20 +31,30 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <AppContextProvider>
-          <VideoContextProvider>
-            <MapContextProvider>
-              <TopicContextProvider>
-                <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/about" element={<About />} />
-                  <Route path='/contact' element={<Contact />} />
-                  <Route path="/map" element={<Map />} />
-                  <Route path="/video/:id" element={<PlayVideo />} />
-                  <Route path="/setup" element={<Setup />} />
-                </Routes>
-              </TopicContextProvider>
-            </MapContextProvider>
-          </VideoContextProvider>
+          <AuthContextProvider>
+            <VideoContextProvider>
+              <MapContextProvider>
+                <TopicContextProvider>
+                  <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/home" element={<Home />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path='/contact' element={<Contact />} />
+                    <Route path="/map" element={<Map />} />
+                    <Route path="/video/:id" element={<PlayVideo />} />
+                    <Route path="/setup" element={
+                      <ProtectedRoute>
+                        <Setup />
+                      </ProtectedRoute>
+                    } />
+                    <Route path="/auth/login" element={<Login />} />
+                    <Route path="/auth/logout" element={<Logout />} />
+                    <Route path="/auth/signup" element={<Signup />} />
+                  </Routes>
+                </TopicContextProvider>
+              </MapContextProvider>
+            </VideoContextProvider>
+          </AuthContextProvider>
         </AppContextProvider>
       </ThemeProvider>
     </>

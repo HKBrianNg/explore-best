@@ -1,11 +1,13 @@
 import SettingsIcon from '@mui/icons-material/Settings';
 import MapIcon from '@mui/icons-material/Map';
 import PersonIcon from '@mui/icons-material/Person'
-import { ListItemButton, ListItemIcon, Divider } from '@mui/material'
+import { ListItemButton, ListItemIcon, Divider, Avatar, Tooltip } from '@mui/material'
 import { Colors } from '../../styles/theme'
 import { styled } from '@mui/material/styles'
 import { Box, List } from '@mui/material'
 import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
+import { useAuthContext } from '../../context/AuthContext'
 
 
 const MenuList = styled(List)(({ type }) => ({
@@ -34,6 +36,18 @@ const ActionIconsContainerDesktop = styled(Box)(() => ({
 
 function Actions({ isMobile }) {
     const Component = isMobile ? ActionIconsContainerMobile : ActionIconsContainerDesktop
+    const navigate = useNavigate()
+    const { user } = useAuthContext()
+
+
+    const handleAuth = () => {
+        if (!user) {
+            navigate('/auth/login', { replace: true })
+        }
+        else {
+            navigate('/auth/logout', { replace: true })
+        }
+    }
 
     return (
         <Component>
@@ -62,15 +76,23 @@ function Actions({ isMobile }) {
                     </ListItemIcon>
                 </ListItemButton>
                 <Divider orientation="vertical" flexItem />
-                <ListItemButton sx={{ justifyContent: 'center' }}>
-                    <ListItemIcon
-                        sx={{
-                            display: 'flex', justifyContent: 'center',
-                            color: Colors.white,
-                        }}>
-                        <PersonIcon />
-                    </ListItemIcon>
-                </ListItemButton>
+                {user ?
+                    <ListItemButton sx={{ justifyContent: 'center' }} onClick={handleAuth}>
+                        <ListItemIcon sx={{ display: 'flex', justifyContent: 'center', color: Colors.white, }}>
+                            <Tooltip title="logout">
+                                <Avatar>{user.email.substring(0, 1)}</Avatar>
+                            </Tooltip>
+                        </ListItemIcon>
+                    </ListItemButton>
+                    :
+                    <ListItemButton sx={{ justifyContent: 'center' }} onClick={handleAuth}>
+                        <ListItemIcon sx={{ display: 'flex', justifyContent: 'center', color: Colors.white, }}>
+                            <Tooltip title="login">
+                                <PersonIcon />
+                            </Tooltip>
+                        </ListItemIcon>
+                    </ListItemButton>
+                }
                 <Divider orientation="vertical" flexItem />
             </MenuList>
         </Component >

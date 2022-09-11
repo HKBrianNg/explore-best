@@ -4,8 +4,7 @@ import Category from "../category/Category"
 import Topic from "../topic/Topic"
 import Banner from "../banner/Banner"
 import Videos from "../videos/Videos"
-import { Container, Grid, Typography, Box, } from '@mui/material'
-import CircularProgress from '@mui/material/CircularProgress'
+import { Container, Grid, Typography, Box, LinearProgress } from '@mui/material'
 import { useVideoContext } from '../../context/VideoContext'
 import { useAppContext } from '../../context/AppContext'
 import { useTopicContext } from '../../context/TopicContext'
@@ -48,7 +47,7 @@ function Home() {
         <>
             <Navbar />
             <Container maxWidth="xl">
-                {isLoading && <Box sx={{ display: 'flex' }}><CircularProgress /></Box>}
+                {isLoading && <Box sx={{ display: 'flex' }}><LinearProgress /></Box>}
                 {sysMessage && <Typography variant="h6" component="h6" align='left' color='red' m={1} >{sysMessage}</Typography>}
                 {(topics && videos) && <>
                     <Grid container spacing={1} direction='row' justifyContent='flex-start' alignItems='flex-start' wrap="wrap" mt={3}>

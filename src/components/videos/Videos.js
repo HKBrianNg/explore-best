@@ -1,29 +1,17 @@
-import { Box, Card, CardHeader, CardMedia, CardContent, IconButton, Typography, CardActions } from '@mui/material';
+import { Box, Card, CardHeader, CardMedia, CardContent, Typography } from '@mui/material';
 import { Colors } from '../../styles/theme/index'
 import { useNavigate } from 'react-router-dom';
 import { useVideoContext } from '../../context/VideoContext'
 import { useAppContext } from '../../context/AppContext';
-import EditIcon from '@mui/icons-material/Edit';
-// import DeleteIcon from '@mui/icons-material/Delete';
 
 function Videos() {
-    const { videos, setSelectedId } = useVideoContext()
-    const { isAdmin, selectedCategory, selectedSubCategory } = useAppContext()
+    const { videos } = useVideoContext()
+    const { selectedCategory, selectedSubCategory } = useAppContext()
     const navigate = useNavigate()
 
     const openVideo = (videoId) => {
         navigate(`/video/${videoId}`, { replace: true })
     }
-
-    const editVideo = (id) => {
-        setSelectedId(id)
-        navigate(`/video/add/${id}`, { replace: true })
-    }
-
-    // const deleteVideo = (id) => {
-
-    //     setSelectedId(id)
-    // }
 
     const data = videos.filter((video) => (video.category === selectedCategory && video.subCategory === selectedSubCategory))
     return (
@@ -49,24 +37,6 @@ function Videos() {
                                 {item.description}
                             </Typography>
                         </CardContent>
-                        <CardActions>
-                            {isAdmin &&
-                                <div>
-                                    <IconButton onClick={() => editVideo(item._id)}>
-                                        <EditIcon />
-                                    </IconButton>
-                                </div>
-                            }
-                            {/* {isAdmin &&
-                                <div>
-                                    <IconButton>
-                                        <DeleteIcon onClick={() => deleteVideo(item._id)} />
-                                    </IconButton>
-                                </div>
-                            } */}
-
-                        </CardActions>
-
                     </Card>
                 ))}
             </Box>

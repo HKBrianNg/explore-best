@@ -114,3 +114,4 @@ Version Date        Description
 1.0.38  2022/9/9    Obsolete old navbar. Change to use topics in VideoSetup.
 1.0.39  2022/9/10   Split VideoSetup.js into VideoSetup.js, VideoSearch.js, VideoForm.js, and VideoList.js 
 1.0.40  2022/9/10   Move all Obsolete code to unuse component directory.  
+1.0.41  2022/9/10   Implement Login/Logout/Signup/ProtectedRoute with Firebase auth.
