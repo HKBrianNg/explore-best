@@ -115,3 +115,4 @@ Version Date        Description
 1.0.39  2022/9/10   Split VideoSetup.js into VideoSetup.js, VideoSearch.js, VideoForm.js, and VideoList.js 
 1.0.40  2022/9/10   Move all Obsolete code to unuse component directory.  
 1.0.41  2022/9/10   Implement Login/Logout/Signup/ProtectedRoute with Firebase auth.
+1.0.42  2022/9/11   Fix Search failure in Map.js

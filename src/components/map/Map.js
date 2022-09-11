@@ -91,21 +91,21 @@ function Map() {
         const lng = autocomplete.getPlace().geometry.location.lng()
         const icon = autocomplete.getPlace().icon
         const name = autocomplete.getPlace().name
-        const ne = { lat: autocomplete.getPlace().geometry.viewport.yb.hi, lng: autocomplete.getPlace().geometry.viewport.Qa.hi }
-        const sw = { lat: autocomplete.getPlace().geometry.viewport.yb.lo, lng: autocomplete.getPlace().geometry.viewport.Qa.lo }
+        // const ne = { lat: autocomplete.getPlace().geometry.viewport.yb.hi, lng: autocomplete.getPlace().geometry.viewport.Qa.hi }
+        // const sw = { lat: autocomplete.getPlace().geometry.viewport.yb.lo, lng: autocomplete.getPlace().geometry.viewport.Qa.lo }
         setMarkers(current => [...current, {
             lat: lat,
             lng: lng,
             time: new Date(),
             icon: icon,
-            ne: ne,
-            sw: sw,
+            // ne: ne,
+            // sw: sw,
             name: name
         }])
         console.log("Icon:", icon)
         console.log("Name:", name)
-        console.log("ne", ne)
-        console.log("sw", sw)
+        // console.log("ne", ne)
+        // console.log("sw", sw)
 
         setCenterCoord({ lat, lng })
         setZoom(4)

@@ -42,7 +42,6 @@ function Home() {
     }, [])
 
 
-
     return (
         <>
             <Navbar />
