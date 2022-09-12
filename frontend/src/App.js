@@ -23,7 +23,7 @@ import { AuthContextProvider } from './context/AuthContext'
 function App() {
 
   useEffect(() => {
-    document.title = 'explore-best v1.0.45'
+    document.title = 'explore-best v1.0.46'
   }, [])
 
   return (
