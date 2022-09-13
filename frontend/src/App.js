@@ -18,12 +18,13 @@ import { AppContextProvider } from './context/AppContext'
 import { MapContextProvider } from './context/MapContext'
 import { TopicContextProvider } from './context/TopicContext'
 import { AuthContextProvider } from './context/AuthContext'
+import { FitnessContextProvider } from './context/FitnessContext'
 
 
 function App() {
 
   useEffect(() => {
-    document.title = 'explore-best v1.0.46'
+    document.title = 'explore-best v1.0.47'
   }, [])
 
   return (
@@ -35,22 +36,24 @@ function App() {
             <VideoContextProvider>
               <MapContextProvider>
                 <TopicContextProvider>
-                  <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/home" element={<Home />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path='/contact' element={<Contact />} />
-                    <Route path="/map" element={<Map />} />
-                    <Route path="/video/:id" element={<PlayVideo />} />
-                    <Route path="/setup" element={
-                      <ProtectedRoute>
-                        <Setup />
-                      </ProtectedRoute>
-                    } />
-                    <Route path="/auth/login" element={<Login />} />
-                    <Route path="/auth/logout" element={<Logout />} />
-                    <Route path="/auth/signup" element={<Signup />} />
-                  </Routes>
+                  <FitnessContextProvider>
+                    <Routes>
+                      <Route path="/" element={<Home />} />
+                      <Route path="/home" element={<Home />} />
+                      <Route path="/about" element={<About />} />
+                      <Route path='/contact' element={<Contact />} />
+                      <Route path="/map" element={<Map />} />
+                      <Route path="/video/:id" element={<PlayVideo />} />
+                      <Route path="/setup" element={
+                        <ProtectedRoute>
+                          <Setup />
+                        </ProtectedRoute>
+                      } />
+                      <Route path="/auth/login" element={<Login />} />
+                      <Route path="/auth/logout" element={<Logout />} />
+                      <Route path="/auth/signup" element={<Signup />} />
+                    </Routes>
+                  </FitnessContextProvider>
                 </TopicContextProvider>
               </MapContextProvider>
             </VideoContextProvider>

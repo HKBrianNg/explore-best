@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import {
     InputBase, useMediaQuery, Drawer, AppBar, Button, Stack, Typography, Divider, IconButton, Toolbar,
-    Box, List, ListItem, ListItemButton, ListItemText, Tooltip
+    Box, List, ListItem, ListItemButton, ListItemText, Tooltip, LinearProgress
 } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 import SearchIcon from '@mui/icons-material/Search'
@@ -10,6 +10,8 @@ import "@fontsource/montez"
 import { styled, useTheme, alpha } from '@mui/material/styles'
 import { Link, useNavigate } from 'react-router-dom'
 import Actions from './actions';
+import { useFitnessContext } from '../../context/FitnessContext'
+import { useAppContext } from '../../context/AppContext'
 
 
 const Logo = styled(Typography)(() => ({
@@ -43,15 +45,6 @@ const Search = styled('div')(({ theme }) => ({
     },
 }));
 
-const SearchIconWrapper = styled('div')(({ theme }) => ({
-    padding: theme.spacing(0, 2),
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-}));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
     color: 'inherit',
@@ -78,6 +71,11 @@ function Navbar(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = useState(false)
     const navigate = useNavigate()
+    const [search, setSearch] = useState('')
+    const [exercises, setExercises] = useState([])
+    const { bodyExercises } = useFitnessContext()
+    const { isLoading, sysMessage, } = useAppContext()
+
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen)
@@ -85,6 +83,20 @@ function Navbar(props) {
 
     const handleClick = (id) => {
         navigate(navItems[id].link, { replace: true })
+    }
+
+    const handleSearch = () => {
+        if (search) {
+            const searchResults = bodyExercises.filter(
+                (exercise) => exercise.name.toLowerCase().includes(search)
+                    || exercise.target.toLowerCase().includes(search)
+                    || exercise.equipment.toLowerCase().includes(search)
+                    || exercise.bodyPart.toLowerCase().includes(search)
+            )
+            setSearch('')
+            setExercises(searchResults)
+            console.log("search exercise results:", exercises)
+        }
     }
 
     const drawer = (
@@ -148,16 +160,14 @@ function Navbar(props) {
                                     </Link>
                                 ))}
                             </Box>
-                            <Search sx={{ display: { xs: 'none', md: 'flex' } }}>
-                                <SearchIconWrapper>
-                                    <SearchIcon />
-                                </SearchIconWrapper>
+                            <Search sx={{ display: { xs: 'none', md: 'flex' } }} >
                                 <StyledInputBase
                                     placeholder="Search…"
+                                    onChange={(e) => setSearch(e.target.value.toLowerCase())}
                                     inputProps={{ 'aria-label': 'search' }}
                                 />
                             </Search>
-                            <IconButton sx={{ display: { xs: 'flex', md: 'none' }, color: Colors.white }}>
+                            <IconButton sx={{ color: Colors.white }} onClick={handleSearch}>
                                 <SearchIcon />
                             </IconButton>
                             <Actions isMobile={isMobile} />
@@ -183,6 +193,8 @@ function Navbar(props) {
                 </Box>
                 <Box component="main" sx={{ p: 3 }}>
                 </Box>
+                {isLoading && <Box sx={{ display: 'flex' }}><LinearProgress /></Box>}
+                {sysMessage && <Typography variant="h6" component="h6" align='left' color='red' m={1} >{sysMessage}</Typography>}
             </Box>
         </>
     )
