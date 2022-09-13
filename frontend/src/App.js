@@ -24,7 +24,7 @@ import { FitnessContextProvider } from './context/FitnessContext'
 function App() {
 
   useEffect(() => {
-    document.title = 'explore-best v1.0.47'
+    document.title = 'explore-best v1.0.48'
   }, [])
 
   return (
