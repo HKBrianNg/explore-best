@@ -60,7 +60,7 @@ function Actions({ isMobile }) {
                             color: Colors.white,
                         }}>
                         <Link to='/fitness' style={{ color: Colors.white, textDecoration: 'none', }}>
-                            <Tooltip title="Setting">
+                            <Tooltip title="Fitness">
                                 <FitbitIcon />
                             </Tooltip>
                         </Link>

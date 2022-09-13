@@ -31,8 +31,6 @@ function Fitness() {
                   <Box key={item.id}>
                     <Typography variant='h5'>{item.name}</Typography>
                     <Typography variant='subtitle2'>{item.bodyPart},{item.target},{item.equipment}</Typography>
-                    {/* <Typography variant='subtitle1'>{item.target}</Typography> */}
-                    {/* <Typography variant='subtitle1'>{item.equipment}</Typography> */}
                     <img src={item.gifUrl} alt={item.name} />
                   </Box>
                 ))
