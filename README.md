@@ -119,5 +119,6 @@ Version Date        Description
 1.0.43  2022/9/11   Add tooltip for map, login, setup and Logo.
 1.0.44  2022/9/11   Sort video list. Host app in Firebase. 
 1.0.45  2022/9/11   Create a web app in explore-best project and enable firebase authentication feature.
-1.0.46  2022/9/11   Move all frontend codes to frontend folder, and create firebase-function folder and Backend folder.
-1.0.47  2022/9/11   Refine search UI. Add FitnessContext.
+1.0.46  2022/9/12   Move all frontend codes to frontend folder, and create firebase-function folder and Backend folder.
+1.0.47  2022/9/12   Refine search UI. Add FitnessContext.
+1.0.48  2022/9/13   Remove firebase function directory
