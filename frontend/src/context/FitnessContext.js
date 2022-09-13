@@ -10,6 +10,9 @@ export const FitnessContextProvider = ({ children }) => {
   const [targetMuscles, setTargetMuscles] = useState(defaultTargetMuscles)
   const [equipments, setEquipments] = useState(defaultEquipments)
   const [bodyExercises, setBodyExercises] = useState(defaultBodyExercises)
+  const [selectedBodyPart, setSelectedBodyPart] = useState('back')
+  const [selectedTargetMuscle, setSelectedTargetMuscle] = useState('lats')
+  const [selectedEquipment, setSelectedEquipment] = useState('cable')
 
 
   const getbodyPartsAPI = async () => {
@@ -80,6 +83,9 @@ export const FitnessContextProvider = ({ children }) => {
 
   return (
     <fitnessContext.Provider value={{
+      selectedBodyPart, setSelectedBodyPart,
+      selectedTargetMuscle, setSelectedTargetMuscle,
+      selectedEquipment, setSelectedEquipment,
       bodyParts, setBodyParts,
       targetMuscles, setTargetMuscles,
       equipments, setEquipments,

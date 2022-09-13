@@ -123,3 +123,4 @@ Version Date        Description
 1.0.47  2022/9/13   Refine search UI. Add FitnessContext.
 1.0.48  2022/9/13   Remove firebase function directory
 1.0.49  2022/9/13   Add default data for topics and videos.
+1.0.50  2022/9/13   Replace Contact component by Fitness component.

@@ -28,7 +28,7 @@ const Logo = styled(Typography)(() => ({
 const navItems = [
     { id: '0', name: 'Home', link: "/" },
     { id: '1', name: 'About', link: "/about" },
-    { id: '2', name: 'Contact', link: "/contact" }
+    { id: '2', name: 'Setup', link: "/setup" }
 ]
 const drawerWidth = 240
 

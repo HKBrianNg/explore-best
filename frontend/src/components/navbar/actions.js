@@ -1,6 +1,7 @@
-import SettingsIcon from '@mui/icons-material/Settings';
+// import SettingsIcon from '@mui/icons-material/Settings';
 import MapIcon from '@mui/icons-material/Map';
 import PersonIcon from '@mui/icons-material/Person'
+import FitbitIcon from '@mui/icons-material/Fitbit';
 import { ListItemButton, ListItemIcon, Divider, Avatar, Tooltip } from '@mui/material'
 import { Colors } from '../../styles/theme'
 import { styled } from '@mui/material/styles'
@@ -58,9 +59,9 @@ function Actions({ isMobile }) {
                             display: 'flex', justifyContent: 'center',
                             color: Colors.white,
                         }}>
-                        <Link to='/setup' style={{ color: Colors.white, textDecoration: 'none', }}>
+                        <Link to='/fitness' style={{ color: Colors.white, textDecoration: 'none', }}>
                             <Tooltip title="Setting">
-                                <SettingsIcon />
+                                <FitbitIcon />
                             </Tooltip>
                         </Link>
                     </ListItemIcon>

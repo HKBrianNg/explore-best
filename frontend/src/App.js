@@ -4,7 +4,7 @@ import { Routes, Route } from 'react-router-dom'
 import { theme } from './styles/theme/index'
 import Home from './components/home/Home'
 import About from './components/about/About'
-import Contact from './components/contact/Contact'
+import Fitness from './components/fitness/Fitness'
 import Map from './components/map/Map'
 import PlayVideo from './components/videos/PlayVideo'
 import Setup from './components/setup/Setup'
@@ -24,7 +24,7 @@ import { FitnessContextProvider } from './context/FitnessContext'
 function App() {
 
   useEffect(() => {
-    document.title = 'explore-best v1.0.49'
+    document.title = 'explore-best v1.0.50'
   }, [])
 
   return (
@@ -41,7 +41,7 @@ function App() {
                       <Route path="/" element={<Home />} />
                       <Route path="/home" element={<Home />} />
                       <Route path="/about" element={<About />} />
-                      <Route path='/contact' element={<Contact />} />
+                      <Route path='/fitness' element={<Fitness />} />
                       <Route path="/map" element={<Map />} />
                       <Route path="/video/:id" element={<PlayVideo />} />
                       <Route path="/setup" element={
