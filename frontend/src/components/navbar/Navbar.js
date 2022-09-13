@@ -12,6 +12,8 @@ import { Link, useNavigate } from 'react-router-dom'
 import Actions from './actions';
 import { useFitnessContext } from '../../context/FitnessContext'
 import { useAppContext } from '../../context/AppContext'
+import { useTopicContext } from '../../context/TopicContext'
+import { useVideoContext } from '../../context/VideoContext'
 
 
 const Logo = styled(Typography)(() => ({
@@ -72,9 +74,13 @@ function Navbar(props) {
     const [mobileOpen, setMobileOpen] = useState(false)
     const navigate = useNavigate()
     const [search, setSearch] = useState('')
-    const [exercises, setExercises] = useState([])
+    const [searchedExercises, setSearchedExercises] = useState([])
+    const [searchedTopics, setSearchedTopics] = useState([])
+    const [searchedVideos, setSearchedVideos] = useState([])
+    const { topics } = useTopicContext()
     const { bodyExercises } = useFitnessContext()
-    const { isLoading, sysMessage, } = useAppContext()
+    const { isLoading, sysMessage } = useAppContext()
+    const { videos } = useVideoContext()
 
 
     const handleDrawerToggle = () => {
@@ -86,16 +92,29 @@ function Navbar(props) {
     }
 
     const handleSearch = () => {
+        // const { data } = await getTopicsAPI()
+        // const { data } = await getVideosAPI()
+        // console.log("videos:", data)
         if (search) {
-            const searchResults = bodyExercises.filter(
+            const searchResults1 = videos.filter(
+                (video) => video.title.toLowerCase().includes(search)
+            )
+            const searchResults2 = bodyExercises.filter(
                 (exercise) => exercise.name.toLowerCase().includes(search)
                     || exercise.target.toLowerCase().includes(search)
                     || exercise.equipment.toLowerCase().includes(search)
                     || exercise.bodyPart.toLowerCase().includes(search)
             )
+            const searchResults3 = topics.filter(
+                (topic) => topic.name.toLowerCase().includes(search)
+            )
             setSearch('')
-            setExercises(searchResults)
-            console.log("search exercise results:", exercises)
+            setSearchedVideos(searchResults1)
+            setSearchedExercises(searchResults2)
+            setSearchedTopics(searchResults3)
+            console.log("searched video results:", searchedVideos)
+            console.log("searched exercise results:", searchedExercises)
+            console.log("searched topic results:", searchedTopics)
         }
     }
 

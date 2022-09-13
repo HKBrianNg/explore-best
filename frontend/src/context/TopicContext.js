@@ -1,5 +1,7 @@
 import { createContext, useContext, useState } from 'react'
 import axios from 'axios'
+import { defaultTopics } from '../data/Topic/topic'
+
 
 const topicContext = createContext()
 const url = "https://learning-bn-api.herokuapp.com"
@@ -14,7 +16,7 @@ const initialTopic = {
 }
 
 export const TopicContextProvider = ({ children }) => {
-    const [topics, setTopics] = useState([])
+    const [topics, setTopics] = useState(defaultTopics)
     const [topic, setTopic] = useState(initialTopic)
 
     const getTopicsAPI = async () => {

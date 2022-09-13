@@ -36,8 +36,9 @@ function Home() {
             getTopics()
             getVideos()
             setIsReady(true)
-            console.log("System is ready:", videos, topics)
+
         }
+        console.log("System is ready:", videos, topics)
         // eslint-disable-next-line
     }, [])
 
