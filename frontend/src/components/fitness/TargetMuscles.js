@@ -1,5 +1,7 @@
 import { Chip, Box, Stack, Typography } from '@mui/material'
 import { useFitnessContext } from '../../context/FitnessContext'
+import muscleImage from '../../images/muscles.png'
+import { Colors } from '../../styles/theme'
 
 
 function TargetMuscles() {
@@ -15,7 +17,13 @@ function TargetMuscles() {
   return (
     <Box m={1} sx={{ display: 'flex', flexWrap: 'wrap' }}>
       <Stack direction='column'>
-        <Typography variant='h6'>Target Muscles</Typography>
+        <Stack display='flex' direction='row' alignItems='center' justifyContent='start'>
+          <img src={muscleImage} alt='targetMuscles' style={{
+            padding: '3px', margin: '5px',
+            width: '40px', height: '40px', borderRadius: "50%", background: Colors.dove_gray
+          }} />
+          <Typography variant='h5'>Target Muscles</Typography>
+        </Stack>
         <Stack direction='row' flexWrap='wrap'>
           {uniqueTargetMuscles.map((item, id) => (
             <Chip

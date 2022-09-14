@@ -1,5 +1,7 @@
 import { Chip, Box, Typography, Stack } from '@mui/material'
 import { useFitnessContext } from '../../context/FitnessContext'
+import equipmentImage from '../../images/equipment.png'
+import { Colors } from '../../styles/theme'
 
 
 function Equipments() {
@@ -15,7 +17,13 @@ function Equipments() {
   return (
     <Box m={1} sx={{ display: 'flex', flexWrap: 'wrap' }}>
       <Stack direction='column'>
-        <Typography variant='h6'>Equipments</Typography>
+        <Stack display='flex' direction='row' alignItems='center' justifyContent='start'>
+          <img src={equipmentImage} alt='targetMuscles' style={{
+            padding: '3px', margin: '5px',
+            width: '40px', height: '40px', borderRadius: "50%", background: Colors.dove_gray
+          }} />
+          <Typography variant='h5'>Equipments</Typography>
+        </Stack>
         <Stack direction='row' flexWrap='wrap'>
           {uniqueEquipments.map((item, id) => (
             <Chip

@@ -13,6 +13,8 @@ export const FitnessContextProvider = ({ children }) => {
   const [selectedBodyPart, setSelectedBodyPart] = useState('back')
   const [selectedTargetMuscle, setSelectedTargetMuscle] = useState('lats')
   const [selectedEquipment, setSelectedEquipment] = useState('cable')
+  const [selectedBodyExercise, setSelectedBodyExercise] = useState({})
+  const [exerciseVideos, setExerciseVideos] = useState([])
 
 
   const getbodyPartsAPI = async () => {
@@ -81,16 +83,57 @@ export const FitnessContextProvider = ({ children }) => {
     }
   }
 
+  const getSelectedBodyExerciseAPI = async (id) => {
+    const URL = `https://exercisedb.p.rapidapi.com/exercises/exercise/${id}`
+    try {
+      const { data } = await axios.get(URL, {
+        headers: {
+          'X-RapidAPI-Key': 'd222430dc4msh3216a8da5df0133p10cb60jsna80cb3930ee5',
+          'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
+        }
+      })
+      setSelectedBodyExercise(data)
+      return data
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  const getYouTubeVideoAPI = async (name) => {
+    const URL = 'https://youtube-search-and-download.p.rapidapi.com/search'
+    try {
+      const { data } = await axios.get(URL, {
+        params: {
+          query: `${name}`,
+          type: 'v',
+          sort: 'v'
+        },
+        headers: {
+          'X-RapidAPI-Key': 'd222430dc4msh3216a8da5df0133p10cb60jsna80cb3930ee5',
+          'X-RapidAPI-Host': 'youtube-search-and-download.p.rapidapi.com'
+        }
+      })
+      setExerciseVideos(data.contents)
+      return data.contents
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+
   return (
     <fitnessContext.Provider value={{
       selectedBodyPart, setSelectedBodyPart,
       selectedTargetMuscle, setSelectedTargetMuscle,
       selectedEquipment, setSelectedEquipment,
+      selectedBodyExercise, setSelectedBodyExercise,
       bodyParts, setBodyParts,
       targetMuscles, setTargetMuscles,
       equipments, setEquipments,
       bodyExercises, setBodyExercises,
-      getbodyPartsAPI, getTargetMusclesAPI, getEquipmentsAPI, getBodyExercisesAPI
+      exerciseVideos, setExerciseVideos,
+      getbodyPartsAPI, getTargetMusclesAPI, getEquipmentsAPI, getBodyExercisesAPI, getSelectedBodyExerciseAPI,
+      getYouTubeVideoAPI
     }}>
       {children}
     </fitnessContext.Provider>

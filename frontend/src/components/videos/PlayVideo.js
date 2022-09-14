@@ -16,7 +16,7 @@ function PlayVideo() {
         <>
             <Navbar />
             <Container maxWidth="lg">
-                <Box mt={2}>
+                <Box mt={3}>
                     <Link to='/'>
                         <ArrowBackIcon fontSize='large' />
                     </Link>
