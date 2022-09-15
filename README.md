@@ -89,7 +89,7 @@ Version Date        Description
 1.0.13  2022/9/4    Merged style.js into component itself
 1.0.14  2022/9/4    Show Banner below SubCategory and show video list on right side
 1.0.15  2022/9/4    Store category in constant.js, and add Golf, Car, & House categories
-1.0.16  2022/9/5    Remove Product, Category, Contact Us from menu. Enable home menu item. Fix category overflow issue in mobile mode.
+1.0.16  2022/9/5    Remove Product, Category, Contact Us from menu. Enable home menu item. Fix category issue in mobile mode.
 1.0.17  2022/9/5    Re-size video image, remove Save icon
 1.0.18  2022/9/5    Add google map page and detect my current geographic location
 1.0.19  2022/9/5    Link navbar logo to home page
@@ -127,3 +127,4 @@ Version Date        Description
 1.0.51  2022/9/13   Fix tooltip for Fitness.
 1.0.52  2022/9/14   Display body exercise detail and search youtube related videos.
 1.0.53  2022/9/15   Add BMI calculation.
+1.0.54  2022/9/16   Add TDEE calculation.

@@ -14,9 +14,9 @@ export const FitnessContextProvider = ({ children }) => {
   const [selectedEquipment, setSelectedEquipment] = useState('cable')
   const [selectedBodyExercise, setSelectedBodyExercise] = useState({})
   const [exerciseVideos, setExerciseVideos] = useState([])
-  const [bodyInfo, setBodyInfo] = useState({ weight: '', height: '' })
+  // const [bodyInfo, setBodyInfo] = useState({ weight: '', height: '' })
   const [bmiInfo, setBmiInfo] = useState({ bmi: 0, health: "", healthy_bmi_range: "" })
-
+  const [tdeeInfo, setTdeeInfo] = useState({ tdee: 0.0 })
 
   const getbodyPartsAPI = async () => {
     const URL = 'https://exercisedb.p.rapidapi.com/exercises/bodyPartList'
@@ -131,14 +131,40 @@ export const FitnessContextProvider = ({ children }) => {
           'X-RapidAPI-Host': 'mega-fitness-calculator1.p.rapidapi.com'
         }
       })
-      setBmiInfo(data)
-      return data
+      if (data.info) {
+        return { okStatus: true, data: data.info }
+      }
+      if (data.err) {
+        return { okStatus: false, data: data.err }
+      }
     } catch (error) {
       console.log(error)
+      return { okStatus: false, data: error }
     }
   }
 
-
+  const getTotalDailyEnergyExpenditureAPI = async (bodyInfo) => {
+    const URL = 'https://mega-fitness-calculator1.p.rapidapi.com/tdee'
+    try {
+      console.log("bodyInfo", bodyInfo)
+      const { data } = await axios.get(URL, {
+        params: bodyInfo,
+        headers: {
+          'X-RapidAPI-Key': 'd222430dc4msh3216a8da5df0133p10cb60jsna80cb3930ee5',
+          'X-RapidAPI-Host': 'mega-fitness-calculator1.p.rapidapi.com'
+        }
+      })
+      if (data.info) {
+        return { okStatus: true, data: data.info }
+      }
+      if (data.err) {
+        return { okStatus: false, data: data.err }
+      }
+    } catch (error) {
+      console.log(error)
+      return { okStatus: false, data: error }
+    }
+  }
 
   return (
     <fitnessContext.Provider value={{
@@ -151,10 +177,11 @@ export const FitnessContextProvider = ({ children }) => {
       equipments, setEquipments,
       bodyExercises, setBodyExercises,
       exerciseVideos, setExerciseVideos,
-      bodyInfo, setBodyInfo,
+      // bodyInfo, setBodyInfo,
       bmiInfo, setBmiInfo,
+      tdeeInfo, setTdeeInfo,
       getbodyPartsAPI, getTargetMusclesAPI, getEquipmentsAPI, getBodyExercisesAPI, getSelectedBodyExerciseAPI,
-      getYouTubeVideoAPI, getBodyMassIndexAPI,
+      getYouTubeVideoAPI, getBodyMassIndexAPI, getTotalDailyEnergyExpenditureAPI,
     }}>
       {children}
     </fitnessContext.Provider>
