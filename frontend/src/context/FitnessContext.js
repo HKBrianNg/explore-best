@@ -4,7 +4,6 @@ import { defaultBodyParts, defaultTargetMuscles, defaultEquipments, defaultBodyE
 
 const fitnessContext = createContext()
 
-
 export const FitnessContextProvider = ({ children }) => {
   const [bodyParts, setBodyParts] = useState(defaultBodyParts)
   const [targetMuscles, setTargetMuscles] = useState(defaultTargetMuscles)
@@ -15,6 +14,8 @@ export const FitnessContextProvider = ({ children }) => {
   const [selectedEquipment, setSelectedEquipment] = useState('cable')
   const [selectedBodyExercise, setSelectedBodyExercise] = useState({})
   const [exerciseVideos, setExerciseVideos] = useState([])
+  const [bodyInfo, setBodyInfo] = useState({ weight: '', height: '' })
+  const [bmiInfo, setBmiInfo] = useState({ bmi: 0, health: "", healthy_bmi_range: "" })
 
 
   const getbodyPartsAPI = async () => {
@@ -120,6 +121,24 @@ export const FitnessContextProvider = ({ children }) => {
     }
   }
 
+  const getBodyMassIndexAPI = async (bodyInfo) => {
+    const URL = 'https://mega-fitness-calculator1.p.rapidapi.com/bmi'
+    try {
+      const { data } = await axios.get(URL, {
+        params: bodyInfo,
+        headers: {
+          'X-RapidAPI-Key': 'd222430dc4msh3216a8da5df0133p10cb60jsna80cb3930ee5',
+          'X-RapidAPI-Host': 'mega-fitness-calculator1.p.rapidapi.com'
+        }
+      })
+      setBmiInfo(data)
+      return data
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+
 
   return (
     <fitnessContext.Provider value={{
@@ -132,8 +151,10 @@ export const FitnessContextProvider = ({ children }) => {
       equipments, setEquipments,
       bodyExercises, setBodyExercises,
       exerciseVideos, setExerciseVideos,
+      bodyInfo, setBodyInfo,
+      bmiInfo, setBmiInfo,
       getbodyPartsAPI, getTargetMusclesAPI, getEquipmentsAPI, getBodyExercisesAPI, getSelectedBodyExerciseAPI,
-      getYouTubeVideoAPI
+      getYouTubeVideoAPI, getBodyMassIndexAPI,
     }}>
       {children}
     </fitnessContext.Provider>

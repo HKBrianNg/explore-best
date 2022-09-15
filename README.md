@@ -126,3 +126,4 @@ Version Date        Description
 1.0.50  2022/9/13   Replace Contact component by Fitness component.
 1.0.51  2022/9/13   Fix tooltip for Fitness.
 1.0.52  2022/9/14   Display body exercise detail and search youtube related videos.
+1.0.53  2022/9/15   Add BMI calculation.

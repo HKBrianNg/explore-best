@@ -4,6 +4,7 @@ import Navbar from '../navbar/Navbar'
 import BodyParts from './BodyParts'
 import TargetMuscles from './TargetMuscles'
 import Equipments from './Equipments'
+import CalculateBMI from './CalculateBMI'
 import ExerciseList from './ExerciseList'
 
 function Fitness() {
@@ -18,6 +19,7 @@ function Fitness() {
             <BodyParts />
             <TargetMuscles />
             <Equipments />
+            <CalculateBMI />
           </Grid>
           <Grid item xs={12} md={9}>
             <ExerciseList />
