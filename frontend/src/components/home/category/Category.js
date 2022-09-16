@@ -1,6 +1,6 @@
 import { Chip, Box } from '@mui/material'
-import { useAppContext } from '../../context/AppContext'
-import { allCategories } from '../../constant';
+import { useAppContext } from '../../../context/AppContext'
+import { allCategories } from '../../../constant';
 
 
 function Category() {

@@ -14,7 +14,6 @@ export const FitnessContextProvider = ({ children }) => {
   const [selectedEquipment, setSelectedEquipment] = useState('cable')
   const [selectedBodyExercise, setSelectedBodyExercise] = useState({})
   const [exerciseVideos, setExerciseVideos] = useState([])
-  // const [bodyInfo, setBodyInfo] = useState({ weight: '', height: '' })
   const [bmiInfo, setBmiInfo] = useState({ bmi: 0, health: "", healthy_bmi_range: "" })
   const [tdeeInfo, setTdeeInfo] = useState({ tdee: 0.0 })
 
@@ -177,7 +176,6 @@ export const FitnessContextProvider = ({ children }) => {
       equipments, setEquipments,
       bodyExercises, setBodyExercises,
       exerciseVideos, setExerciseVideos,
-      // bodyInfo, setBodyInfo,
       bmiInfo, setBmiInfo,
       tdeeInfo, setTdeeInfo,
       getbodyPartsAPI, getTargetMusclesAPI, getEquipmentsAPI, getBodyExercisesAPI, getSelectedBodyExerciseAPI,

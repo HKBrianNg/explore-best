@@ -1,6 +1,6 @@
-import { useAppContext } from '../../context/AppContext'
+import { useAppContext } from '../../../context/AppContext'
 import { Box, Typography } from '@mui/material'
-import { allCategories } from '../../constant'
+import { allCategories } from '../../../constant'
 
 
 function Banner() {

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Box, FormControl, Button, Typography, Stack, Select, TextField, MenuItem, InputLabel } from '@mui/material'
-import { useFitnessContext } from '../../context/FitnessContext'
-import { useAppContext } from '../../context/AppContext'
+import { useFitnessContext } from '../../../context/FitnessContext'
+import { useAppContext } from '../../../context/AppContext'
 
 
 function CalculateTDEE() {
@@ -40,7 +40,7 @@ function CalculateTDEE() {
     <Box m={1}>
       <Box component='form' m={1} onSubmit={handleSubmit}>
         <Stack direction='column' gap={1}>
-          <Typography variant='h5'>TDEE Calculation</Typography>
+          <Typography variant='h4'>TDEE Calculator</Typography>
           <Stack direction='row' gap={1}>
             <TextField value={weight} required type='number' fullWidth label="Weight (kg)" size='small' variant="outlined"
               onChange={(e) => setWeight(e.target.value)}
@@ -78,7 +78,7 @@ function CalculateTDEE() {
           <Button variant="contained" type='Submit' fullWidth disabled={isLoading}>Calculate TDEE</Button>
         </Stack>
       </Box>
-      <Typography variant='h6'>Total Daily Energy Expenditure:{tdeeInfo.tdee}</Typography>
+      <Typography variant='h4'>Total Daily Energy Expenditure (Cal):{tdeeInfo.tdee}</Typography>
     </Box>
   )
 }

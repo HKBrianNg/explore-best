@@ -1,7 +1,7 @@
 import { Chip, Box, Stack, Typography } from '@mui/material'
-import { useFitnessContext } from '../../context/FitnessContext'
-import muscleImage from '../../images/muscles.png'
-import { Colors } from '../../styles/theme'
+import { useFitnessContext } from '../../../context/FitnessContext'
+import muscleImage from '../../../images/muscles.png'
+import { Colors } from '../../../styles/theme'
 
 
 function TargetMuscles() {

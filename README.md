@@ -127,4 +127,5 @@ Version Date        Description
 1.0.51  2022/9/13   Fix tooltip for Fitness.
 1.0.52  2022/9/14   Display body exercise detail and search youtube related videos.
 1.0.53  2022/9/15   Add BMI calculation.
-1.0.54  2022/9/16   Add TDEE calculation.
+1.0.54  2022/9/15   Add TDEE calculation.
+1.0.55  2022/9/15   Split Fitness.js into CalculateBMI, CalculateTDEE.js, BodyExercise.js and ExerciseVideo.js

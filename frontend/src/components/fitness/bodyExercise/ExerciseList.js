@@ -1,5 +1,5 @@
-import { Stack, Box, Typography } from '@mui/material'
-import { useFitnessContext } from '../../context/FitnessContext'
+import { Stack, Box, Typography, Tooltip } from '@mui/material'
+import { useFitnessContext } from '../../../context/FitnessContext'
 import { Link } from 'react-router-dom'
 
 
@@ -18,7 +18,9 @@ function ExerciseList() {
             <Typography variant='h5'>{item.name}</Typography>
             <Typography variant='subtitle2'>{item.id},{item.bodyPart},{item.target},{item.equipment}</Typography>
             <Link to={`/fitness/exercise/${item.id}`}>
-              <img src={item.gifUrl} alt={item.name} />
+              <Tooltip title='Click to get Video References'>
+                <img src={item.gifUrl} alt={item.name} />
+              </Tooltip>
             </Link >
           </Box>
         ))

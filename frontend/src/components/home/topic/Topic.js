@@ -1,6 +1,6 @@
 import { Box, Chip } from '@mui/material'
-import { useAppContext } from '../../context/AppContext'
-import { useTopicContext } from '../../context/TopicContext'
+import { useAppContext } from '../../../context/AppContext'
+import { useTopicContext } from '../../../context/TopicContext'
 
 
 function Topic() {

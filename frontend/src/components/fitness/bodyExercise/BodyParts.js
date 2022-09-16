@@ -1,7 +1,7 @@
 import { Chip, Box, Stack, Typography } from '@mui/material'
-import { useFitnessContext } from '../../context/FitnessContext'
-import bodyImage from '../../images/body.png'
-import { Colors } from '../../styles/theme'
+import { useFitnessContext } from '../../../context/FitnessContext'
+import bodyImage from '../../../images/body.png'
+import { Colors } from '../../../styles/theme'
 
 
 function BodyParts() {

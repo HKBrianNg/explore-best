@@ -1,7 +1,7 @@
 import { Chip, Box, Typography, Stack } from '@mui/material'
-import { useFitnessContext } from '../../context/FitnessContext'
-import equipmentImage from '../../images/equipment.png'
-import { Colors } from '../../styles/theme'
+import { useFitnessContext } from '../../../context/FitnessContext'
+import equipmentImage from '../../../images/equipment.png'
+import { Colors } from '../../../styles/theme'
 
 
 function Equipments() {

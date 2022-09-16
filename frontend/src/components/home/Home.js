@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
 import Navbar from "../navbar/Navbar"
-import Category from "../category/Category"
-import Topic from "../topic/Topic"
-import Banner from "../banner/Banner"
+import Category from "./category/Category"
+import Topic from "./topic/Topic"
+import Banner from "./banner/Banner"
 import Videos from "../videos/Videos"
 import { Container, Grid, Typography, Box, LinearProgress } from '@mui/material'
 import { useVideoContext } from '../../context/VideoContext'

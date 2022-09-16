@@ -7,7 +7,7 @@ function ExerciseVideos() {
 
 
   return (
-    <Box m={4}>
+    <Box m={1}>
       <Stack direction='row' justifyContent='flex-start' flexWrap='wrap' alignItems='center' gap={2}>
         {exerciseVideos.map((item, index) => (
           <a key={index}

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Box, Stack, TextField, Button, Typography } from '@mui/material'
-import { useFitnessContext } from '../../context/FitnessContext'
-import { useAppContext } from '../../context/AppContext'
+import { useFitnessContext } from '../../../context/FitnessContext'
+import { useAppContext } from '../../../context/AppContext'
 
 
 function CalculateBMI() {
@@ -29,7 +29,7 @@ function CalculateBMI() {
       <Stack direction='column'>
         <Box component='form' m={1} autoComplete="off" onSubmit={calculateBMI}>
           <Stack direction='column' gap={1}>
-            <Typography variant='h5'>BMI Calculation</Typography>
+            <Typography variant='h4'>BMI Calculator</Typography>
             <Stack direction='row' gap={1}>
               <TextField value={weight} required fullWidth type='number' label="Weight (kg)" size='small' variant="outlined"
                 onChange={(e) => setWeight(e.target.value)}

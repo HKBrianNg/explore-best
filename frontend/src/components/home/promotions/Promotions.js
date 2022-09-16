@@ -1,6 +1,6 @@
 import { Slide } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
-import { Colors } from '../../styles/theme'
+import { Colors } from '../../../styles/theme'
 import { Box, Typography } from '@mui/material'
 import { styled } from '@mui/material/styles'
 
