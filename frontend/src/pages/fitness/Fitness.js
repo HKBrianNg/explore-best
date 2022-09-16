@@ -1,6 +1,5 @@
 import { useState } from 'react'
-import { Grid, Box, Button, Typography, LinearProgress } from '@mui/material'
-import { useAppContext } from '../../context/AppContext'
+import { Grid, Box, Button } from '@mui/material'
 import Navbar from '../../components/navbar/Navbar'
 import BodyExercise from './bodyExercise/BodyExercise'
 import CalculateBMI from './calculateBMI/CalculateBMI'
@@ -16,19 +15,17 @@ const featureList = [
 ]
 
 function Fitness() {
-  const { isLoading, sysMessage } = useAppContext()
   const [selectedFeature, setSelectedFeature] = useState('Profile')
 
   const handleClick = (name) => {
     setSelectedFeature(name)
   }
 
+
   return (
     <>
       <Navbar />
-      {isLoading && <Box sx={{ display: 'flex' }}><LinearProgress /></Box>}
-      {<Typography variant="h6" component="h6" align='left' color='red' mt={4} >{sysMessage}</Typography>}
-      <Grid container spacing={0.5} direction="row" justifyContent="flex-start" alignItems="flex-start">
+      <Grid container m={2} spacing={0.5} direction="row" justifyContent="flex-start" alignItems="flex-start">
         <Grid item xs={12}>
           <Box>
             {
@@ -44,7 +41,6 @@ function Fitness() {
               ))
             }
           </Box>
-
         </Grid>
         {selectedFeature === 'Exercises' && <BodyExercise />}
         {selectedFeature === 'BMI Calculator' && <CalculateBMI />}

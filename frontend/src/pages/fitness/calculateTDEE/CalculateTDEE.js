@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Box, FormControl, Button, Typography, Stack, Select, TextField, MenuItem, InputLabel } from '@mui/material'
 import { useFitnessContext } from '../../../context/FitnessContext'
 import { useAppContext } from '../../../context/AppContext'
+import Message from '../../../components/message/Message'
 
 
 function CalculateTDEE() {
@@ -35,12 +36,20 @@ function CalculateTDEE() {
     setIsLoading(false)
   }
 
+  useEffect(() => {
+    setIsLoading(false)
+    // eslint-disable-next-line
+  }, [])
 
   return (
-    <Box m={1}>
-      <Box component='form' m={1} onSubmit={handleSubmit}>
+    <Box m={4} maxWidth={500}>
+      <Box component='form' onSubmit={handleSubmit}>
         <Stack direction='column' gap={1}>
           <Typography variant='h4'>TDEE Calculator</Typography>
+          <Typography variant='h6'>Use this calculator to easily calculate the optimal calorie intake per day you need to keep your weight stable,
+            or to gain or lose weight. If you are asking yourself: how many calories do I need a day,
+            how many calories should I eat, etc. this calorie calculator is for you!
+          </Typography>
           <Stack direction='row' gap={1}>
             <TextField value={weight} required type='number' fullWidth label="Weight (kg)" size='small' variant="outlined"
               onChange={(e) => setWeight(e.target.value)}
@@ -75,10 +84,11 @@ function CalculateTDEE() {
               <MenuItem value='va'>very active</MenuItem>
             </Select>
           </FormControl>
-          <Button variant="contained" type='Submit' fullWidth disabled={isLoading}>Calculate TDEE</Button>
+          <Button variant="contained" type='Submit' fullWidth disabled={isLoading}>Calculate</Button>
+          <Message />
         </Stack>
       </Box>
-      <Typography variant='h4'>Total Daily Energy Expenditure (Cal):{tdeeInfo.tdee}</Typography>
+      <Typography variant='h4'>Total Daily Energy Expenditure (Cal):{tdeeInfo.tdee.toFixed(2)}</Typography>
     </Box>
   )
 }

@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom'
 function ExerciseList() {
   const { selectedBodyPart, selectedTargetMuscle, selectedEquipment, bodyExercises } = useFitnessContext()
 
-
   const exerciseData = bodyExercises.filter((item) => (item.bodyPart === selectedBodyPart
     && item.target === selectedTargetMuscle && item.equipment === selectedEquipment))
+
 
   return (
     <Stack display='flex' direction='row' flexWrap='wrap' gap={1}>
