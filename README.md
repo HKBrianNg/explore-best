@@ -129,3 +129,4 @@ Version Date        Description
 1.0.53  2022/9/15   Add BMI calculation.
 1.0.54  2022/9/15   Add TDEE calculation.
 1.0.55  2022/9/15   Split Fitness.js into CalculateBMI, CalculateTDEE.js, BodyExercise.js and ExerciseVideo.js
+1.0.56  2022/9/16   Divide components into pages and components (shared by different pages)

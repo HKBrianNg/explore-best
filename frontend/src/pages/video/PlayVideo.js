@@ -1,4 +1,4 @@
-import Navbar from '../navbar/Navbar'
+import Navbar from '../../components/navbar/Navbar'
 import { useParams } from 'react-router-dom'
 import ReactPlayer from "react-player"
 import { Container, Box } from '@mui/material'

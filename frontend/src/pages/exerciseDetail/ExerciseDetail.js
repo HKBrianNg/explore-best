@@ -1,18 +1,12 @@
-import { useEffect } from 'react'
 import { Grid } from '@mui/material'
 import { useParams } from 'react-router-dom'
-import ExerciseVideos from '../exerciseVideo/ExerciseVideos'
+import ExerciseVideos from '../../components/exerciseVideo/ExerciseVideos'
 import ExerciseSummary from './ExerciseSummary'
-import Navbar from '../navbar/Navbar'
+import Navbar from '../../components/navbar/Navbar'
 
 
 function ExerciseDetail() {
   const { id } = useParams()
-
-  useEffect(() => {
-
-  }, [])
-
 
   return (
     <>

@@ -1,8 +1,8 @@
 import { Box, Card, CardHeader, CardMedia, CardContent, Typography } from '@mui/material';
-import { Colors } from '../../styles/theme/index'
+import { Colors } from '../../../styles/theme/index'
 import { useNavigate } from 'react-router-dom';
-import { useVideoContext } from '../../context/VideoContext'
-import { useAppContext } from '../../context/AppContext';
+import { useVideoContext } from '../../../context/VideoContext'
+import { useAppContext } from '../../../context/AppContext';
 
 function Videos() {
     const { videos } = useVideoContext()

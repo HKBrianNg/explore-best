@@ -1,4 +1,4 @@
-import Navbar from "../navbar/Navbar"
+import Navbar from "../../components/navbar/Navbar"
 import { useState, useCallback } from 'react'
 import { GoogleMap, InfoWindow, Marker, useLoadScript, Autocomplete, Circle } from '@react-google-maps/api'
 import { Container, Grid, Autocomplete as AutocompleteMui, TextField, IconButton, Stack, Box, Typography } from '@mui/material'

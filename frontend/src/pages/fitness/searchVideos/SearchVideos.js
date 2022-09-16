@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Autocomplete, Grid, TextField, Button, Stack } from '@mui/material'
-import ExerciseVideos from '../../exerciseVideo/ExerciseVideos'
+import ExerciseVideos from '../../../components/exerciseVideo/ExerciseVideos'
 import { useFitnessContext } from '../../../context/FitnessContext'
 
 

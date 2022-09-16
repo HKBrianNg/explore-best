@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Grid, Box, Button, Typography, LinearProgress } from '@mui/material'
 import { useAppContext } from '../../context/AppContext'
-import Navbar from '../navbar/Navbar'
+import Navbar from '../../components/navbar/Navbar'
 import BodyExercise from './bodyExercise/BodyExercise'
 import CalculateBMI from './calculateBMI/CalculateBMI'
 import CalculateTDEE from './calculateTDEE/CalculateTDEE'

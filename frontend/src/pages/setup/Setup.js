@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Grid, Box, Button, LinearProgress, Typography } from '@mui/material'
-import Navbar from '../navbar/Navbar'
+import Navbar from '../../components/navbar/Navbar'
 import ProfileSetup from './profile/ProfileSetup'
 import VideoSetup from './video/VideoSetup'
 import TopicSetup from './topic/TopicSetup'

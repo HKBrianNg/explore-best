@@ -1,4 +1,4 @@
-import Navbar from '../navbar/Navbar'
+import Navbar from '../../components/navbar/Navbar'
 import { Container, Grid } from '@mui/material'
 
 

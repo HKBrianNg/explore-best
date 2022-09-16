@@ -2,13 +2,13 @@ import { ThemeProvider } from '@mui/system'
 import { useEffect } from "react"
 import { Routes, Route } from 'react-router-dom'
 import { theme } from './styles/theme/index'
-import Home from './components/home/Home'
-import About from './components/about/About'
-import Fitness from './components/fitness/Fitness'
-import ExerciseDetail from './components/exerciseDetail/ExerciseDetail'
-import Map from './components/map/Map'
-import PlayVideo from './components/videos/PlayVideo'
-import Setup from './components/setup/Setup'
+import Home from './pages/home/Home'
+import About from './pages/about/About'
+import Fitness from './pages/fitness/Fitness'
+import ExerciseDetail from './pages/exerciseDetail/ExerciseDetail'
+import Map from './pages/map/Map'
+import PlayVideo from './pages/video/PlayVideo'
+import Setup from './pages/setup/Setup'
 import Login from './components/auth/Login'
 import Logout from './components/auth/Logout'
 import Signup from './components/auth/Signup'
@@ -25,7 +25,7 @@ import { FitnessContextProvider } from './context/FitnessContext'
 function App() {
 
   useEffect(() => {
-    document.title = 'explore-best v1.0.55'
+    document.title = 'explore-best v1.0.56'
   }, [])
 
   return (
