@@ -35,15 +35,15 @@ function Currencies({ simplified }) {
         </Row>
         <div className='home-heading-container'>
           <Title level={2} className="home-title">Top 100 Cryptocurrencies in the world</Title>
-          {!simplified && (
-            <div className="search-crypto">
-              <Input
-                placeholder="Search Cryptocurrency"
-                onChange={(e) => setSearchTerm(e.target.value.toLowerCase())}
-              />
-            </div>
-          )}
         </div>
+        {!simplified && (
+          <div className="search-crypto">
+            <Input
+              placeholder="Search Cryptocurrency"
+              onChange={(e) => setSearchTerm(e.target.value.toLowerCase())}
+            />
+          </div>
+        )}
 
         <Row gutter={[32, 32]} className="crypto-card-container">
           {cryptos?.map((currency) => (

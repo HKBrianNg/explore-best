@@ -132,4 +132,5 @@ Version Date        Description
 1.0.56  2022/9/16   Divide components into pages and components (shared by different pages)
 1.0.57  2022/9/16   Add description to BMI and TDEE. Add message component.
 1.0.58  2022/9/16   Add crypto feature using ant design, redux, chart, html-react-parser, axios, millify, moment react-chart-2
+1.0.59  2022/9/19   Resize news card and move currency search under title.
 1.0.60  2022/9/16   Create Learn-best its own backend. Separate it from knowledge database.
