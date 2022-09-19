@@ -7,6 +7,9 @@ import About from './pages/about/About'
 import Fitness from './pages/fitness/Fitness'
 import ExerciseDetail from './pages/exerciseDetail/ExerciseDetail'
 import Map from './pages/map/Map'
+import Crypto from './pages/crypto/Crypto'
+import CryptoDetails from './pages/crypto/cryptoDetails/CryptoDetails'
+import Exchanges from './pages/crypto/exchanges/Exchanges'
 import PlayVideo from './pages/video/PlayVideo'
 import Setup from './pages/setup/Setup'
 import Login from './pages/auth/Login'
@@ -25,7 +28,7 @@ import { FitnessContextProvider } from './context/FitnessContext'
 function App() {
 
   useEffect(() => {
-    document.title = 'explore-best v1.0.57'
+    document.title = 'explore-best v1.0.58'
   }, [])
 
   return (
@@ -45,6 +48,9 @@ function App() {
                       <Route path='/fitness' element={<Fitness />} />
                       <Route path='/fitness/exercise/:id' element={<ExerciseDetail />} />
                       <Route path="/map" element={<Map />} />
+                      <Route path="/crypto" element={<Crypto />} />
+                      <Route path='/exchange' element={<Exchanges />} />
+                      <Route path="/crypto/:id" element={<CryptoDetails />} />
                       <Route path="/video/:id" element={<PlayVideo />} />
                       <Route path="/setup" element={
                         <ProtectedRoute>

@@ -2,6 +2,7 @@
 import MapIcon from '@mui/icons-material/Map';
 import PersonIcon from '@mui/icons-material/Person'
 import FitbitIcon from '@mui/icons-material/Fitbit';
+import CurrencyBitcoinIcon from '@mui/icons-material/CurrencyBitcoin';
 import { ListItemButton, ListItemIcon, Divider, Avatar, Tooltip } from '@mui/material'
 import { Colors } from '../../styles/theme'
 import { styled } from '@mui/material/styles'
@@ -76,6 +77,20 @@ function Actions({ isMobile }) {
                         <Link to='/map' style={{ color: Colors.white, textDecoration: 'none', }}>
                             <Tooltip title="Google Map">
                                 <MapIcon />
+                            </Tooltip>
+                        </Link>
+                    </ListItemIcon>
+                </ListItemButton>
+                <Divider orientation="vertical" flexItem />
+                <ListItemButton sx={{ justifyContent: 'center' }}>
+                    <ListItemIcon
+                        sx={{
+                            display: 'flex', justifyContent: 'center',
+                            color: Colors.white,
+                        }}>
+                        <Link to='/crypto' style={{ color: Colors.white, textDecoration: 'none', }}>
+                            <Tooltip title="Cryptoverse">
+                                <CurrencyBitcoinIcon />
                             </Tooltip>
                         </Link>
                     </ListItemIcon>

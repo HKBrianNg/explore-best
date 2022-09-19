@@ -1,0 +1,33 @@
+.currencies-main {
+  flex: 0.8;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.home-heading-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.home-title {
+  font-size: 1.4rem !important;
+}
+
+.crypto-card-container {
+  min-height: 65vh !important;
+}
+
+.crypto-card {
+  min-width: 250px;
+}
+
+.crypto-card .crypto-image {
+  width: 35px;
+}
+
+.search-crypto {
+  margin: 20px auto 30px 10px;
+  width: 250px;
+}

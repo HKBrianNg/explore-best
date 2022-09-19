@@ -1,0 +1,37 @@
+.home-heading-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px
+}
+
+.home-title {
+  font-size: 1.4rem !important;
+}
+
+.select-news {
+  width: 200px;
+}
+
+.news-card {
+  min-height: 300px !important;
+  width: 520px;
+}
+
+.news-image-container {
+  display: flex !important;
+  justify-content: space-around !important;
+}
+
+.news-title {
+  width: 90%;
+}
+
+.provider-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.provider-name {
+  margin-left: 10px;
+}

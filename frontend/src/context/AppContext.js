@@ -10,6 +10,7 @@ export const AppContextProvider = ({ children }) => {
     const [sysMessage, setSysMessage] = useState("")
     const [selectedCategory, setSelectedCategory] = useState("IT")
     const [selectedSubCategory, setSelectedSubCategory] = useState("AppService")
+    const [searchText, setSearchText] = useState('')
 
     return (
         <appContext.Provider value={{
@@ -19,7 +20,8 @@ export const AppContextProvider = ({ children }) => {
             isLoading, setIsLoading,
             sysMessage, setSysMessage,
             selectedCategory, setSelectedCategory,
-            selectedSubCategory, setSelectedSubCategory
+            selectedSubCategory, setSelectedSubCategory,
+            searchText, setSearchText
         }}>
             {children}
         </appContext.Provider>
