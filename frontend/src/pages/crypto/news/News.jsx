@@ -3,7 +3,7 @@ import { Row, Col, Avatar, Typography, Card, Select } from 'antd'
 import { useGetCryptosQuery } from '../../../services/cryptoApi'
 import { useGetCryptoNewsQuery } from '../../../services/cryptoNewsApi'
 import moment from 'moment';
-import Loader from './Loader';
+import Loader from '../Loader';
 import './News.css'
 
 const demoImage = 'https://www.bing.com/th?id=OVFT.mpzuVZnv8dwIMRfQGPbOPC&pid=News';

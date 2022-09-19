@@ -1,0 +1,10 @@
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  color: #0071bd;
+}
+
+.chart-title {
+  color: #0071bd !important;
+}

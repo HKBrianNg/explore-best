@@ -28,7 +28,7 @@ import { FitnessContextProvider } from './context/FitnessContext'
 function App() {
 
   useEffect(() => {
-    document.title = 'explore-best v1.0.59'
+    document.title = 'explore-best v1.0.60'
   }, [])
 
   return (
@@ -50,7 +50,7 @@ function App() {
                       <Route path="/map" element={<Map />} />
                       <Route path="/crypto" element={<Crypto />} />
                       <Route path="/exchange" element={<Exchanges />} />
-                      <Route path="/crypto/:id" element={<CryptoDetails />} />
+                      <Route path="/crypto/:coinId" element={<CryptoDetails />} />
                       <Route path="/video/:id" element={<PlayVideo />} />
                       <Route path="/setup" element={
                         <ProtectedRoute>
