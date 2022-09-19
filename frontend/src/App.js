@@ -45,11 +45,11 @@ function App() {
                       <Route path="/" element={<Home />} />
                       <Route path="/home" element={<Home />} />
                       <Route path="/about" element={<About />} />
-                      <Route path='/fitness' element={<Fitness />} />
-                      <Route path='/fitness/exercise/:id' element={<ExerciseDetail />} />
+                      <Route path="/fitness" element={<Fitness />} />
+                      <Route path="/fitness/exercise/:id" element={<ExerciseDetail />} />
                       <Route path="/map" element={<Map />} />
                       <Route path="/crypto" element={<Crypto />} />
-                      <Route path='/exchange' element={<Exchanges />} />
+                      <Route path="/exchange" element={<Exchanges />} />
                       <Route path="/crypto/:id" element={<CryptoDetails />} />
                       <Route path="/video/:id" element={<PlayVideo />} />
                       <Route path="/setup" element={
