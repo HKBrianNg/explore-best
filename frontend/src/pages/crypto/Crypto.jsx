@@ -3,12 +3,12 @@ import { Grid, Box, Button } from '@mui/material'
 import Navbar from '../../components/navbar/Navbar'
 import Currencies from './currencies/Currencies'
 import News from './news/News'
-import Exchanges from './exchanges/Exchanges'
+// import Exchanges from './exchanges/Exchanges'
 
 const featureList = [
   { id: "0", name: 'Currencies' },
   { id: "1", name: 'News', },
-  { id: "2", name: 'Exchanges', }
+  // { id: "2", name: 'Exchanges', }
 ]
 
 function Crypto() {
@@ -41,7 +41,7 @@ function Crypto() {
         </Grid>
         {selectedFeature === 'Currencies' && <Currencies simplified={false} />}
         {selectedFeature === 'News' && <News simplified={false} />}
-        {selectedFeature === 'Exchanges' && <Exchanges />}
+        {/* {selectedFeature === 'Exchanges' && <Exchanges />} */}
       </Grid>
     </>
   )
