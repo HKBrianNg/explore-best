@@ -139,4 +139,5 @@ Version Date        Description
 1.0.63  2022/9/20   Change home as a info feature.
 1.0.64  2022/9/20   Set exercise as default in fitnes. Move bit coins as menu item. Move info as action item.
 1.0.65  2022/9/20   Implement News page and set it as home page.
-1.0.66  2022/9/16   Create Learn-best its own backend. Separate it from knowledge database.
+1.0.66  2022/9/20   Remove get news button. Enable get news directly by selecting a news category.
+1.0.67  2022/9/16   Create Learn-best its own backend. Separate it from knowledge database.

@@ -14,6 +14,7 @@ export const SysMsg = [
 ]
 
 export const defaultNewsCategories = [
+    { id: '0', name: '世界' },
     { id: '1', name: '中国' },
     { id: '2', name: '台湾' },
     { id: '3', name: '香港' },
@@ -28,9 +29,20 @@ export const defaultNewsCategories = [
     { id: '12', name: '法国' },
     { id: '13', name: '澳洲' },
     { id: '14', name: '加拿大' },
-    { id: '15', name: 'Technology' },
-    { id: '16', name: 'Golf' },
-    { id: '17', name: 'English' },
+    { id: '15', name: '墨西哥' },
+    { id: '16', name: '意大利' },
+    { id: '17', name: '西班牙' },
+    { id: '18', name: '葡萄牙' },
+    { id: '19', name: '巴西' },
+    { id: '20', name: 'Technology' },
+    { id: '21', name: 'Sport' },
+    { id: '22', name: 'Fashion' },
+    { id: '23', name: 'Science' },
+    { id: '24', name: 'Politics' },
+    { id: '25', name: 'Health' },
+    { id: '26', name: 'Food' },
+    { id: '27', name: 'School' },
+    { id: '28', name: 'War' }
 ]
 
 export const allCategories = [

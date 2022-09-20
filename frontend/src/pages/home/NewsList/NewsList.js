@@ -16,7 +16,7 @@ function NewsList() {
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
       {news.length > 0 && news.map((item, id) => (
-        <Card key={id} sx={{ maxWidth: 345, m: '5px' }}>
+        <Card key={id} sx={{ maxWidth: 330, m: '5px' }}>
           <Link href={item.url} target="_blank" rel="noopener" underline="none">
             <Stack direction='row' space={0.5}>
               <Typography gutterBottom variant="h4" component="div" m={1}>
