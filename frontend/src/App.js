@@ -28,7 +28,7 @@ import { NewsContextProvider } from './context/NewsContext'
 function App() {
 
   useEffect(() => {
-    document.title = 'explore-best v1.0.64'
+    document.title = 'explore-best v1.0.65'
   }, [])
 
   return (

@@ -13,6 +13,26 @@ export const SysMsg = [
     "003-Please select a category for topic."
 ]
 
+export const defaultNewsCategories = [
+    { id: '1', name: '中国' },
+    { id: '2', name: '台湾' },
+    { id: '3', name: '香港' },
+    { id: '4', name: '英国' },
+    { id: '5', name: '美国' },
+    { id: '6', name: '欧盟' },
+    { id: '7', name: '乌克兰' },
+    { id: '8', name: '俄罗斯' },
+    { id: '9', name: '日本' },
+    { id: '10', name: '韩国' },
+    { id: '11', name: '德国' },
+    { id: '12', name: '法国' },
+    { id: '13', name: '澳洲' },
+    { id: '14', name: '加拿大' },
+    { id: '15', name: 'Technology' },
+    { id: '16', name: 'Golf' },
+    { id: '17', name: 'English' },
+]
+
 export const allCategories = [
     {
         id: "1",

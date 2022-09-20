@@ -25,7 +25,6 @@ export const NewsContextProvider = ({ children }) => {
           'X-RapidAPI-Host': 'bing-news-search1.p.rapidapi.com'
         }
       })
-      setNews(data)
       return data
     } catch (error) {
       console.log(error)

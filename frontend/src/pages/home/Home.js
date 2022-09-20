@@ -1,7 +1,7 @@
+import { Grid } from '@mui/material'
 import Navbar from "../../components/navbar/Navbar"
-import { Container } from '@mui/material'
-import Message from '../../components/message/Message'
-import News from './news/News'
+import NewsCategories from './NewsCategories/NewsCategories'
+import NewsList from './NewsList/NewsList'
 
 
 function Home() {
@@ -9,10 +9,15 @@ function Home() {
     return (
         <>
             <Navbar />
-            <Container maxWidth="xl">
-                <Message />
-                <News />
-            </Container>
+            <Grid container m={2} spacing={1} >
+                <Grid item xs={12} md={3}>
+                    <NewsCategories />
+                </Grid>
+                <Grid item xs={12} md={9}>
+                    <NewsList />
+                </Grid>
+            </Grid>
+
         </>
     )
 }

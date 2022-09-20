@@ -88,7 +88,7 @@ function Actions({ isMobile }) {
                             color: Colors.white,
                         }}>
                         <Link to='/info' style={{ color: Colors.white, textDecoration: 'none', }}>
-                            <Tooltip title="Cryptoverse">
+                            <Tooltip title="Videos">
                                 <OndemandVideoIcon />
                             </Tooltip>
                         </Link>
