@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Box, Chip, } from '@mui/material'
 import { defaultNewsCategories } from '../../../constant'
 import Message from '../../../components/message/Message'
@@ -7,13 +7,17 @@ import { useNewsContext } from '../../../context/NewsContext'
 
 
 function NewsCategories() {
-  const [selectedChip, setSelectedChip] = useState('')
+  const [selectedChip, setSelectedChip] = useState('世界')
   const { isLoading, setIsLoading, setSysMessage } = useAppContext()
   const { setNews, getNewsAPI } = useNewsContext()
 
 
-  const handleClick = async (name) => {
+  const handleClick = (name) => {
     setSelectedChip(name)
+    getNews(name)
+  }
+
+  const getNews = async (name) => {
     setIsLoading(true)
     setSysMessage("loading...")
     const data = await getNewsAPI(name)
@@ -22,6 +26,10 @@ function NewsCategories() {
     setSysMessage(null)
   }
 
+  useEffect(() => {
+    getNews(selectedChip)
+    // eslint-disable-next-line
+  }, [])
 
   return (
     <>
