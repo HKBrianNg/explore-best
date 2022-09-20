@@ -15,7 +15,7 @@ const featureList = [
 ]
 
 function Fitness() {
-  const [selectedFeature, setSelectedFeature] = useState('Profile')
+  const [selectedFeature, setSelectedFeature] = useState('Exercises')
 
   const handleClick = (name) => {
     setSelectedFeature(name)
