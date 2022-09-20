@@ -3,7 +3,7 @@ import { useEffect } from "react"
 import { Routes, Route } from 'react-router-dom'
 import { theme } from './styles/theme/index'
 import Home from './pages/home/Home'
-import About from './pages/about/About'
+import Info from './pages/info/Info'
 import Fitness from './pages/fitness/Fitness'
 import ExerciseDetail from './pages/exerciseDetail/ExerciseDetail'
 import Map from './pages/map/Map'
@@ -28,7 +28,7 @@ import { NewsContextProvider } from './context/NewsContext'
 function App() {
 
   useEffect(() => {
-    document.title = 'explore-best v1.0.62'
+    document.title = 'explore-best v1.0.63'
   }, [])
 
   return (
@@ -44,8 +44,8 @@ function App() {
                     <NewsContextProvider>
                       <Routes>
                         <Route path="/" element={<Home />} />
+                        <Route path="/info" element={<Info />} />
                         <Route path="/home" element={<Home />} />
-                        <Route path="/about" element={<About />} />
                         <Route path="/fitness" element={<Fitness />} />
                         <Route path="/fitness/exercise/:id" element={<ExerciseDetail />} />
                         <Route path="/map" element={<Map />} />

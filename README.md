@@ -136,4 +136,5 @@ Version Date        Description
 1.0.60  2022/9/19   Implement crypto details.
 1.0.61  2022/9/19   Remove crypto exchanges.
 1.0.62  2022/9/19   Add News context features.
-1.0.63  2022/9/16   Create Learn-best its own backend. Separate it from knowledge database.
+1.0.63  2022/9/20   Change home as a info feature.
+1.0.65  2022/9/16   Create Learn-best its own backend. Separate it from knowledge database.
