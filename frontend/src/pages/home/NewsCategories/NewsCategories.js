@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Box, Chip, Stack, Typography, FormControl, FormLabel, RadioGroup, FormControlLabel, Radio } from '@mui/material'
 import { defaultWorldCategories, defaultAsiaCategories, defaultEuropeCategories, defaultAmericaCategories, defaultAtlanticCategories } from '../../../constant'
+import { defaultExploreCategories, defaultSportCategories } from '../../../constant'
 import Message from '../../../components/message/Message'
 import { useAppContext } from '../../../context/AppContext'
 import { useNewsContext } from '../../../context/NewsContext'
@@ -9,6 +10,8 @@ import AsiaImage from '../../../images/asia.png'
 import EuropeImage from '../../../images/europe.png'
 import AmericaImage from '../../../images/america.png'
 import AtlanticImage from '../../../images/atlantic.png'
+import ExploreImage from '../../../images/explore.png'
+import SportImage from '../../../images/sport.png'
 import { Colors } from '../../../styles/theme/index'
 
 
@@ -17,11 +20,13 @@ function NewsCategories() {
   const { isLoading, setIsLoading, setSysMessage } = useAppContext()
   const { setNews, getNewsAPI } = useNewsContext()
   const [value, setValue] = useState('Chinese')
-  const [worldShow, setWorldShow] = useState(true)
-  const [asiaShow, setAsiaShow] = useState(true)
-  const [europeShow, setEuropeShow] = useState(true)
-  const [americaShow, setAmericaShow] = useState(true)
-  const [atlanticShow, setAtlanticShow] = useState(true)
+  const [worldShow, setWorldShow] = useState(false)
+  const [asiaShow, setAsiaShow] = useState(false)
+  const [europeShow, setEuropeShow] = useState(false)
+  const [americaShow, setAmericaShow] = useState(false)
+  const [atlanticShow, setAtlanticShow] = useState(false)
+  const [exploreShow, setExploreShow] = useState(false)
+  const [sportShow, setSportShow] = useState(false)
 
 
   const handleClick = (name) => {
@@ -62,13 +67,21 @@ function NewsCategories() {
     setAtlanticShow(!atlanticShow)
   }
 
+  const handleExploreShow = () => {
+    setExploreShow(!exploreShow)
+  }
+
+  const handleSportShow = () => {
+    setSportShow(!sportShow)
+  }
+
   useEffect(() => {
     getNews(selectedChip)
     // eslint-disable-next-line
   }, [])
 
 
-  const DisplayChineseCategory = () => {
+  const ChineseCountryCategory = () => {
     return (
       <>
         <Stack display='flex' direction='row' alignItems='center' justifyContent='start'>
@@ -126,7 +139,7 @@ function NewsCategories() {
   }
 
 
-  const DisplayEnglishCategory = () => {
+  const EnglishCountryCategory = () => {
     return (
       <>
         <Stack display='flex' direction='row' alignItems='center' justifyContent='start'>
@@ -183,6 +196,73 @@ function NewsCategories() {
     )
   }
 
+  const ChineseTopicCategory = () => {
+    return (
+      <>
+        <Stack display='flex' direction='row' alignItems='center' justifyContent='start'>
+          <img src={ExploreImage} onClick={handleExploreShow} alt='Country' style={{ padding: '3px', margin: '5px', width: '40px', height: '40px', borderRadius: "50%", background: Colors.dove_gray }} />
+          <Typography variant='h5'>探讨</Typography>
+        </Stack>
+        {exploreShow &&
+          defaultExploreCategories.map((item) => (
+            < Chip sx={{ m: '2px' }} key={item.id} variant={selectedChip === item.name ? 'filled' : 'outlined'}
+              label={item.name} onClick={() => handleClick(item.name)} />
+          ))
+        }
+      </>
+    )
+  }
+
+  const EnglishTopicCategory = () => {
+    return (
+      <>
+        <Stack display='flex' direction='row' alignItems='center' justifyContent='start'>
+          <img src={ExploreImage} onClick={handleExploreShow} alt='Country' style={{ padding: '3px', margin: '5px', width: '40px', height: '40px', borderRadius: "50%", background: Colors.dove_gray }} />
+          <Typography variant='h5'>Explore</Typography>
+        </Stack>
+        {exploreShow &&
+          defaultExploreCategories.map((item) => (
+            < Chip sx={{ m: '2px' }} key={item.id} variant={selectedChip === item.ename ? 'filled' : 'outlined'}
+              label={item.ename} onClick={() => handleClick(item.ename)} />
+          ))
+        }
+      </>
+    )
+  }
+
+  const ChineseSportCategory = () => {
+    return (
+      <>
+        <Stack display='flex' direction='row' alignItems='center' justifyContent='start'>
+          <img src={SportImage} onClick={handleSportShow} alt='Country' style={{ padding: '3px', margin: '5px', width: '40px', height: '40px', borderRadius: "50%", background: Colors.dove_gray }} />
+          <Typography variant='h5'>运动</Typography>
+        </Stack>
+        {sportShow &&
+          defaultSportCategories.map((item) => (
+            < Chip sx={{ m: '2px' }} key={item.id} variant={selectedChip === item.name ? 'filled' : 'outlined'}
+              label={item.name} onClick={() => handleClick(item.name)} />
+          ))
+        }
+      </>
+    )
+  }
+
+  const EnglishSportCategory = () => {
+    return (
+      <>
+        <Stack display='flex' direction='row' alignItems='center' justifyContent='start'>
+          <img src={SportImage} onClick={handleSportShow} alt='Country' style={{ padding: '3px', margin: '5px', width: '40px', height: '40px', borderRadius: "50%", background: Colors.dove_gray }} />
+          <Typography variant='h5'>Sport</Typography>
+        </Stack>
+        {sportShow &&
+          defaultSportCategories.map((item) => (
+            < Chip sx={{ m: '2px' }} key={item.id} variant={selectedChip === item.ename ? 'filled' : 'outlined'}
+              label={item.ename} onClick={() => handleClick(item.ename)} />
+          ))
+        }
+      </>
+    )
+  }
 
   return (
     <>
@@ -194,8 +274,12 @@ function NewsCategories() {
             <FormControlLabel value="English" control={<Radio />} label="English" />
           </RadioGroup>
         </FormControl>
-        {value === 'Chinese' && <DisplayChineseCategory />}
-        {value === 'English' && <DisplayEnglishCategory />}
+        {value === 'Chinese' && <ChineseCountryCategory />}
+        {value === 'English' && <EnglishCountryCategory />}
+        {value === 'Chinese' && <ChineseTopicCategory />}
+        {value === 'English' && <EnglishTopicCategory />}
+        {value === 'Chinese' && <ChineseSportCategory />}
+        {value === 'English' && <EnglishSportCategory />}
       </Box>
       <Box mt={1}>
         <Message />

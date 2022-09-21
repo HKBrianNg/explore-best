@@ -126,16 +126,33 @@ export const defaultAtlanticCategories = [
     { id: '301', name: '纽西兰', ename: 'new zealand' },
     { id: '302', name: '巴布新几内亚', ename: 'Papua New Guinea' }
 ]
-// { id: '20', name: 'Technology' },
-// { id: '21', name: 'Sport' },
-// { id: '22', name: 'Fashion' },
-// { id: '23', name: 'Science' },
-// { id: '24', name: 'Politics' },
-// { id: '25', name: 'Health' },
-// { id: '26', name: 'Food' },
-// { id: '27', name: 'School' },
-// { id: '28', name: 'War' }
 
+export const defaultExploreCategories = [
+    { id: '500', name: '科学', ename: 'science' },
+    { id: '501', name: '宇宙', ename: 'universe' },
+    { id: '502', name: '医疗', ename: 'medical' },
+    { id: '503', name: '娱乐', ename: 'entertainment' },
+    { id: '504', name: '电影', ename: 'movie' },
+    { id: '505', name: '新冠肺炎', ename: 'COVID19' },
+    { id: '506', name: '学校', ename: 'school' },
+    { id: '507', name: '政府', ename: 'government' },
+    { id: '508', name: '政治', ename: 'politics' }
+]
+
+export const defaultSportCategories = [
+    { id: '900', name: '运动', ename: 'sports' },
+    { id: '901', name: '高尔夫球', ename: 'golf' },
+    { id: '902', name: '足球', ename: 'football' },
+    { id: '903', name: '篮球', ename: 'basketball' },
+    { id: '904', name: '网球', ename: 'tennis' },
+    { id: '905', name: '羽毛球', ename: 'badminton' },
+    { id: '906', name: '排球', ename: 'volleyball' },
+    { id: '907', name: '乒乓球', ename: 'pingpong' },
+    { id: '908', name: '曲棍球', ename: 'hockey' },
+    { id: '909', name: '游泳', ename: 'swim' },
+    { id: '910', name: '田径', ename: 'track and field' },
+    { id: '911', name: '马拉松', ename: 'marathon' }
+]
 
 export const allCategories = [
     {

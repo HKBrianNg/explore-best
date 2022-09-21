@@ -143,4 +143,5 @@ Version Date        Description
 1.0.67  2022/9/21   Save news in cache. Avoid retrieve repeated data from backend.
 1.0.68  2022/9/21   Classify news categories by country in Chinese and English.
 1.0.69  2022/9/21   Collapse news category and add some countries.
-1.0.70  2022/9/16   Create Learn-best its own backend. Separate it from knowledge database.
+1.0.70  2022/9/21   Add News topics.
+1.0.71  2022/9/16   Create Learn-best its own backend. Separate it from knowledge database.
