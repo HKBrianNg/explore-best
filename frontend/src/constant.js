@@ -46,15 +46,23 @@ export const defaultAsiaCategories = [
     { id: '27', name: '马来西亚', ename: 'Malaysia' },
     { id: '28', name: '新加坡', ename: 'Singapore' },
     { id: '29', name: '文莱', ename: 'Brunei' },
-    { id: '30', name: '菲律宾', ename: 'Philippines' },
-    { id: '31', name: '阿富汗', ename: 'Afghanistan' },
-    { id: '32', name: '伊朗', ename: 'Iran' },
-    { id: '33', name: '叙利亚', ename: 'Syria' },
-    { id: '34', name: '约旦', ename: 'Jordan' },
-    { id: '35', name: '以色列', ename: 'Israel' },
-    { id: '36', name: '土耳其', ename: 'Turkey' },
-    { id: '37', name: '伊拉克', ename: 'Iraq' },
-    { id: '38', name: '科威特', ename: 'Kuwait' }
+    { id: '30', name: '蒙古', ename: 'Mongolia' },
+    { id: '40', name: '菲律宾', ename: 'Philippines' },
+    { id: '41', name: '阿富汗', ename: 'Afghanistan' },
+    { id: '42', name: '伊朗', ename: 'Iran' },
+    { id: '43', name: '叙利亚', ename: 'Syria' },
+    { id: '44', name: '约旦', ename: 'Jordan' },
+    { id: '45', name: '以色列', ename: 'Israel' },
+    { id: '46', name: '土耳其', ename: 'Turkey' },
+    { id: '47', name: '伊拉克', ename: 'Iraq' },
+    { id: '48', name: '科威特', ename: 'Kuwait' },
+    { id: '49', name: '沙特阿拉伯', ename: 'Saudi Arabia' },
+    { id: '50', name: '也门', ename: 'Yemen' },
+    { id: '51', name: '阿曼', ename: 'Oman' },
+    { id: '52', name: '黎巴嫩', ename: 'Lebanon' },
+    { id: '53', name: '巴林', ename: 'Bahrain' },
+    { id: '54', name: '埃及', ename: 'Egypt' },
+    { id: '55', name: '卡塔尔', ename: 'Qatar' }
 ]
 
 export const defaultEuropeCategories = [
@@ -79,7 +87,20 @@ export const defaultEuropeCategories = [
     { id: '118', name: '南斯拉夫', ename: 'Yugoslavia' },
     { id: '119', name: '俄罗斯', ename: 'Russia' },
     { id: '120', name: '白俄罗斯', ename: 'Belarus' },
-    { id: '121', name: '乌克兰', ename: 'Ukraine' }
+    { id: '121', name: '乌克兰', ename: 'Ukraine' },
+    { id: '122', name: '立陶宛', ename: 'Lithuania' },
+    { id: '123', name: '爱沙尼亚', ename: 'Estonia' },
+    { id: '124', name: '斯洛伐克', ename: 'Slovakia' },
+    { id: '125', name: '克罗地亚', ename: 'Croatia' },
+    { id: '126', name: '拉脱维亚', ename: 'Latvia' },
+    { id: '127', name: '保加利亚', ename: 'Bulgaria' },
+    { id: '128', name: '罗马尼亚', ename: 'Romania' },
+    { id: '129', name: '塞浦路斯', ename: 'Cyprus' },
+    { id: '130', name: '斯洛文尼亚', ename: 'Slovenia' },
+    { id: '131', name: '马耳他', ename: 'Malta' },
+    { id: '132', name: '爱尔兰', ename: 'Ireland' },
+    { id: '133', name: '奥地利', ename: 'Austria' },
+    { id: '134', name: '卢森堡', ename: 'Luxembourg' }
 ]
 
 export const defaultAmericaCategories = [

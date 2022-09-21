@@ -17,6 +17,12 @@ function NewsCategories() {
   const { isLoading, setIsLoading, setSysMessage } = useAppContext()
   const { setNews, getNewsAPI } = useNewsContext()
   const [value, setValue] = useState('Chinese')
+  const [worldShow, setWorldShow] = useState(true)
+  const [asiaShow, setAsiaShow] = useState(true)
+  const [europeShow, setEuropeShow] = useState(true)
+  const [americaShow, setAmericaShow] = useState(true)
+  const [atlanticShow, setAtlanticShow] = useState(true)
+
 
   const handleClick = (name) => {
     setSelectedChip(name)
@@ -36,6 +42,26 @@ function NewsCategories() {
     setValue(event.target.value);
   }
 
+  const handleWorldShow = () => {
+    setWorldShow(!worldShow)
+  }
+
+  const handleAsiaShow = () => {
+    setAsiaShow(!asiaShow)
+  }
+
+  const handleEuropeShow = () => {
+    setEuropeShow(!europeShow)
+  }
+
+  const handleAmericaShow = () => {
+    setAmericaShow(!americaShow)
+  }
+
+  const handleAtlanticShow = () => {
+    setAtlanticShow(!atlanticShow)
+  }
+
   useEffect(() => {
     getNews(selectedChip)
     // eslint-disable-next-line
@@ -46,50 +72,50 @@ function NewsCategories() {
     return (
       <>
         <Stack display='flex' direction='row' alignItems='center' justifyContent='start'>
-          <img src={WorldImage} alt='Country' style={{ padding: '3px', margin: '5px', width: '40px', height: '40px', borderRadius: "50%", background: Colors.dove_gray }} />
+          <img src={WorldImage} onClick={handleWorldShow} alt='Country' style={{ padding: '3px', margin: '5px', width: '40px', height: '40px', borderRadius: "50%", background: Colors.dove_gray }} />
           <Typography variant='h5'>世界</Typography>
         </Stack>
-        {
+        {worldShow &&
           defaultWorldCategories.map((item) => (
             < Chip sx={{ m: '2px' }} key={item.id} variant={selectedChip === item.name ? 'filled' : 'outlined'}
               label={item.name} onClick={() => handleClick(item.name)} />
           ))
         }
         <Stack display='flex' direction='row' alignItems='center' justifyContent='start'>
-          <img src={AsiaImage} alt='Country' style={{ padding: '3px', margin: '5px', width: '40px', height: '40px', borderRadius: "50%", background: Colors.dove_gray }} />
-          <Typography variant='h5'>亚洲</Typography>
+          <img src={AsiaImage} onClick={handleAsiaShow} alt='Country' style={{ padding: '3px', margin: '5px', width: '40px', height: '40px', borderRadius: "50%", background: Colors.dove_gray }} />
+          <Typography variant='h5'>亚洲和中东</Typography>
         </Stack>
-        {
+        {asiaShow &&
           defaultAsiaCategories.map((item) => (
             <Chip sx={{ m: '2px' }} key={item.id} variant={selectedChip === item.name ? 'filled' : 'outlined'}
               label={item.name} onClick={() => handleClick(item.name)} />
           ))
         }
         <Stack display='flex' direction='row' alignItems='center' justifyContent='start'>
-          <img src={EuropeImage} alt='Country' style={{ padding: '3px', margin: '5px', width: '40px', height: '40px', borderRadius: "50%", background: Colors.dove_gray }} />
+          <img src={EuropeImage} onClick={handleEuropeShow} alt='Country' style={{ padding: '3px', margin: '5px', width: '40px', height: '40px', borderRadius: "50%", background: Colors.dove_gray }} />
           <Typography variant='h5'>欧洲</Typography>
         </Stack>
-        {
+        {europeShow &&
           defaultEuropeCategories.map((item) => (
             <Chip sx={{ m: '2px' }} key={item.id} variant={selectedChip === item.name ? 'filled' : 'outlined'}
               label={item.name} onClick={() => handleClick(item.name)} />
           ))
         }
         <Stack display='flex' direction='row' alignItems='center' justifyContent='start'>
-          <img src={AmericaImage} alt='Country' style={{ padding: '3px', margin: '5px', width: '40px', height: '40px', borderRadius: "50%", background: Colors.dove_gray }} />
+          <img src={AmericaImage} onClick={handleAmericaShow} alt='Country' style={{ padding: '3px', margin: '5px', width: '40px', height: '40px', borderRadius: "50%", background: Colors.dove_gray }} />
           <Typography variant='h5'>美洲</Typography>
         </Stack>
-        {
+        {americaShow &&
           defaultAmericaCategories.map((item) => (
             <Chip sx={{ m: '2px' }} key={item.id} variant={selectedChip === item.name ? 'filled' : 'outlined'}
               label={item.name} onClick={() => handleClick(item.name)} />
           ))
         }
         <Stack display='flex' direction='row' alignItems='center' justifyContent='start'>
-          <img src={AtlanticImage} alt='Country' style={{ padding: '3px', margin: '5px', width: '40px', height: '40px', borderRadius: "50%", background: Colors.dove_gray }} />
+          <img src={AtlanticImage} onClick={handleAtlanticShow} alt='Country' style={{ padding: '3px', margin: '5px', width: '40px', height: '40px', borderRadius: "50%", background: Colors.dove_gray }} />
           <Typography variant='h5'>大洋洲</Typography>
         </Stack>
-        {
+        {atlanticShow &&
           defaultAtlanticCategories.map((item) => (
             <Chip sx={{ m: '2px' }} key={item.id} variant={selectedChip === item.name ? 'filled' : 'outlined'}
               label={item.name} onClick={() => handleClick(item.name)} />
@@ -104,50 +130,50 @@ function NewsCategories() {
     return (
       <>
         <Stack display='flex' direction='row' alignItems='center' justifyContent='start'>
-          <img src={WorldImage} alt='Country' style={{ padding: '3px', margin: '5px', width: '40px', height: '40px', borderRadius: "50%", background: Colors.dove_gray }} />
+          <img src={WorldImage} onClick={handleWorldShow} alt='Country' style={{ padding: '3px', margin: '5px', width: '40px', height: '40px', borderRadius: "50%", background: Colors.dove_gray }} />
           <Typography variant='h5'>World</Typography>
         </Stack>
-        {
+        {worldShow &&
           defaultWorldCategories.map((item) => (
             < Chip sx={{ m: '2px' }} key={item.id} variant={selectedChip === item.ename ? 'filled' : 'outlined'}
               label={item.ename} onClick={() => handleClick(item.ename)} />
           ))
         }
         <Stack display='flex' direction='row' alignItems='center' justifyContent='start'>
-          <img src={AsiaImage} alt='Country' style={{ padding: '3px', margin: '5px', width: '40px', height: '40px', borderRadius: "50%", background: Colors.dove_gray }} />
-          <Typography variant='h5'>Asia</Typography>
+          <img src={AsiaImage} onClick={handleAsiaShow} alt='Country' style={{ padding: '3px', margin: '5px', width: '40px', height: '40px', borderRadius: "50%", background: Colors.dove_gray }} />
+          <Typography variant='h5'>Asia&Middle East</Typography>
         </Stack>
-        {
+        {asiaShow &&
           defaultAsiaCategories.map((item) => (
             <Chip sx={{ m: '2px' }} key={item.id} variant={selectedChip === item.ename ? 'filled' : 'outlined'}
               label={item.ename} onClick={() => handleClick(item.ename)} />
           ))
         }
         <Stack display='flex' direction='row' alignItems='center' justifyContent='start'>
-          <img src={EuropeImage} alt='Country' style={{ padding: '3px', margin: '5px', width: '40px', height: '40px', borderRadius: "50%", background: Colors.dove_gray }} />
+          <img src={EuropeImage} onClick={handleEuropeShow} alt='Country' style={{ padding: '3px', margin: '5px', width: '40px', height: '40px', borderRadius: "50%", background: Colors.dove_gray }} />
           <Typography variant='h5'>Europe</Typography>
         </Stack>
-        {
+        {europeShow &&
           defaultEuropeCategories.map((item) => (
             <Chip sx={{ m: '2px' }} key={item.id} variant={selectedChip === item.ename ? 'filled' : 'outlined'}
               label={item.ename} onClick={() => handleClick(item.ename)} />
           ))
         }
         <Stack display='flex' direction='row' alignItems='center' justifyContent='start'>
-          <img src={AmericaImage} alt='Country' style={{ padding: '3px', margin: '5px', width: '40px', height: '40px', borderRadius: "50%", background: Colors.dove_gray }} />
+          <img src={AmericaImage} onClick={handleAmericaShow} alt='Country' style={{ padding: '3px', margin: '5px', width: '40px', height: '40px', borderRadius: "50%", background: Colors.dove_gray }} />
           <Typography variant='h5'>America</Typography>
         </Stack>
-        {
+        {americaShow &&
           defaultAmericaCategories.map((item) => (
             <Chip sx={{ m: '2px' }} key={item.id} variant={selectedChip === item.ename ? 'filled' : 'outlined'}
               label={item.ename} onClick={() => handleClick(item.ename)} />
           ))
         }
         <Stack display='flex' direction='row' alignItems='center' justifyContent='start'>
-          <img src={AtlanticImage} alt='Country' style={{ padding: '3px', margin: '5px', width: '40px', height: '40px', borderRadius: "50%", background: Colors.dove_gray }} />
+          <img src={AtlanticImage} onClick={handleAtlanticShow} alt='Country' style={{ padding: '3px', margin: '5px', width: '40px', height: '40px', borderRadius: "50%", background: Colors.dove_gray }} />
           <Typography variant='h5'>Atlantic</Typography>
         </Stack>
-        {
+        {atlanticShow &&
           defaultAtlanticCategories.map((item) => (
             <Chip sx={{ m: '2px' }} key={item.id} variant={selectedChip === item.ename ? 'filled' : 'outlined'}
               label={item.ename} onClick={() => handleClick(item.ename)} />
