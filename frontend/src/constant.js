@@ -61,9 +61,25 @@ export const defaultAsiaCategories = [
     { id: '51', name: '阿曼', ename: 'Oman' },
     { id: '52', name: '黎巴嫩', ename: 'Lebanon' },
     { id: '53', name: '巴林', ename: 'Bahrain' },
-    { id: '54', name: '埃及', ename: 'Egypt' },
-    { id: '55', name: '卡塔尔', ename: 'Qatar' }
+    { id: '54', name: '卡塔尔', ename: 'Qatar' },
+    { id: '55', name: '塔吉克斯坦', ename: 'Tajikistan' },
+    { id: '56', name: '阿拉伯聯合酋長國', ename: 'United Arab Emirates' },
+    { id: '57', name: '不丹', ename: 'Bhutan' },
+    { id: '58', name: '吉爾吉斯斯坦', ename: 'Kyrgyzstan' },
+    { id: '59', name: '土庫曼斯坦', ename: 'Turkmenistan' },
+    { id: '60', name: '馬爾代夫', ename: 'Maldives' },
+    { id: '61', name: '巴勒斯坦國', ename: 'State of Palestine' },
+    { id: '62', name: '喬治亞州', ename: 'Georgia' },
+    { id: '63', name: '烏茲別克斯坦', ename: 'Uzbekistan' },
+    { id: '64', name: '亞美尼亞', ename: 'Armenia' },
+    { id: '65', name: '尼泊爾', ename: 'Nepal' },
+    { id: '66', name: '斯里蘭卡', ename: 'Sri Lanka' },
+    { id: '67', name: '哈薩克斯坦', ename: 'Kazakhstan' },
+    { id: '68', name: '孟加拉國', ename: 'Bangladesh' },
+    { id: '69', name: '東帝汶', ename: 'Timor-Leste' },
+    { id: '70', name: '阿塞拜疆', ename: 'Azerbaijan' }
 ]
+
 
 export const defaultEuropeCategories = [
     { id: '100', name: '欧盟', ename: 'EU' },
@@ -100,8 +116,21 @@ export const defaultEuropeCategories = [
     { id: '131', name: '马耳他', ename: 'Malta' },
     { id: '132', name: '爱尔兰', ename: 'Ireland' },
     { id: '133', name: '奥地利', ename: 'Austria' },
-    { id: '134', name: '卢森堡', ename: 'Luxembourg' }
+    { id: '134', name: '卢森堡', ename: 'Luxembourg' },
+    { id: '135', name: '塞爾維亞', ename: 'Serbia' },
+    { id: '136', name: '教廷', ename: 'Holy See' },
+    { id: '137', name: '安道爾', ename: 'Andorra' },
+    { id: '138', name: '黑山', ename: 'Montenegro' },
+    { id: '139', name: '摩爾多瓦', ename: 'Moldova' },
+    { id: '140', name: '摩納哥', ename: 'Monaco' },
+    { id: '141', name: '列支敦士登', ename: 'Liechtenstein' },
+    { id: '142', name: '冰島', ename: 'Iceland' },
+    { id: '143', name: '聖馬力諾', ename: 'San Marino' },
+    { id: '144', name: '波斯尼亞和黑塞哥維那', ename: 'Bosnia and Herzegovina' },
+    { id: '145', name: '阿爾巴尼亞', ename: 'Albania' },
+    { id: '146', name: '北馬其頓', ename: 'North Macedonia' }
 ]
+
 
 export const defaultAmericaCategories = [
     { id: '200', name: '美国', ename: 'US' },
@@ -126,6 +155,64 @@ export const defaultAtlanticCategories = [
     { id: '301', name: '纽西兰', ename: 'new zealand' },
     { id: '302', name: '巴布新几内亚', ename: 'Papua New Guinea' }
 ]
+
+export const defaultAfricaCategories = [
+    { id: '400', name: '吉布提', ename: 'Djibouti' },
+    { id: '401', name: '塞舌爾', ename: 'Seychelles' },
+    { id: '402', name: '剛果民主共和國', ename: 'DR Congo' },
+    { id: '403', name: '科摩羅', ename: 'Comoros' },
+    { id: '404', name: '多哥', ename: 'Togo' },
+    { id: '405', name: '塞拉利昂', ename: 'Sierra Leone' },
+    { id: '406', name: '利比亞', ename: 'Libya' },
+    { id: '407', name: '坦桑尼亞', ename: 'Tanzania' },
+    { id: '408', name: '南非', ename: 'South Africa' },
+    { id: '409', name: '刚果', ename: 'Congo' },
+    { id: '410', name: '肯尼亚', ename: 'Kenya' },
+    { id: '411', name: '利比里亚', ename: 'Liberia' },
+    { id: '412', name: '中非共和国', ename: 'Central African Republic' },
+    { id: '413', name: '毛里塔尼亚', ename: 'Mauritania' },
+    { id: '414', name: '乌干达', ename: 'Uganda' },
+    { id: '415', name: '阿尔及利亚', ename: 'Algeria' },
+    { id: '416', name: '苏丹', ename: 'Sudan' },
+    { id: '417', name: '摩洛哥', ename: 'Morocco' },
+    { id: '418', name: '厄立特里亚', ename: 'Eritrea' },
+    { id: '419', name: '安哥拉', ename: 'Angola' },
+    { id: '420', name: '莫桑比克', ename: 'Mozambique' },
+    { id: '421', name: '加纳', ename: 'Ghana' },
+    { id: '422', name: '马达加斯加', ename: 'Madagascar' },
+    { id: '423', name: '喀麦隆', ename: 'Cameroon' },
+    { id: '424', name: '象牙海岸', ename: "Côte d'Ivoire" },
+    { id: '425', name: '纳米比亚', ename: 'Namibia' },
+    { id: '426', name: '尼日尔', ename: 'Niger' },
+    { id: '427', name: '冈比亚', ename: 'Gambia' },
+    { id: '428', name: '博茨瓦纳', ename: 'Botswana' },
+    { id: '429', name: '加蓬', ename: 'Gabon' },
+    { id: '430', name: '圣多美和普林西比', ename: 'Sao Tome & Principe' },
+    { id: '431', name: '莱索托', ename: 'Lesotho' },
+    { id: '432', name: '布基纳法索', ename: 'Burkina Faso' },
+    { id: '433', name: '尼日利亚', ename: 'Nigeria' },
+    { id: '434', name: '馬里', ename: 'Mali' },
+    { id: '435', name: '幾內亞比紹', ename: 'Guinea-Bissau' },
+    { id: '436', name: '馬拉維', ename: 'Malawi' },
+    { id: '437', name: '贊比亞', ename: 'Zambia' },
+    { id: '438', name: '塞內加爾', ename: 'Senegal' },
+    { id: '439', name: '乍得', ename: 'Chad' },
+    { id: '440', name: '索馬里', ename: 'Somalia' },
+    { id: '441', name: '津巴布韋', ename: 'Zimbabwe' },
+    { id: '442', name: '赤道幾內亞', ename: 'Equatorial Guinea' },
+    { id: '443', name: '幾內亞', ename: 'Guinea' },
+    { id: '444', name: '盧旺達', ename: 'Rwanda' },
+    { id: '445', name: '毛里求斯', ename: 'Mauritius' },
+    { id: '446', name: '貝寧', ename: 'Benin' },
+    { id: '447', name: '布隆迪', ename: 'Burundi' },
+    { id: '448', name: '突尼斯', ename: 'Tunisia' },
+    { id: '449', name: '斯威士蘭', ename: 'Eswatini' },
+    { id: '450', name: '埃塞俄比亞', ename: 'Ethiopia' },
+    { id: '451', name: '南蘇丹', ename: 'South Sudan' },
+    { id: '452', name: '埃及', ename: 'Egypt' }
+]
+
+
 
 export const defaultExploreCategories = [
     { id: '500', name: '科学', ename: 'science' },

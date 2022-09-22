@@ -144,4 +144,5 @@ Version Date        Description
 1.0.68  2022/9/21   Classify news categories by country in Chinese and English.
 1.0.69  2022/9/21   Collapse news category and add some countries.
 1.0.70  2022/9/21   Add News topics.
-1.0.71  2022/9/16   Create Learn-best its own backend. Separate it from knowledge database.
+1.0.71  2022/9/22   Create backend amazon scraper, and africa/asia/europe news category.
+1.0.72  2022/9/16   Create Learn-best its own backend.

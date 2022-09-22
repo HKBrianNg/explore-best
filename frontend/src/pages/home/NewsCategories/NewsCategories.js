@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react'
 import { Box, Chip, Stack, Typography, FormControl, FormLabel, RadioGroup, FormControlLabel, Radio } from '@mui/material'
-import { defaultWorldCategories, defaultAsiaCategories, defaultEuropeCategories, defaultAmericaCategories, defaultAtlanticCategories } from '../../../constant'
-import { defaultExploreCategories, defaultSportCategories } from '../../../constant'
+import {
+  defaultWorldCategories, defaultAsiaCategories, defaultEuropeCategories,
+  defaultAmericaCategories, defaultAtlanticCategories, defaultAfricaCategories
+} from '../../../constant'
+import { defaultExploreCategories, defaultSportCategories, } from '../../../constant'
 import Message from '../../../components/message/Message'
 import { useAppContext } from '../../../context/AppContext'
 import { useNewsContext } from '../../../context/NewsContext'
@@ -10,6 +13,7 @@ import AsiaImage from '../../../images/asia.png'
 import EuropeImage from '../../../images/europe.png'
 import AmericaImage from '../../../images/america.png'
 import AtlanticImage from '../../../images/atlantic.png'
+import AfricaImage from '../../../images/africa.png'
 import ExploreImage from '../../../images/explore.png'
 import SportImage from '../../../images/sport.png'
 import { Colors } from '../../../styles/theme/index'
@@ -25,6 +29,7 @@ function NewsCategories() {
   const [europeShow, setEuropeShow] = useState(false)
   const [americaShow, setAmericaShow] = useState(false)
   const [atlanticShow, setAtlanticShow] = useState(false)
+  const [africaShow, setAfricaShow] = useState(false)
   const [exploreShow, setExploreShow] = useState(false)
   const [sportShow, setSportShow] = useState(false)
 
@@ -65,6 +70,10 @@ function NewsCategories() {
 
   const handleAtlanticShow = () => {
     setAtlanticShow(!atlanticShow)
+  }
+
+  const handleAfricaShow = () => {
+    setAfricaShow(!africaShow)
   }
 
   const handleExploreShow = () => {
@@ -134,6 +143,16 @@ function NewsCategories() {
               label={item.name} onClick={() => handleClick(item.name)} />
           ))
         }
+        <Stack display='flex' direction='row' alignItems='center' justifyContent='start'>
+          <img src={AfricaImage} onClick={handleAfricaShow} alt='Country' style={{ padding: '3px', margin: '5px', width: '40px', height: '40px', borderRadius: "50%", background: Colors.dove_gray }} />
+          <Typography variant='h5'>非洲</Typography>
+        </Stack>
+        {africaShow &&
+          defaultAfricaCategories.map((item) => (
+            <Chip sx={{ m: '2px' }} key={item.id} variant={selectedChip === item.name ? 'filled' : 'outlined'}
+              label={item.name} onClick={() => handleClick(item.name)} />
+          ))
+        }
       </>
     )
   }
@@ -188,6 +207,16 @@ function NewsCategories() {
         </Stack>
         {atlanticShow &&
           defaultAtlanticCategories.map((item) => (
+            <Chip sx={{ m: '2px' }} key={item.id} variant={selectedChip === item.ename ? 'filled' : 'outlined'}
+              label={item.ename} onClick={() => handleClick(item.ename)} />
+          ))
+        }
+        <Stack display='flex' direction='row' alignItems='center' justifyContent='start'>
+          <img src={AfricaImage} onClick={handleAfricaShow} alt='Country' style={{ padding: '3px', margin: '5px', width: '40px', height: '40px', borderRadius: "50%", background: Colors.dove_gray }} />
+          <Typography variant='h5'>Africa</Typography>
+        </Stack>
+        {africaShow &&
+          defaultAfricaCategories.map((item) => (
             <Chip sx={{ m: '2px' }} key={item.id} variant={selectedChip === item.ename ? 'filled' : 'outlined'}
               label={item.ename} onClick={() => handleClick(item.ename)} />
           ))
