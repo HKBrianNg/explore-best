@@ -26,7 +26,7 @@ const Logo = styled(Typography)(() => ({
 }))
 
 const navItems = [
-    { id: '0', name: 'News', link: "/" },
+    { id: '0', name: 'News', link: "/news" },
     { id: '1', name: 'Crypto', link: "/crypto" },
     { id: '2', name: 'Setup', link: "/setup" }
 ]

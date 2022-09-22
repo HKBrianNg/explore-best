@@ -3,6 +3,7 @@ import { useEffect } from "react"
 import { Routes, Route } from 'react-router-dom'
 import { theme } from './styles/theme/index'
 import Home from './pages/home/Home'
+import News from './pages/news/News'
 import Info from './pages/info/Info'
 import Fitness from './pages/fitness/Fitness'
 import ExerciseDetail from './pages/exerciseDetail/ExerciseDetail'
@@ -22,7 +23,7 @@ import { CssBaseline } from "@mui/material"
 function App() {
 
   useEffect(() => {
-    document.title = 'explore-best f1.0.71,b1.0.0'
+    document.title = 'explore-best v1.0.72'
   }, [])
 
   return (
@@ -31,8 +32,9 @@ function App() {
         <CssBaseline />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/info" element={<Info />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/info" element={<Info />} />
           <Route path="/fitness" element={<Fitness />} />
           <Route path="/fitness/exercise/:id" element={<ExerciseDetail />} />
           <Route path="/map" element={<Map />} />
