@@ -2,6 +2,7 @@ import { Box, Typography, Button, Stack, TextField, Paper, } from '@mui/material
 import { SysMsg } from '../../../constant'
 import { useVideoContext } from '../../../context/VideoContext'
 import { useAppContext } from '../../../context/AppContext'
+import { useTranslation } from 'react-i18next'
 
 
 const initialVideo = {
@@ -20,7 +21,7 @@ const initialVideo = {
 function VideoForm() {
     const { video, setVideo, videos, setVideos, updateVideoAPI, createVideoAPI, } = useVideoContext()
     const { isEdit, setIsEdit, isLoading, setIsLoading, setSysMessage } = useAppContext()
-
+    const { t } = useTranslation(["common"])
 
     const createVideo = async () => {
         const { okStatus, data } = await createVideoAPI(video)
@@ -108,9 +109,9 @@ function VideoForm() {
                     <TextField name="description" fullWidth label="Description" size='small' multiline minRows={2} maxRows={4} value={video.description} onChange={handleChange} />
                 </Stack>
                 <Stack direction='row' spacing={2} m={2}>
-                    <Button variant="contained" type='Submit' disabled={isLoading} >Submit</Button>
-                    <Button variant="contained" disabled={isLoading} onClick={handleCancel}>Cancel</Button>
-                    <Button variant="contained" disabled={isLoading} onClick={handleDecodeURL}>Decode URL</Button>
+                    <Button variant="contained" type='Submit' disabled={isLoading} >{t("Submit")}</Button>
+                    <Button variant="contained" disabled={isLoading} onClick={handleCancel}>{t("Cancel")}</Button>
+                    <Button variant="contained" disabled={isLoading} onClick={handleDecodeURL}>{t("Decode URL")}</Button>
                 </Stack>
             </Paper>
         </Box>

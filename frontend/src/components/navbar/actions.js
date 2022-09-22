@@ -10,6 +10,8 @@ import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
 import { useAuthContext } from '../../context/AuthContext'
 import OndemandVideoIcon from '@mui/icons-material/OndemandVideo';
+import { useTranslation } from 'react-i18next'
+
 
 const MenuList = styled(List)(({ type }) => ({
     display: type === "row" ? "flex" : "block",
@@ -39,7 +41,7 @@ function Actions({ isMobile }) {
     const Component = isMobile ? ActionIconsContainerMobile : ActionIconsContainerDesktop
     const navigate = useNavigate()
     const { user } = useAuthContext()
-
+    const { t } = useTranslation()
 
     const handleAuth = () => {
         if (!user) {
@@ -60,7 +62,7 @@ function Actions({ isMobile }) {
                             color: Colors.white,
                         }}>
                         <Link to='/fitness' style={{ color: Colors.white, textDecoration: 'none', }}>
-                            <Tooltip title="Fitness">
+                            <Tooltip title={t("Fitness")}>
                                 <FitbitIcon />
                             </Tooltip>
                         </Link>
@@ -74,7 +76,7 @@ function Actions({ isMobile }) {
                             color: Colors.white,
                         }}>
                         <Link to='/map' style={{ color: Colors.white, textDecoration: 'none', }}>
-                            <Tooltip title="Google Map">
+                            <Tooltip title={t("Google Map")}>
                                 <MapIcon />
                             </Tooltip>
                         </Link>
@@ -88,7 +90,7 @@ function Actions({ isMobile }) {
                             color: Colors.white,
                         }}>
                         <Link to='/info' style={{ color: Colors.white, textDecoration: 'none', }}>
-                            <Tooltip title="Videos">
+                            <Tooltip title={t("Videos")}>
                                 <OndemandVideoIcon />
                             </Tooltip>
                         </Link>
@@ -98,7 +100,7 @@ function Actions({ isMobile }) {
                 {user ?
                     <ListItemButton sx={{ justifyContent: 'center' }} onClick={handleAuth}>
                         <ListItemIcon sx={{ display: 'flex', justifyContent: 'center', color: Colors.white, }}>
-                            <Tooltip title="Logout">
+                            <Tooltip title={t("Logout")}>
                                 <Avatar>{user.email.substring(0, 1)}</Avatar>
                             </Tooltip>
                         </ListItemIcon>
@@ -106,7 +108,7 @@ function Actions({ isMobile }) {
                     :
                     <ListItemButton sx={{ justifyContent: 'center' }} onClick={handleAuth}>
                         <ListItemIcon sx={{ display: 'flex', justifyContent: 'center', color: Colors.white, }}>
-                            <Tooltip title="Login">
+                            <Tooltip title={t("Login")}>
                                 <PersonIcon />
                             </Tooltip>
                         </ListItemIcon>

@@ -145,4 +145,6 @@ Version Date        Description
 1.0.69  2022/9/21   Collapse news category and add some countries.
 1.0.70  2022/9/21   Add News topics.
 1.0.71  2022/9/22   Create backend amazon scraper, and africa/asia/europe news category.
-1.0.72  2022/9/16   Create explore-best backend framework. Move News from home page.
+1.0.72  2022/9/22   Create explore-best backend framework. Move News from home page.
+1.0.73  2022/9/22   Implement multi-lang support framework + Navbar component
+1.0.74  2022/9/23   Create explore-best own mongo db. Support CRUD operations for topics and video data.

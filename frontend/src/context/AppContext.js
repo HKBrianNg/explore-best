@@ -11,6 +11,7 @@ export const AppContextProvider = ({ children }) => {
     const [selectedCategory, setSelectedCategory] = useState("IT")
     const [selectedSubCategory, setSelectedSubCategory] = useState("AppService")
     const [searchText, setSearchText] = useState('')
+    const [lang, setLang] = useState("en")
 
     return (
         <appContext.Provider value={{
@@ -21,7 +22,8 @@ export const AppContextProvider = ({ children }) => {
             sysMessage, setSysMessage,
             selectedCategory, setSelectedCategory,
             selectedSubCategory, setSelectedSubCategory,
-            searchText, setSearchText
+            searchText, setSearchText,
+            lang, setLang
         }}>
             {children}
         </appContext.Provider>

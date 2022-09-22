@@ -13,7 +13,7 @@ import { MapContextProvider } from './context/MapContext'
 import { VideoContextProvider } from "./context/VideoContext"
 import { AuthContextProvider } from './context/AuthContext'
 import { AppContextProvider } from './context/AppContext'
-
+import "./i18n"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 

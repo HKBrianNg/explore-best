@@ -1,7 +1,7 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import {
     InputBase, useMediaQuery, Drawer, AppBar, Button, Stack, Typography, Divider, IconButton, Toolbar,
-    Box, List, ListItem, ListItemButton, ListItemText, Tooltip, LinearProgress
+    Box, List, ListItem, ListItemButton, ListItemText, Tooltip, LinearProgress, Select, MenuItem,
 } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 import SearchIcon from '@mui/icons-material/Search'
@@ -10,11 +10,10 @@ import "@fontsource/montez"
 import { styled, useTheme, alpha } from '@mui/material/styles'
 import { Link, useNavigate } from 'react-router-dom'
 import Actions from './actions';
-// import { useFitnessContext } from '../../context/FitnessContext'
 import { useAppContext } from '../../context/AppContext'
-// import { useTopicContext } from '../../context/TopicContext'
-// import { useVideoContext } from '../../context/VideoContext'
-
+import { useTranslation } from 'react-i18next'
+import i18next from 'i18next'
+import homeImage from '../../images/home.png'
 
 const Logo = styled(Typography)(() => ({
     padding: '4px',
@@ -25,11 +24,11 @@ const Logo = styled(Typography)(() => ({
     marginRight: '20px'
 }))
 
-const navItems = [
-    { id: '0', name: 'News', link: "/news" },
-    { id: '1', name: 'Crypto', link: "/crypto" },
-    { id: '2', name: 'Setup', link: "/setup" }
-]
+// const navItems = [
+//     { id: '0', name: 'News', link: "/news" },
+//     { id: '1', name: 'Crypto', link: "/crypto" },
+//     { id: '2', name: 'Setup', link: "/setup" }
+// ]
 const drawerWidth = 240
 
 const Search = styled('div')(({ theme }) => ({
@@ -73,16 +72,18 @@ function Navbar(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = useState(false)
     const navigate = useNavigate()
-    const { isLoading, sysMessage, setSearchText } = useAppContext()
+    const { isLoading, sysMessage, setSearchText, lang, setLang } = useAppContext()
     const [search, setSearch] = useState('')
+    const { t } = useTranslation(["common"])
 
-    // const [searchedExercises, setSearchedExercises] = useState([])
-    // const [searchedTopics, setSearchedTopics] = useState([])
-    // const [searchedVideos, setSearchedVideos] = useState([])
-    // const { topics } = useTopicContext()
-    // const { bodyExercises } = useFitnessContext()
-    // const { videos } = useVideoContext()
-
+    useEffect(() => {
+        i18next.changeLanguage(lang)
+    }, [])
+    const navItems = [
+        { id: '0', name: t('News'), link: "/news" },
+        { id: '1', name: t('Crypto'), link: "/crypto" },
+        { id: '2', name: t('Setup'), link: "/setup" }
+    ]
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen)
@@ -94,37 +95,19 @@ function Navbar(props) {
 
     const handleSearchClick = () => {
         setSearchText(search)
-        // const { data } = await getTopicsAPI()
-        // const { data } = await getVideosAPI()
-        // console.log("videos:", data)
-        // if (search) {
-        //     const searchResults1 = videos.filter(
-        //         (video) => video.title.toLowerCase().includes(search)
-        //     )
-        //     const searchResults2 = bodyExercises.filter(
-        //         (exercise) => exercise.name.toLowerCase().includes(search)
-        //             || exercise.target.toLowerCase().includes(search)
-        //             || exercise.equipment.toLowerCase().includes(search)
-        //             || exercise.bodyPart.toLowerCase().includes(search)
-        //     )
-        //     const searchResults3 = topics.filter(
-        //         (topic) => topic.name.toLowerCase().includes(search)
-        //     )
-        //     setSearch('')
-        //     setSearchedVideos(searchResults1)
-        //     setSearchedExercises(searchResults2)
-        //     setSearchedTopics(searchResults3)
-        //     console.log("searched video results:", searchedVideos)
-        //     console.log("searched exercise results:", searchedExercises)
-        //     console.log("searched topic results:", searchedTopics)
-        // }
+
+    }
+
+    const handleLangChange = (event) => {
+        i18next.changeLanguage(event.target.value)
+        setLang(event.target.value)
     }
 
     const drawer = (
         <Box onClick={handleDrawerToggle} >
-            <Tooltip title="Home">
+            <Tooltip title={t("Home")}>
                 <Logo textAlign={"center"}>
-                    Explore-Best
+                    {t("Explore-Best")}
                 </Logo>
             </Tooltip>
             <Divider />
@@ -165,10 +148,13 @@ function Navbar(props) {
                         >
                             <Box>
                                 <Link to='/' style={{ color: Colors.secondary, textDecoration: 'none', }}>
-                                    <Tooltip title="Home">
-                                        <Logo textAlign={"center"}>
-                                            Explore-Best
-                                        </Logo>
+                                    <Tooltip title={t("Home")}>
+                                        <Box display='flex' direction='row' alignItems="center">
+                                            <img src={homeImage} alt='' width="50px" height="50px" />
+                                            <Logo textAlign={"center"}>
+                                                {t("Explore-Best")}
+                                            </Logo>
+                                        </Box>
                                     </Tooltip>
                                 </Link>
                             </Box>
@@ -183,7 +169,7 @@ function Navbar(props) {
                             </Box>
                             <Search sx={{ display: { xs: 'none', md: 'flex' } }} >
                                 <StyledInputBase
-                                    placeholder="Search…"
+                                    placeholder={t("Search")}
                                     onChange={(e) => setSearch(e.target.value.toLowerCase())}
                                     inputProps={{ 'aria-label': 'search' }}
                                 />
@@ -191,6 +177,14 @@ function Navbar(props) {
                             <IconButton sx={{ color: Colors.white }} onClick={handleSearchClick}>
                                 <SearchIcon />
                             </IconButton>
+                            <Select size='small' sx={{ color: 'white' }}
+                                value={lang}
+                                label="language"
+                                onChange={handleLangChange}
+                            >
+                                <MenuItem value='en'>English</MenuItem>
+                                <MenuItem value='zh'>中文</MenuItem>
+                            </Select>
                             <Actions isMobile={isMobile} />
                         </Stack>
                     </Toolbar>

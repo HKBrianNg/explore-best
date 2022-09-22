@@ -1,5 +1,5 @@
 import { ThemeProvider } from '@mui/system'
-import { useEffect } from "react"
+import { Suspense, useEffect } from "react"
 import { Routes, Route } from 'react-router-dom'
 import { theme } from './styles/theme/index'
 import Home from './pages/home/Home'
@@ -19,37 +19,38 @@ import ProtectedRoute from './pages/auth/ProtectedRoute'
 import { CssBaseline } from "@mui/material"
 
 
-
 function App() {
 
   useEffect(() => {
-    document.title = 'explore-best v1.0.72'
+    document.title = 'explore-best v1.0.73'
   }, [])
 
   return (
     <>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/news" element={<News />} />
-          <Route path="/info" element={<Info />} />
-          <Route path="/fitness" element={<Fitness />} />
-          <Route path="/fitness/exercise/:id" element={<ExerciseDetail />} />
-          <Route path="/map" element={<Map />} />
-          <Route path="/crypto" element={<Crypto />} />
-          <Route path="/crypto/:coinId" element={<CryptoDetails />} />
-          <Route path="/video/:id" element={<PlayVideo />} />
-          <Route path="/setup" element={
-            <ProtectedRoute>
-              <Setup />
-            </ProtectedRoute>
-          } />
-          <Route path="/auth/login" element={<Login />} />
-          <Route path="/auth/logout" element={<Logout />} />
-          <Route path="/auth/signup" element={<Signup />} />
-        </Routes>
+        <Suspense fallback={null}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/news" element={<News />} />
+            <Route path="/info" element={<Info />} />
+            <Route path="/fitness" element={<Fitness />} />
+            <Route path="/fitness/exercise/:id" element={<ExerciseDetail />} />
+            <Route path="/map" element={<Map />} />
+            <Route path="/crypto" element={<Crypto />} />
+            <Route path="/crypto/:coinId" element={<CryptoDetails />} />
+            <Route path="/video/:id" element={<PlayVideo />} />
+            <Route path="/setup" element={
+              <ProtectedRoute>
+                <Setup />
+              </ProtectedRoute>
+            } />
+            <Route path="/auth/login" element={<Login />} />
+            <Route path="/auth/logout" element={<Logout />} />
+            <Route path="/auth/signup" element={<Signup />} />
+          </Routes>
+        </Suspense>
       </ThemeProvider>
     </>
   )
