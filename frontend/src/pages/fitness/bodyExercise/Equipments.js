@@ -1,4 +1,5 @@
 import { Chip, Box, Typography, Stack } from '@mui/material'
+import { useTranslation } from 'react-i18next'
 import { useFitnessContext } from '../../../context/FitnessContext'
 import equipmentImage from '../../../images/equipment.png'
 import { Colors } from '../../../styles/theme'
@@ -6,6 +7,8 @@ import { Colors } from '../../../styles/theme'
 
 function Equipments() {
   const { selectedEquipment, setSelectedEquipment, selectedBodyPart, selectedTargetMuscle, bodyExercises } = useFitnessContext()
+  const { t } = useTranslation()
+
 
   const handleClick = (label) => {
     setSelectedEquipment(label)
@@ -22,14 +25,14 @@ function Equipments() {
             padding: '3px', margin: '5px',
             width: '40px', height: '40px', borderRadius: "50%", background: Colors.dove_gray
           }} />
-          <Typography variant='h5'>Equipments</Typography>
+          <Typography variant='h5'>{t('Equipments')}</Typography>
         </Stack>
         <Stack direction='row' flexWrap='wrap'>
           {uniqueEquipments.map((item, id) => (
             <Chip
               key={id}
               onClick={() => handleClick(item)}
-              label={item}
+              label={t(item)}
               variant={selectedEquipment === item ? "filled" : "outlined"}
               sx={{ m: '1px' }}
             />

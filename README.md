@@ -147,5 +147,6 @@ Version Date        Description
 1.0.71  2022/9/22   Create backend amazon scraper, and africa/asia/europe news category.
 1.0.72  2022/9/22   Create explore-best backend framework. Move News from home page.
 1.0.73  2022/9/22   Implement multi-lang support framework + Navbar component
-1.0.74  2022/9/23   Implement multi-lang support - Fitness & Map.  
-1.0.75  2022/9/23   Create explore-best own mongo db. Support CRUD operations for topics and video data.
+1.0.74  2022/9/23   Implement multi-lang support - Fitness & Map.
+1.0.75  2022/9/23   Implement multi-lang support - Fitness exercise  
+1.0.76  2022/9/23   Create explore-best own mongo db. Support CRUD operations for topics and video data.

@@ -1,4 +1,5 @@
 import { Chip, Box, Stack, Typography } from '@mui/material'
+import { useTranslation } from 'react-i18next'
 import { useFitnessContext } from '../../../context/FitnessContext'
 import bodyImage from '../../../images/body.png'
 import { Colors } from '../../../styles/theme'
@@ -6,6 +7,8 @@ import { Colors } from '../../../styles/theme'
 
 function BodyParts() {
   const { bodyParts, selectedBodyPart, setSelectedBodyPart } = useFitnessContext()
+  const { t } = useTranslation(["common"])
+
 
   const handleClick = (label) => {
     setSelectedBodyPart(label)
@@ -16,14 +19,14 @@ function BodyParts() {
       <Stack direction='column'>
         <Stack display='flex' direction='row' alignItems='center' justifyContent='start'>
           <img src={bodyImage} alt='bodyParts' style={{ padding: '3px', margin: '5px', width: '40px', height: '40px', borderRadius: "50%", background: Colors.dove_gray }} />
-          <Typography variant='h5'>Body Parts</Typography>
+          <Typography variant='h5'>{t('Body Parts')}</Typography>
         </Stack>
         <Stack direction='row' flexWrap='wrap' mt={1}>
           {bodyParts.map((item, id) => (
             <Chip
               key={id}
               onClick={() => handleClick(item)}
-              label={item}
+              label={t(item)}
               variant={selectedBodyPart === item ? "filled" : "outlined"}
               sx={{ m: '1px' }}
             />

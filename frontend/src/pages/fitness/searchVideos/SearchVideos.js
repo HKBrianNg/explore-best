@@ -33,7 +33,7 @@ function SearchVideos() {
 
   useEffect(() => {
     setIsLoading(false)
-    const uniqueExerciseName = [...new Set(bodyExercises.map(item => item.name))];
+    const uniqueExerciseName = [...new Set(bodyExercises.map(item => t(item.name)))];
     uniqueExerciseName.push("")
     setOptions(uniqueExerciseName)
     // eslint-disable-next-line
