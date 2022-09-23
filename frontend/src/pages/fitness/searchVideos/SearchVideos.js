@@ -4,6 +4,7 @@ import ExerciseVideos from '../../../components/exerciseVideo/ExerciseVideos'
 import { useFitnessContext } from '../../../context/FitnessContext'
 import { useAppContext } from '../../../context/AppContext'
 import Message from '../../../components/message/Message'
+import { useTranslation } from 'react-i18next'
 
 
 function SearchVideos() {
@@ -12,7 +13,7 @@ function SearchVideos() {
   const [value, setValue] = useState('')
   const [inputValue, setInputValue] = useState('')
   const { setIsLoading, setSysMessage } = useAppContext()
-
+  const { t } = useTranslation(["common"])
 
   const handleOnChange = (event, newValue) => {
     setValue(newValue);
@@ -24,7 +25,7 @@ function SearchVideos() {
 
   const handleClick = async () => {
     setIsLoading(true)
-    setSysMessage("loading videos from Youtube...")
+    setSysMessage(t("loading videos from Youtube..."))
     await getYouTubeVideoAPI(value)
     setIsLoading(false)
     setSysMessage(null)
@@ -48,9 +49,9 @@ function SearchVideos() {
             value={value} onChange={handleOnChange}
             inputValue={inputValue} onInputChange={handleOnInputChange}
             options={options}
-            renderInput={(params) => <TextField {...params} label="Exercise name" />}
+            renderInput={(params) => <TextField {...params} label={t("Exercise name")} />}
           />
-          <Button variant='contained' fullWidth onClick={handleClick}>Get Videos</Button>
+          <Button variant='contained' fullWidth onClick={handleClick}>{t("Get Videos")}</Button>
           <Message />
         </Stack>
       </Grid>

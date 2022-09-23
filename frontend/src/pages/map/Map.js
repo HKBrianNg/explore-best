@@ -1,5 +1,5 @@
 import Navbar from "../../components/navbar/Navbar"
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { GoogleMap, InfoWindow, Marker, useLoadScript, Autocomplete, Circle } from '@react-google-maps/api'
 import { Container, Grid, Autocomplete as AutocompleteMui, TextField, IconButton, Stack, Box, Typography } from '@mui/material'
 import MyLocationIcon from '@mui/icons-material/MyLocation';
@@ -9,14 +9,10 @@ import { mapDarkStyles } from './mapDarkStyles'
 import { formatRelative } from 'date-fns';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import { useMapContext } from '../../context/MapContext'
+import { useTranslation } from "react-i18next";
+import { useAppContext } from "../../context/AppContext";
 
 
-const styleList = [
-    'default',
-    'GreenStyles',
-    'WhiteStyles',
-    'DarkStyles'
-]
 
 const libraries = ["places"]
 
@@ -66,6 +62,19 @@ const initialMapOptions = {
 
 const mapContainerStyle = { width: '100%', height: '80vh' }
 
+const styleList = [
+    'default',
+    'GreenStyles',
+    'WhiteStyles',
+    'DarkStyles'
+]
+
+const styleList1 = [
+    '默认樣式',
+    '绿色樣式',
+    '白色樣式',
+    '深色樣式'
+]
 
 function Map() {
     const { isLoaded, loadError } = useLoadScript({
@@ -76,10 +85,12 @@ function Map() {
     const [autocomplete, setAutocomplete] = useState(null)
     const [mapOptions, setMapOptions] = useState(initialMapOptions)
     const [searchValue, setSearchValue] = useState('')
-    const [value, setValue] = useState(styleList[0])
+    const [value, setValue] = useState(null)
     const [mapref, setMapRef] = useState(null);
     const { zoom, setZoom, centerCoord, setCenterCoord,
         markers, setMarkers, selected, setSelected } = useMapContext()
+    const { t } = useTranslation(["common"])
+    const { lang } = useAppContext()
 
     const onLoad = (autoC) => {
         setAutocomplete(autoC)
@@ -162,16 +173,24 @@ function Map() {
         setSearchValue('')
     }
 
+
+    // '默认樣式',
+    // '绿色樣式',
+    // '白色樣式',
+    // '深色樣式'
     const handleMapStyleChange = (event, newValue) => {
         setValue(newValue)
         switch (newValue) {
             case 'WhiteStyles':
+            case '白色樣式':
                 setMapOptions({ ...mapOptions, styles: mapWhiteStyles })
                 break
             case 'GreenStyles':
+            case '绿色樣式':
                 setMapOptions({ ...mapOptions, styles: mapGreenStyles })
                 break
             case 'DarkStyles':
+            case '深色樣式':
                 setMapOptions({ ...mapOptions, styles: mapDarkStyles })
                 break
             default:
@@ -192,8 +211,13 @@ function Map() {
         setZoom(10)
     }
 
-    if (loadError) return "Error Loading Maps"
-    if (!isLoaded) return "Loading Maps"
+    useEffect(() => {
+
+        // eslint-disable-next-line
+    }, [lang])
+
+    if (loadError) return t("Error Loading Maps")
+    if (!isLoaded) return t("Loading Maps")
 
     return (
         <>
@@ -207,26 +231,26 @@ function Map() {
                 >
                     <Grid item xs={12} md={12} >
                         <Stack direction={{ xs: 'column', md: 'row' }}>
-                            <AutocompleteMui size='small' disablePortal options={styleList} value={value}
+                            <AutocompleteMui size='small' disablePortal options={lang === 'en' ? styleList : styleList1} value={value}
                                 onChange={handleMapStyleChange} sx={{ width: 220, margin: 1, padding: 0, }}
-                                renderInput={(params) => <TextField {...params} label="Map Styles" />}
+                                renderInput={(params) => <TextField {...params} label={t("Map Styles")} />}
                             />
                             <Box display={{ xs: 'none', md: 'flex' }}>
-                                <TextField variant="outlined" type='number' label='Zoom' size='small' value={zoom} onChange={handleZoomChanged}
+                                <TextField variant="outlined" type='number' label={t('Zoom')} size='small' value={zoom} onChange={handleZoomChanged}
                                     sx={{ width: 80, margin: 1, padding: 0 }}
                                     InputProps={{ inputProps: { max: 22, min: 0 } }} />
-                                <TextField variant="outlined" type='number' label='Center Latitude' size='small' value={centerCoord.lat} onChange={handleLatChanged}
+                                <TextField variant="outlined" type='number' label={t('Center Latitude')} size='small' value={centerCoord.lat} onChange={handleLatChanged}
                                     sx={{ width: 120, margin: 1, padding: 0 }}
                                     InputProps={{ inputProps: { max: 89, min: -89 } }} />
-                                <TextField variant="outlined" type='number' label='Center Longtitude' size='small' value={centerCoord.lng} onChange={handleLngChanged}
+                                <TextField variant="outlined" type='number' label={t('Center Longtitude')} size='small' value={centerCoord.lng} onChange={handleLngChanged}
                                     sx={{ width: 120, margin: 1, padding: 0 }}
                                     InputProps={{ inputProps: { max: 180, min: -179 } }} />
                             </Box>
                             <Box display='flex'>
                                 <Autocomplete onLoad={onLoad} onPlaceChanged={onPlaceChanged}
-                                    options={{ fields: ["geometry", "icon", "name"] }}
+                                    options={{ fields: ["geometry", "icon", "name"], }}
                                 >
-                                    <TextField variant="outlined" label='Places' size='small' value={searchValue} onChange={(e) => setSearchValue(e.target.value)}
+                                    <TextField variant="outlined" label={t('Places')} size='small' value={searchValue} onChange={(e) => setSearchValue(e.target.value)}
                                         sx={{ width: 220, margin: 1, padding: 0 }}
                                         InputProps={{ inputProps: { max: 180, min: -179 }, }} />
                                 </Autocomplete>
@@ -279,7 +303,7 @@ function Map() {
                                 {selected && (
                                     <InfoWindow position={{ lat: selected.lat, lng: selected.lng }} onCloseClick={() => { setSelected(null) }}>
                                         <Box>
-                                            <Typography variant='h5'>Marked&nbsp; {formatRelative(selected.time, new Date())}</Typography>
+                                            <Typography variant='h5'>{t('Marked')}&nbsp; {formatRelative(selected.time, new Date())}</Typography>
                                             <Stack direction='row'>
                                                 <img src={selected.icon} alt="" style={{ width: '30px', height: '30px' }} />
                                                 <Typography variant='h5' ml={1}>{selected.name}</Typography>

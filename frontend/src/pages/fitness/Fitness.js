@@ -5,17 +5,18 @@ import BodyExercise from './bodyExercise/BodyExercise'
 import CalculateBMI from './calculateBMI/CalculateBMI'
 import CalculateTDEE from './calculateTDEE/CalculateTDEE'
 import SearchVideos from './searchVideos/SearchVideos'
-
+import { useTranslation } from 'react-i18next'
 
 const featureList = [
   { id: "0", name: 'Exercises' },
   { id: "1", name: 'BMI Calculator' },
-  { id: "2", name: 'TDEE Calculator', },
+  { id: "2", name: 'TDEE Calculator' },
   { id: "3", name: 'Search Videos', }
 ]
 
 function Fitness() {
   const [selectedFeature, setSelectedFeature] = useState('Exercises')
+  const { t } = useTranslation(["common"])
 
   const handleClick = (name) => {
     setSelectedFeature(name)
@@ -36,7 +37,7 @@ function Fitness() {
                   onClick={() => handleClick(item.name)}
                   sx={{ m: '2px' }}
                 >
-                  {item.name}
+                  {t(item.name)}
                 </Button>
               ))
             }
