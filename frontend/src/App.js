@@ -22,7 +22,7 @@ import { CssBaseline } from "@mui/material"
 function App() {
 
   useEffect(() => {
-    document.title = 'explore-best v1.0.76'
+    document.title = 'explore-best v1.0.77'
   }, [])
 
   return (
