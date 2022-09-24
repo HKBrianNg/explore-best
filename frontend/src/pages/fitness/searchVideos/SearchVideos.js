@@ -12,7 +12,7 @@ function SearchVideos() {
   const [options, setOptions] = useState([])
   const [value, setValue] = useState('')
   const [inputValue, setInputValue] = useState('')
-  const { setIsLoading, setSysMessage } = useAppContext()
+  const { setIsLoading, setSysMessage, lang } = useAppContext()
   const { t } = useTranslation(["common"])
 
   const handleOnChange = (event, newValue) => {
@@ -37,7 +37,7 @@ function SearchVideos() {
     uniqueExerciseName.push("")
     setOptions(uniqueExerciseName)
     // eslint-disable-next-line
-  }, [])
+  }, [lang])
 
 
   return (
