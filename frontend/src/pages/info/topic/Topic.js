@@ -1,4 +1,5 @@
 import { Box, Chip } from '@mui/material'
+import { useTranslation } from 'react-i18next'
 import { useAppContext } from '../../../context/AppContext'
 import { useTopicContext } from '../../../context/TopicContext'
 
@@ -6,6 +7,7 @@ import { useTopicContext } from '../../../context/TopicContext'
 function Topic() {
     const { selectedCategory, selectedSubCategory, setSelectedSubCategory } = useAppContext()
     const { topics } = useTopicContext()
+    const { t } = useTranslation()
 
     const handleClick = (name) => {
         setSelectedSubCategory(name)
@@ -16,7 +18,7 @@ function Topic() {
     return (
         <Box m={1}>
             {topicList.map((item) => (
-                <Chip label={item.subCategory}
+                <Chip label={t(item.subCategory)}
                     key={item.id}
                     onClick={(e) => handleClick(item.subCategory)}
                     variant={item.subCategory === selectedSubCategory ? "filled" : "outlined"}

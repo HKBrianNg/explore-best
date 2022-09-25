@@ -153,4 +153,5 @@ Version Date        Description
 1.0.77  2022/9/24   Translate exercise name into Chinese. (part 2)
 1.0.78  2022/9/25   Remove banner.js. Add home page.js. Set default language as Chinese. Remove search from navbar.js
 1.0.79  2022/9/25   Move navbar icon map, fitness, info as menu item. Add version number in brief menu.
-1.0.80  2022/9/23   Create explore-best own mongo db. Support CRUD operations for topics and video data.
+1.0.80  2022/9/25   Translate Info.js into Chinese.
+1.0.81  2022/9/23   Create explore-best own mongo db. Support CRUD operations for topics and video data.

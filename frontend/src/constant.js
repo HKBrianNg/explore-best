@@ -5,7 +5,7 @@ import GolfCourseIcon from '@mui/icons-material/GolfCourse';
 import ElectricCarIcon from '@mui/icons-material/ElectricCar';
 import CabinIcon from '@mui/icons-material/Cabin';
 
-export const softwareVersion = "1.0.79"
+export const softwareVersion = "1.0.80"
 
 export const SysMsg = [
     "000-No topic data. System fails to start.",
@@ -81,7 +81,6 @@ export const defaultAsiaCategories = [
     { id: '70', name: '阿塞拜疆', ename: 'Azerbaijan' }
 ]
 
-
 export const defaultEuropeCategories = [
     { id: '100', name: '欧盟', ename: 'EU' },
     { id: '101', name: '英国', ename: 'UK' },
@@ -131,7 +130,6 @@ export const defaultEuropeCategories = [
     { id: '145', name: '阿爾巴尼亞', ename: 'Albania' },
     { id: '146', name: '北馬其頓', ename: 'North Macedonia' }
 ]
-
 
 export const defaultAmericaCategories = [
     { id: '200', name: '美国', ename: 'US' },
