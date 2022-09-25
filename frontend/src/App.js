@@ -18,12 +18,12 @@ import Signup from './pages/auth/Signup'
 import ProtectedRoute from './pages/auth/ProtectedRoute'
 import { CssBaseline } from "@mui/material"
 import Search from './pages/search/Search'
-
+import { softwareVersion } from './constant'
 
 function App() {
 
   useEffect(() => {
-    document.title = 'explore-best v1.0.78'
+    document.title = `explore-best v${softwareVersion}`
   }, [])
 
   return (

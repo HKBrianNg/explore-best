@@ -1,15 +1,15 @@
 // import SettingsIcon from '@mui/icons-material/Settings';
-import MapIcon from '@mui/icons-material/Map';
+// import MapIcon from '@mui/icons-material/Map';
 import PersonIcon from '@mui/icons-material/Person'
-import FitbitIcon from '@mui/icons-material/Fitbit';
+// import FitbitIcon from '@mui/icons-material/Fitbit';
 import { ListItemButton, ListItemIcon, Divider, Avatar, Tooltip } from '@mui/material'
 import { Colors } from '../../styles/theme'
 import { styled } from '@mui/material/styles'
 import { Box, List } from '@mui/material'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
 import { useAuthContext } from '../../context/AuthContext'
-import OndemandVideoIcon from '@mui/icons-material/OndemandVideo';
+// import OndemandVideoIcon from '@mui/icons-material/OndemandVideo';
 import { useTranslation } from 'react-i18next'
 
 
@@ -55,7 +55,7 @@ function Actions({ isMobile }) {
     return (
         <Component>
             <MenuList type='row'>
-                <ListItemButton sx={{ justifyContent: 'center' }}>
+                {/* <ListItemButton sx={{ justifyContent: 'center' }}>
                     <ListItemIcon
                         sx={{
                             display: 'flex', justifyContent: 'center',
@@ -67,8 +67,8 @@ function Actions({ isMobile }) {
                             </Tooltip>
                         </Link>
                     </ListItemIcon>
-                </ListItemButton>
-                <Divider orientation="vertical" flexItem />
+                </ListItemButton> */}
+                {/* <Divider orientation="vertical" flexItem />
                 <ListItemButton sx={{ justifyContent: 'center' }}>
                     <ListItemIcon
                         sx={{
@@ -81,8 +81,8 @@ function Actions({ isMobile }) {
                             </Tooltip>
                         </Link>
                     </ListItemIcon>
-                </ListItemButton>
-                <Divider orientation="vertical" flexItem />
+                </ListItemButton> */}
+                {/* <Divider orientation="vertical" flexItem />
                 <ListItemButton sx={{ justifyContent: 'center' }}>
                     <ListItemIcon
                         sx={{
@@ -95,7 +95,7 @@ function Actions({ isMobile }) {
                             </Tooltip>
                         </Link>
                     </ListItemIcon>
-                </ListItemButton>
+                </ListItemButton> */}
                 <Divider orientation="vertical" flexItem />
                 {user ?
                     <ListItemButton sx={{ justifyContent: 'center' }} onClick={handleAuth}>

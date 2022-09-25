@@ -4,9 +4,8 @@
   "News": "News",
   "Crypto": "CRYPTO",
   "Setup": "SETUP",
-  "Search": "Search...",
   "Fitness": "Fitness",
-  "Google Map": "Google Map",
+  "Map": "Map",
   "Videos": "Videos",
   "Logout": "Logout",
   "Login": "Login",
@@ -551,7 +550,6 @@
   "close grip chin-up": "close grip chin-up",
   "close-grip push-up": "close-grip push-up",
   "close-grip push-up (on knees)": "close-grip push-up (on knees)",
-  "cocoons": "cocoons",
   "crab twist toe touch": "crab twist toe touch",
   "cross body crunch": "cross body crunch",
   "crunch (hands overhead)": "crunch (hands overhead)",
@@ -603,5 +601,6 @@
   "Decode URL": "Decode URL",
   "Watch Video": "Watch Video",
   "View Map": "View Map",
-  "search": "Search"
+  "search": "Search",
+  "Info": "Information"
 }

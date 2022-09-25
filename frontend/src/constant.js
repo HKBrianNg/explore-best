@@ -5,6 +5,7 @@ import GolfCourseIcon from '@mui/icons-material/GolfCourse';
 import ElectricCarIcon from '@mui/icons-material/ElectricCar';
 import CabinIcon from '@mui/icons-material/Cabin';
 
+export const softwareVersion = "1.0.79"
 
 export const SysMsg = [
     "000-No topic data. System fails to start.",

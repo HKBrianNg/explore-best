@@ -1,4 +1,4 @@
-import { Grid, Container, Tooltip } from '@mui/material'
+import { Grid, Container, Typography, Stack } from '@mui/material'
 import { Link } from 'react-router-dom'
 import Navbar from "../../components/navbar/Navbar"
 import watchVideoImage from "../../images/watchVideo.png"
@@ -18,37 +18,43 @@ function Home() {
             <Navbar />
             <Container maxWidth="xl">
                 <Grid container m={2} spacing={2} >
-                    <Grid item xs={12} md={12} display='flex' flexWrap='wrap'>
-                        <Tooltip title={t("Watch Video")}>
+                    <Grid item xs={12} md={12} display='flex' flexWrap='wrap' gap={2}>
+                        <Stack direction="column" gap={1} alignItems='center'>
+                            <Typography>{t("Info")}</Typography>
                             <Link to='/info'>
-                                <img src={watchVideoImage} alt='' width="200px" height="150px" style={{ marginRight: '3px' }} />
+                                <img src={watchVideoImage} alt='' width="200px" height="150px" />
                             </Link>
-                        </Tooltip>
-                        <Tooltip title={t("View Map")}>
-                            <Link to='/map'>
-                                <img src={mapImage} alt='' width="200px" height="150px" style={{ marginRight: '3px' }} />
-                            </Link>
-                        </Tooltip>
-                        <Tooltip title={t("Fitness")}>
+                        </Stack>
+                        <Stack direction="column" gap={1} alignItems='center'>
+                            <Typography>{t("Fitness")}</Typography>
                             <Link to='/fitness'>
-                                <img src={fitnessImage} alt='' width="200px" height="150px" style={{ marginRight: '3px' }} />
+                                <img src={fitnessImage} alt='' width="200px" height="150px" />
                             </Link>
-                        </Tooltip>
-                        <Tooltip title={t('search')}>
+                        </Stack>
+                        <Stack direction="column" gap={1} alignItems='center'>
+                            <Typography>{t("Map")}</Typography>
+                            <Link to='/map'>
+                                <img src={mapImage} alt='' width="200px" height="150px" />
+                            </Link>
+                        </Stack>
+                        <Stack direction="column" gap={1} alignItems='center'>
+                            <Typography>{t('Search')}</Typography>
                             <Link to="/search">
-                                <img src={searchImage} alt='' width="200px" height="150px" style={{ marginRight: '3px' }} />
+                                <img src={searchImage} alt='' width="200px" height="150px" />
                             </Link>
-                        </Tooltip>
-                        <Tooltip title={t("Crypto")}>
+                        </Stack>
+                        <Stack direction="column" gap={1} alignItems='center'>
+                            <Typography>{t("Crypto")}</Typography>
                             <Link to='/crypto'>
-                                <img src={bitcoinImage} alt='' width="200px" height="150px" style={{ marginRight: '3px' }} />
+                                <img src={bitcoinImage} alt='' width="200px" height="150px" />
                             </Link>
-                        </Tooltip>
-                        <Tooltip title={t('News')}>
+                        </Stack>
+                        <Stack direction="column" gap={1} alignItems='center'>
+                            <Typography>{t('News')}</Typography>
                             <Link to='/news'>
-                                <img src={newsImage} alt="" width="200px" height="150px" style={{ mr: '2px' }} />
+                                <img src={newsImage} alt="" width="200px" height="150px" />
                             </Link>
-                        </Tooltip>
+                        </Stack>
                     </Grid>
                 </Grid>
             </Container>

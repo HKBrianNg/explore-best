@@ -4,7 +4,6 @@ import {
     Box, List, ListItem, ListItemButton, ListItemText, Tooltip, LinearProgress, Select, MenuItem,
 } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
-// import SearchIcon from '@mui/icons-material/Search'
 import { Colors } from '../../styles/theme'
 import "@fontsource/montez"
 import { styled, useTheme, } from '@mui/material/styles'
@@ -14,6 +13,8 @@ import { useAppContext } from '../../context/AppContext'
 import { useTranslation } from 'react-i18next'
 import i18next from 'i18next'
 import homeImage from '../../images/home.png'
+import { softwareVersion } from '../../constant'
+
 
 const Logo = styled(Typography)(() => ({
     padding: '4px',
@@ -24,47 +25,8 @@ const Logo = styled(Typography)(() => ({
     marginRight: '20px'
 }))
 
-// const navItems = [
-//     { id: '0', name: 'News', link: "/news" },
-//     { id: '1', name: 'Crypto', link: "/crypto" },
-//     { id: '2', name: 'Setup', link: "/setup" }
-// ]
+
 const drawerWidth = 240
-
-// const Search = styled('div')(({ theme }) => ({
-//     position: 'relative',
-//     borderRadius: theme.shape.borderRadius,
-//     backgroundColor: alpha(theme.palette.common.white, 0.15),
-//     '&:hover': {
-//         backgroundColor: alpha(theme.palette.common.white, 0.25),
-//     },
-//     marginLeft: 0,
-//     width: '100%',
-//     [theme.breakpoints.up('md')]: {
-//         marginLeft: theme.spacing(1),
-//         width: 'auto',
-//     },
-// }));
-
-
-// const StyledInputBase = styled(InputBase)(({ theme }) => ({
-//     color: 'inherit',
-//     '& .MuiInputBase-input': {
-//         padding: theme.spacing(1, 1, 1, 0),
-//         // vertical padding + font size from searchIcon
-//         paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-//         transition: theme.transitions.create('width'),
-//         width: '100%',
-//         [theme.breakpoints.up('md')]: {
-//             width: '20ch',
-//             '&:focus': {
-//                 width: '20ch',
-//             },
-//         },
-//     },
-// }));
-
-
 
 function Navbar(props) {
     const theme = useTheme()
@@ -73,7 +35,6 @@ function Navbar(props) {
     const [mobileOpen, setMobileOpen] = useState(false)
     const navigate = useNavigate()
     const { isLoading, sysMessage, lang, setLang } = useAppContext()
-    // const [search, setSearch] = useState('')
     const { t } = useTranslation(["common"])
 
     useEffect(() => {
@@ -81,9 +42,13 @@ function Navbar(props) {
     }, [lang])
 
     const navItems = [
-        { id: '0', name: t('News'), link: "/news" },
-        { id: '1', name: t('Crypto'), link: "/crypto" },
-        { id: '2', name: t('Setup'), link: "/setup" }
+        { id: '0', name: t('Info'), link: "/info" },
+        { id: '1', name: t('Fitness'), link: "/fitness" },
+        { id: '2', name: t('Map'), link: "/map" },
+        { id: '3', name: t('Search'), link: "/search" },
+        { id: '4', name: t('Crypto'), link: "/crypto" },
+        { id: '5', name: t('News'), link: "/news" },
+        { id: '6', name: t('Setup'), link: "/setup" }
     ]
 
     const handleDrawerToggle = () => {
@@ -94,10 +59,6 @@ function Navbar(props) {
         navigate(navItems[id].link, { replace: true })
     }
 
-    // const handleSearchClick = () => {
-    //     setSearchText(search)
-
-    // }
 
     const handleLangChange = (event) => {
         i18next.changeLanguage(event.target.value)
@@ -108,7 +69,7 @@ function Navbar(props) {
         <Box onClick={handleDrawerToggle} >
             <Tooltip title={t("Home")}>
                 <Logo textAlign={"center"}>
-                    {t("Explore-Best")}
+                    {t("Explore-Best")} {softwareVersion}
                 </Logo>
             </Tooltip>
             <Divider />
@@ -168,16 +129,7 @@ function Navbar(props) {
                                     </Link>
                                 ))}
                             </Box>
-                            {/* <Search sx={{ display: { xs: 'none', md: 'flex' } }} >
-                                <StyledInputBase
-                                    placeholder={t("Search")}
-                                    onChange={(e) => setSearch(e.target.value.toLowerCase())}
-                                    inputProps={{ 'aria-label': 'search' }}
-                                />
-                            </Search>
-                            <IconButton sx={{ color: Colors.white }} onClick={handleSearchClick}>
-                                <SearchIcon />
-                            </IconButton> */}
+
                             <Select size='small' sx={{ color: 'white' }}
                                 value={lang}
                                 label="language"

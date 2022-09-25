@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Grid, Box, Button } from '@mui/material'
+import { Grid, Box, Button, Container } from '@mui/material'
 import Navbar from '../../components/navbar/Navbar'
 import BodyExercise from './bodyExercise/BodyExercise'
 import CalculateBMI from './calculateBMI/CalculateBMI'
@@ -26,28 +26,30 @@ function Fitness() {
   return (
     <>
       <Navbar />
-      <Grid container mt={3} spacing={0.5} direction="row" justifyContent="flex-start" alignItems="flex-start">
-        <Grid item xs={12}>
-          <Box>
-            {
-              featureList.map((item) => (
-                <Button
-                  key={item.id}
-                  variant={selectedFeature === item.name ? "contained" : "outlined"}
-                  onClick={() => handleClick(item.name)}
-                  sx={{ m: '2px' }}
-                >
-                  {t(item.name)}
-                </Button>
-              ))
-            }
-          </Box>
+      <Container maxWidth='xl'>
+        <Grid container mt={3} spacing={0.5} direction="row" justifyContent="flex-start" alignItems="flex-start">
+          <Grid item xs={12}>
+            <Box>
+              {
+                featureList.map((item) => (
+                  <Button
+                    key={item.id}
+                    variant={selectedFeature === item.name ? "contained" : "outlined"}
+                    onClick={() => handleClick(item.name)}
+                    sx={{ m: '2px' }}
+                  >
+                    {t(item.name)}
+                  </Button>
+                ))
+              }
+            </Box>
+          </Grid>
+          {selectedFeature === 'Exercises' && <BodyExercise />}
+          {selectedFeature === 'BMI Calculator' && <CalculateBMI />}
+          {selectedFeature === 'TDEE Calculator' && <CalculateTDEE />}
+          {selectedFeature === 'Search Videos' && <SearchVideos />}
         </Grid>
-        {selectedFeature === 'Exercises' && <BodyExercise />}
-        {selectedFeature === 'BMI Calculator' && <CalculateBMI />}
-        {selectedFeature === 'TDEE Calculator' && <CalculateTDEE />}
-        {selectedFeature === 'Search Videos' && <SearchVideos />}
-      </Grid>
+      </Container>
     </>
   )
 }

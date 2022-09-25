@@ -4,9 +4,8 @@
   "News": "新闻",
   "Crypto": "加密貨幣",
   "Setup": "設置",
-  "Search": "查询...",
   "Fitness": "健身",
-  "Google Map": "谷歌地图",
+  "Map": "地图",
   "Videos": "视频",
   "Logout": "登出",
   "Login": "登入",
@@ -602,5 +601,6 @@
   "DecodeURL": "URL解码",
   "Watch Video": "观看视频",
   "View Map": "浏览地图",
-  "search": "搜寻"
+  "Search": "搜寻",
+  "Info": "资讯"
 }
