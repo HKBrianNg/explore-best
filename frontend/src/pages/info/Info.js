@@ -2,7 +2,6 @@ import { useEffect } from 'react'
 import Navbar from "../../components/navbar/Navbar"
 import Category from "./category/Category"
 import Topic from "./topic/Topic"
-import Banner from "./banner/Banner"
 import Videos from "./videos/Videos"
 import { Container, Grid, } from '@mui/material'
 import { useVideoContext } from '../../context/VideoContext'
@@ -51,11 +50,8 @@ function Info() {
         <Message />
         {(topics && videos) && <>
           <Grid container spacing={1} direction='row' justifyContent='flex-start' alignItems='flex-start' wrap="wrap" mt={3}>
-            <Grid item xs={12} md={3}>
+            <Grid item xs={12} md={12}>
               <Category />
-              <Banner />
-            </Grid>
-            <Grid item xs={12} md={9}>
               <Topic />
               <Videos />
             </Grid>

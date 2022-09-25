@@ -2,7 +2,6 @@ import { useAppContext } from '../../../context/AppContext'
 import { Box, Typography } from '@mui/material'
 import { allCategories } from '../../../constant'
 
-
 function Banner() {
     const { selectedCategory } = useAppContext()
 

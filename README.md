@@ -151,4 +151,5 @@ Version Date        Description
 1.0.75  2022/9/23   Implement multi-lang support - Fitness exercise  
 1.0.76  2022/9/24   Translate exercise name into Chinese. (part 1)
 1.0.77  2022/9/24   Translate exercise name into Chinese. (part 2)
-1.0.78  2022/9/23   Create explore-best own mongo db. Support CRUD operations for topics and video data.
+1.0.78  2022/9/25   Remove banner.js. Add home page.js. Set default language as Chinese. Remove search from navbar.js
+1.0.79  2022/9/23   Create explore-best own mongo db. Support CRUD operations for topics and video data.

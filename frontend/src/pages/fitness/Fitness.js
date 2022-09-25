@@ -26,7 +26,7 @@ function Fitness() {
   return (
     <>
       <Navbar />
-      <Grid container m={2} spacing={0.5} direction="row" justifyContent="flex-start" alignItems="flex-start">
+      <Grid container mt={3} spacing={0.5} direction="row" justifyContent="flex-start" alignItems="flex-start">
         <Grid item xs={12}>
           <Box>
             {

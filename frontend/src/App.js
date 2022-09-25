@@ -17,12 +17,13 @@ import Logout from './pages/auth/Logout'
 import Signup from './pages/auth/Signup'
 import ProtectedRoute from './pages/auth/ProtectedRoute'
 import { CssBaseline } from "@mui/material"
+import Search from './pages/search/Search'
 
 
 function App() {
 
   useEffect(() => {
-    document.title = 'explore-best v1.0.77'
+    document.title = 'explore-best v1.0.78'
   }, [])
 
   return (
@@ -35,6 +36,7 @@ function App() {
             <Route path="/home" element={<Home />} />
             <Route path="/news" element={<News />} />
             <Route path="/info" element={<Info />} />
+            <Route path="/search" element={<Search />} />
             <Route path="/fitness" element={<Fitness />} />
             <Route path="/fitness/exercise/:id" element={<ExerciseDetail />} />
             <Route path="/map" element={<Map />} />

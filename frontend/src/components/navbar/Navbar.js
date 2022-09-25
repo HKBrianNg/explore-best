@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react'
 import {
-    InputBase, useMediaQuery, Drawer, AppBar, Button, Stack, Typography, Divider, IconButton, Toolbar,
+    useMediaQuery, Drawer, AppBar, Button, Stack, Typography, Divider, IconButton, Toolbar,
     Box, List, ListItem, ListItemButton, ListItemText, Tooltip, LinearProgress, Select, MenuItem,
 } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
-import SearchIcon from '@mui/icons-material/Search'
+// import SearchIcon from '@mui/icons-material/Search'
 import { Colors } from '../../styles/theme'
 import "@fontsource/montez"
-import { styled, useTheme, alpha } from '@mui/material/styles'
+import { styled, useTheme, } from '@mui/material/styles'
 import { Link, useNavigate } from 'react-router-dom'
 import Actions from './actions';
 import { useAppContext } from '../../context/AppContext'
@@ -31,38 +31,38 @@ const Logo = styled(Typography)(() => ({
 // ]
 const drawerWidth = 240
 
-const Search = styled('div')(({ theme }) => ({
-    position: 'relative',
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: alpha(theme.palette.common.white, 0.15),
-    '&:hover': {
-        backgroundColor: alpha(theme.palette.common.white, 0.25),
-    },
-    marginLeft: 0,
-    width: '100%',
-    [theme.breakpoints.up('md')]: {
-        marginLeft: theme.spacing(1),
-        width: 'auto',
-    },
-}));
+// const Search = styled('div')(({ theme }) => ({
+//     position: 'relative',
+//     borderRadius: theme.shape.borderRadius,
+//     backgroundColor: alpha(theme.palette.common.white, 0.15),
+//     '&:hover': {
+//         backgroundColor: alpha(theme.palette.common.white, 0.25),
+//     },
+//     marginLeft: 0,
+//     width: '100%',
+//     [theme.breakpoints.up('md')]: {
+//         marginLeft: theme.spacing(1),
+//         width: 'auto',
+//     },
+// }));
 
 
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-    color: 'inherit',
-    '& .MuiInputBase-input': {
-        padding: theme.spacing(1, 1, 1, 0),
-        // vertical padding + font size from searchIcon
-        paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-        transition: theme.transitions.create('width'),
-        width: '100%',
-        [theme.breakpoints.up('md')]: {
-            width: '20ch',
-            '&:focus': {
-                width: '20ch',
-            },
-        },
-    },
-}));
+// const StyledInputBase = styled(InputBase)(({ theme }) => ({
+//     color: 'inherit',
+//     '& .MuiInputBase-input': {
+//         padding: theme.spacing(1, 1, 1, 0),
+//         // vertical padding + font size from searchIcon
+//         paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+//         transition: theme.transitions.create('width'),
+//         width: '100%',
+//         [theme.breakpoints.up('md')]: {
+//             width: '20ch',
+//             '&:focus': {
+//                 width: '20ch',
+//             },
+//         },
+//     },
+// }));
 
 
 
@@ -72,13 +72,14 @@ function Navbar(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = useState(false)
     const navigate = useNavigate()
-    const { isLoading, sysMessage, setSearchText, lang, setLang } = useAppContext()
-    const [search, setSearch] = useState('')
+    const { isLoading, sysMessage, lang, setLang } = useAppContext()
+    // const [search, setSearch] = useState('')
     const { t } = useTranslation(["common"])
 
     useEffect(() => {
         i18next.changeLanguage(lang)
-    }, [])
+    }, [lang])
+
     const navItems = [
         { id: '0', name: t('News'), link: "/news" },
         { id: '1', name: t('Crypto'), link: "/crypto" },
@@ -93,10 +94,10 @@ function Navbar(props) {
         navigate(navItems[id].link, { replace: true })
     }
 
-    const handleSearchClick = () => {
-        setSearchText(search)
+    // const handleSearchClick = () => {
+    //     setSearchText(search)
 
-    }
+    // }
 
     const handleLangChange = (event) => {
         i18next.changeLanguage(event.target.value)
@@ -167,7 +168,7 @@ function Navbar(props) {
                                     </Link>
                                 ))}
                             </Box>
-                            <Search sx={{ display: { xs: 'none', md: 'flex' } }} >
+                            {/* <Search sx={{ display: { xs: 'none', md: 'flex' } }} >
                                 <StyledInputBase
                                     placeholder={t("Search")}
                                     onChange={(e) => setSearch(e.target.value.toLowerCase())}
@@ -176,7 +177,7 @@ function Navbar(props) {
                             </Search>
                             <IconButton sx={{ color: Colors.white }} onClick={handleSearchClick}>
                                 <SearchIcon />
-                            </IconButton>
+                            </IconButton> */}
                             <Select size='small' sx={{ color: 'white' }}
                                 value={lang}
                                 label="language"
