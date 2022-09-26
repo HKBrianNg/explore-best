@@ -5,7 +5,7 @@ import GolfCourseIcon from '@mui/icons-material/GolfCourse';
 import ElectricCarIcon from '@mui/icons-material/ElectricCar';
 import CabinIcon from '@mui/icons-material/Cabin';
 
-export const softwareVersion = "1.0.82"
+export const softwareVersion = "1.0.84"
 
 // production
 // export const videoUrl = "https://learning-bn-api.herokuapp.com"

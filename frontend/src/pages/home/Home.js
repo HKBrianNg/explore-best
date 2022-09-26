@@ -22,37 +22,37 @@ function Home() {
                         <Stack direction="column" gap={1} alignItems='center'>
                             <Typography>{t("Info")}</Typography>
                             <Link to='/info'>
-                                <img src={watchVideoImage} alt='' width="200px" height="150px" />
+                                <img src={watchVideoImage} alt='' width="150px" height="150px" />
                             </Link>
                         </Stack>
                         <Stack direction="column" gap={1} alignItems='center'>
                             <Typography>{t("Fitness")}</Typography>
                             <Link to='/fitness'>
-                                <img src={fitnessImage} alt='' width="200px" height="150px" />
+                                <img src={fitnessImage} alt='' width="150px" height="150px" />
                             </Link>
                         </Stack>
                         <Stack direction="column" gap={1} alignItems='center'>
                             <Typography>{t("Map")}</Typography>
                             <Link to='/map'>
-                                <img src={mapImage} alt='' width="200px" height="150px" />
+                                <img src={mapImage} alt='' width="150px" height="150px" />
                             </Link>
                         </Stack>
                         <Stack direction="column" gap={1} alignItems='center'>
                             <Typography>{t('Search')}</Typography>
                             <Link to="/search">
-                                <img src={searchImage} alt='' width="200px" height="150px" />
+                                <img src={searchImage} alt='' width="150px" height="150px" />
                             </Link>
                         </Stack>
                         <Stack direction="column" gap={1} alignItems='center'>
                             <Typography>{t("Crypto")}</Typography>
                             <Link to='/crypto'>
-                                <img src={bitcoinImage} alt='' width="200px" height="150px" />
+                                <img src={bitcoinImage} alt='' width="150px" height="150px" />
                             </Link>
                         </Stack>
                         <Stack direction="column" gap={1} alignItems='center'>
                             <Typography>{t('News')}</Typography>
                             <Link to='/news'>
-                                <img src={newsImage} alt="" width="200px" height="150px" />
+                                <img src={newsImage} alt="" width="150px" height="150px" />
                             </Link>
                         </Stack>
                     </Grid>

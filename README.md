@@ -156,3 +156,5 @@ Version Date        Description
 1.0.80  2022/9/25   Translate Info.js into Chinese.
 1.0.81  2022/9/26   Tidy up project structure by removing unnecessary folders. Translate exercise name into Chinese. (part 3)
 1.0.82  2022/9/26   Create explore-best own mongo db. Support CRUD operations for topics and video data.
+1.0.83  2022/9/26   Split explore-best frontend and backend into separated git repositories (explore-best and explore-best-api) 
+1.0.84  2022/9/26   In home page mobile mode, show 2 images in a row.
