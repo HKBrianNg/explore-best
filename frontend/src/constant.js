@@ -211,8 +211,6 @@ export const defaultAfricaCategories = [
     { id: '452', name: '埃及', ename: 'Egypt' }
 ]
 
-
-
 export const defaultExploreCategories = [
     { id: '500', name: '科学', ename: 'science' },
     { id: '501', name: '宇宙', ename: 'universe' },
