@@ -12,11 +12,14 @@ export const softwareVersion = "1.0.82"
 // export const topicUrl = "https://learning-bn-api.herokuapp.com"
 // export const amazonUrl = "https://learning-bn-api.herokuapp.com"
 
+export const videoUrl = "https://explore-best-api.herokuapp.com/"
+export const topicUrl = "https://explore-best-api.herokuapp.com/"
+export const amazonUrl = "https://explore-best-api.herokuapp.com/"
 
 // development
-export const videoUrl = "http://localhost:5000"
-export const topicUrl = "http://localhost:5000"
-export const amazonUrl = "http://localhost:5000"
+// export const videoUrl = "http://localhost:5000"
+// export const topicUrl = "http://localhost:5000"
+// export const amazonUrl = "http://localhost:5000"
 
 
 export const SysMsg = [
