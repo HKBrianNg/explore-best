@@ -5,7 +5,19 @@ import GolfCourseIcon from '@mui/icons-material/GolfCourse';
 import ElectricCarIcon from '@mui/icons-material/ElectricCar';
 import CabinIcon from '@mui/icons-material/Cabin';
 
-export const softwareVersion = "1.0.80"
+export const softwareVersion = "1.0.82"
+
+// production
+// export const videoUrl = "https://learning-bn-api.herokuapp.com"
+// export const topicUrl = "https://learning-bn-api.herokuapp.com"
+// export const amazonUrl = "https://learning-bn-api.herokuapp.com"
+
+
+// development
+export const videoUrl = "http://localhost:5000"
+export const topicUrl = "http://localhost:5000"
+export const amazonUrl = "http://localhost:5000"
+
 
 export const SysMsg = [
     "000-No topic data. System fails to start.",

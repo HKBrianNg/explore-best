@@ -1,10 +1,12 @@
 import { createContext, useContext, useState } from 'react'
 import axios from 'axios'
-import { defaultTopics } from '../data/Topic/topic'
+// import { defaultTopics } from '../data/Topic/topic-2022-9-26'
+import { defaultTopics } from '../data/Topic/topics'
+
+import { topicUrl as url } from '../constant'
 
 
 const topicContext = createContext()
-const url = "https://learning-bn-api.herokuapp.com"
 const initialTopic = {
     id: "",
     category: "",

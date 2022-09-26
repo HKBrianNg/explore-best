@@ -1,0 +1,485 @@
+[{
+  "_id": {
+    "$oid": "62f9c01f6e20569c93cb0d4f"
+  },
+  "id": "1",
+  "category": "IT",
+  "subCategory": "AppService",
+  "title": "Application Service",
+  "summary": "This e-book outlines eight steps that any organization should consider when looking to adopt a cloud - native approach to applications.",
+  "content": "Applications have become the way a majority of organizations interact with their customers, partners, and employees.This rapid rise of new digitally native capabilities has disrupted traditional business models and required established companies and industry sectors to adapt and modernize their operations. For the majority of organizations, creating innovative digital experiences means pivoting to a culture of organizational agility, where the rapid pace of demand can only be satisfied by faster and more flexible development and delivery models.But most organizations do not have the luxury of completely rebuilding their technology foundation or immediately adopting new practices and mindsets. Instead, they are embracing gradual yet fundamental shifts in culture, processes, and technology to support greater velocity and agility.",
+  "contentUrl": "",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1660534815236"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1660534815236"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62f9c04a6e20569c93cb0d51"
+  },
+  "id": "3",
+  "category": "IT",
+  "subCategory": "CICD",
+  "title": "CICD",
+  "summary": "CI/CD is a method to frequently deliver apps to customers by introducing automation into the stages of app development.",
+  "content": "The main concepts attributed to CI/CD are continuous integration, continuous delivery, and continuous deployment. CI/CD is a solution to the problems integrating new code can cause for development and operations teams (AKA integration hell). Specifically, CI/CD introduces ongoing automation and continuous monitoring throughout the lifecycle of apps, from integration and testing phases to delivery and deployment. Taken together, these connected practices are often referred to as a CI/CD pipeline and are supported by development and operations teams working together in an agile way with either a DevOps or site reliability engineering (SRE) approach.",
+  "contentUrl": "",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1660534858625"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1660534858625"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62f9c0746e20569c93cb0d53"
+  },
+  "id": "2",
+  "category": "IT",
+  "subCategory": "DevOps",
+  "title": "DevOps",
+  "summary": "DevOps is an approach to culture, automation, and platform design intended to deliver increased business value and responsiveness through rapid, high-quality service delivery.",
+  "content": "The word DevOps is a mashup of development and operations but it represents a set of ideas and practices much larger than those two terms alone, or together. DevOps includes security, collaborative ways of working, data analytics, and many other things. But what is it? DevOps describes approaches to speeding up the processes by which an idea (like a new software feature, a request for enhancement, or a bug fix) goes from development to deployment in a production environment where it can provide value to the user. These approaches require that development teams and operations teams communicate frequently and approach their work with empathy for their teammates. Scalability and flexible provisioning are also necessary. With DevOps, those that need power the most, get it—through self service and automation. Developers, usually coding in a standard development environment, work closely with IT operations to speed software builds, tests, and releases—without sacrificing reliability. Of course, this means more frequent changes to code and more dynamic infrastructure usage. Traditional management strategies can’t keep up with this kind of demand. You’re going to need to change a few things to give you an edge.",
+  "contentUrl": "",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1660534900103"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1660534900103"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62f9c0ae6e20569c93cb0d55"
+  },
+  "id": "6",
+  "category": "IT",
+  "subCategory": "Docker",
+  "title": "Docker Desktop",
+  "summary": "Docker Desktop is an easy-to-install application for your Mac or Windows environment that enables you to build and share containerized applications and microservices.",
+  "content": "It provides a simple interface that enables you to manage your containers, applications, and images directly from your machine without having to use the CLI to perform core actions. Docker Desktop includes: Docker Engine, Docker CLI client, Docker Compose -Docker Content Trust, Kubernetes, Credential Helper. Docker Desktop works with your choice of development tools and languages and gives you access to a vast library of certified images and templates in Docker Hub. This enables development teams to extend their environment to rapidly auto-build, continuously integrate, and collaborate using a secure repository. The Containers view provides a runtime view of all your containers and applications. The Images view displays a list of your Docker images and allows you to run an image as a container, pull the latest version of an image from Docker Hub, and inspect images. The Volumes view displays a list of volumes and allows you to easily create and delete volumes and see which ones are being used. ",
+  "contentUrl": "",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1660534958430"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1660534958430"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62f9c0db6e20569c93cb0d57"
+  },
+  "id": "5",
+  "category": "IT",
+  "subCategory": "GitHub",
+  "title": "GitHub",
+  "summary": "GitHub is a collaboration platform built on top of a distributed version control system called Git. GitHub is focused on developers, the people who code and create software.",
+  "content": "Our focus is also the people who partner with and employ developers, who are encouraging them to build amazing things. We do all we can to help unlock the creativity of developers and to foster a community of developers that can come together—as individuals and in teams—to create the future of software and make a difference in the world. GitHub concentrates on three things: 1) Building a technology platform that is like no other, on which developers can create, share and grow the best code possible, 2) Nurturing a community for developers; a safe and collaborative place that facilitates sharing, amplifies creativity, and supports the principles of open source, 3)Providing access, opening up a community of opportunity, where new developers can be born and where experienced developers can hone their skills and expand their knowledge.",
+  "contentUrl": "",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1660535003771"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1660535003771"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62f9c0f76e20569c93cb0d59"
+  },
+  "id": "4",
+  "category": "IT",
+  "subCategory": "IDE",
+  "title": "IDE",
+  "summary": "An integrated development environment (IDE) is software for building applications that combines common developer tools into a single graphical user interface (GUI).",
+  "content": "An IDE typically consists of: 1) Source code editor: A text editor that can assist in writing software code with features such as syntax highlighting with visual cues, providing language specific auto-completion, and checking for bugs as code is being written. 2) Local build automation: Utilities that automate simple, repeatable tasks as part of creating a local build of the software for use by the developer, like compiling computer source code into binary code, packaging binary code, and running automated tests. 3) Debugger: A program for testing other programs that can graphically display the location of a bug in the original code.",
+  "contentUrl": "",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1660535031594"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1660535031594"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62f9c12b6e20569c93cb0d5b"
+  },
+  "id": "8",
+  "category": "IT",
+  "subCategory": "MERN",
+  "title": "MERN",
+  "summary": "MERN stack is a web development framework. It consists of MongoDB, ExpressJS, ReactJS, and NodeJS as its working components.",
+  "content": "Here are the details of what each of these components is used for in developing a web application when using MERN stack: MongoDB: A document-oriented, No-SQL database used to store the application data. NodeJS: The JavaScript runtime environment. It is used to run JavaScript on a machine rather than in a browser. ExpressJS: A framework layered on top of NodeJS, used to build the backend of a site using NodeJS functions and structures. Since NodeJS was not developed to make websites but rather run JavaScript on a machine, ExpressJS was developed. ReactJS: A library created by Facebook. It is used to build UI components that create the user interface of the single page web application.",
+  "contentUrl": "",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1660535083892"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1660535083892"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62f9c1ba8666102e2dd377a8"
+  },
+  "id": "7",
+  "category": "IT",
+  "subCategory": "React",
+  "title": "React",
+  "summary": "React is a declarative, efficient, and flexible JavaScript library for building user interfaces. It lets you compose complex UIs from small and isolated pieces of code called “components”.",
+  "content": "",
+  "contentUrl": "",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1660535226213"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1660535226213"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62fb0c0dbebdd4dc3d3510d2"
+  },
+  "id": "0",
+  "category": "IT",
+  "subCategory": "ALL",
+  "title": "All Videos",
+  "summary": "All IT videos.",
+  "content": "",
+  "contentUrl": "",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1660619789224"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1660619789224"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "630337720c84fd314bf5ee1f"
+  },
+  "id": "10",
+  "category": "IT",
+  "subCategory": "Firebase",
+  "title": "Firebase",
+  "summary": "Deliver web content fast,  SSD-backed hosting, around the globe, Free SSL certificates for custom domains, Deploy with one command, Preview changes before going live",
+  "content": "Deliver web content fast\nWith Firebase Hosting, you can deploy a single-page web app, a mobile app landing page, or a progressive web app without all the hassle.\nSSD-backed hosting, around the globe\nNo matter where a user is, content is delivered fast. Files deployed to Firebase Hosting are cached on SSDs at CDN edge servers around the world.\nFree SSL certificates for custom domains\nFirebase Hosting automatically provisions and configures an SSL certificate for each site deployed. Connect a custom domain with painless verification.\nDeploy with one command\nDeploying your app from a local directory to the web only takes one command. See deployment history and roll back to a previous version from the Firebase console.\nPreview changes before going live\nChannels allow you to preview updates of your site. Allow team members to view progress easily and give feedback, do code reviews, and test.\nPart of the Firebase platform\nFirebase helps you develop high-quality apps, grow your user base, and earn more money. Each feature works independently, and they work even better together.",
+  "contentUrl": "https://firebase.google.com/products/hosting?gclid=Cj0KCQjw0oyYBhDGARIsAMZEuMtB4EzvoQMLLJFa1-DqzC-r9qmXBWj8CtNYeJ3r24t1hbfThST7CUcaAtMNEALw_wcB&gclsrc=aw.ds",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1661155186318"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1661155186318"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "631b046286284147b6edf78f"
+  },
+  "id": "0",
+  "category": "English",
+  "subCategory": "BBC",
+  "title": "BBC",
+  "summary": "BBC",
+  "content": "",
+  "contentUrl": "",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1662714978572"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1664112545398"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "631ea35ff8d565714e7ed3da"
+  },
+  "id": "11",
+  "category": "IT",
+  "subCategory": "GraphQL",
+  "title": "GraphQL",
+  "summary": "A query language for your API",
+  "content": "GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data. GraphQL provides a complete and understandable description of the data in your API, gives clients the power to ask for exactly what they need and nothing more, makes it easier to evolve APIs over time, and enables powerful developer tools.",
+  "contentUrl": "https://graphql.org/",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1662952287898"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1662952287898"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "631eb4b70fe237004f9e0696"
+  },
+  "id": "12",
+  "category": "IT",
+  "subCategory": "Serverless",
+  "title": "Firebase & Serverless Computing",
+  "summary": "What are the advantages of serverless computing?\nLower costs - Serverless computing is generally very cost-effective, as traditional cloud providers of backend services...\nSimplified scalability - Developers using serverless architecture dont have to worry about policies to scale up their...\nSimplified backend code - With FaaS, developers can create simple functions that independently perform a single purpose,...\nQuicker turnaround - Serverless architecture can significantly cut time to market. Instead of needing a...",
+  "content": "Serverless computing is a cloud computing execution model in which the cloud provider allocates machine resources on demand, taking care of the servers on behalf of their customers. \"Serverless\" is a misnomer in the sense that servers are still used by cloud service providers to execute code for developers. However, developers of serverless applications are not concerned with capacity planning, configuration, management, maintenance, fault tolerance, or scaling of containers, VMs, or physical servers. Serverless computing does not hold resources in volatile memory; computing is rather done in short bursts with the results persisted to storage. When an app is not in use, there are no computing resources allocated to the app. Pricing is based on the actual amount of resources consumed by an application.[1] It can be a form of utility computing.\nServerless computing can simplify the process of deploying code into production. Serverless code can be used in conjunction with code deployed in traditional styles, such as microservices or monoliths. Alternatively, applications can be written to be purely serverless and use no provisioned servers at all.[2] This should not be confused with computing or networking models that do not require an actual server to function, such as peer-to-peer (P2P).",
+  "contentUrl": "https://www.cloudflare.com/learning/serverless/what-is-serverless/",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1662956727718"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1662956727718"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "631f236bcc549c9b99b13b44"
+  },
+  "id": "13",
+  "category": "IT",
+  "subCategory": "MaterialUI",
+  "title": "Move faster with intuitive React UI tools",
+  "summary": "MUI offers a comprehensive suite of UI tools to help you ship new features faster. Start with Material UI, our fully-loaded component library, or bring your own design system to our production-ready components.",
+  "content": "Our ultimate goal\nWe aim high trying to design the most effective and efficient tool for building UIs, for developers and designers. MUI started back in 2014, to unify React and Material Design. Since then, we've become a community of over 2M developers from every corner of the world.\n\nWe plan on doing all that cultivating our values:\n\n\nCustomer obsessed. We put our customers front & center.\n\n\nTransparency. Most of our work is public.\n\n\nFreedom. We work from anywhere in the world.\n\n\nAutonomy. We want to create a safe, high-trust team.\n\n\nExcellence. We're aiming high, and we know it.",
+  "contentUrl": "https://mui.com/",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1662985067500"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1662985067500"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63219a7f67f09b8db13688aa"
+  },
+  "id": "0",
+  "category": "Fitness",
+  "subCategory": "Belly",
+  "title": "How to GET ABS 🚫 NO SIT UPS | Slim Your Stomach Fast | OnTheCheapTip",
+  "summary": "Belly",
+  "content": "",
+  "contentUrl": "",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1663146623951"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1664111321498"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6321ae6367f09b8db13688b7"
+  },
+  "id": "0",
+  "category": "Golf",
+  "subCategory": "Course",
+  "title": "Famous golf courses",
+  "summary": "The most joyful golf courses",
+  "content": "",
+  "contentUrl": "",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1663151715051"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1663151715051"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63304d92dde244347d3ef260"
+  },
+  "id": "1",
+  "category": "Fitness",
+  "subCategory": "Build Muscle",
+  "title": "Build Muscle",
+  "summary": "Build Muscle",
+  "content": "",
+  "contentUrl": "",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1664109970007"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1664109970007"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63304ea8dde244347d3ef268"
+  },
+  "id": "2",
+  "category": "Fitness",
+  "subCategory": "Yoga",
+  "title": "Yoga",
+  "summary": "Yoga",
+  "content": "",
+  "contentUrl": "",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1664110248908"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1664110330764"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "633051aedde244347d3ef275"
+  },
+  "id": "3",
+  "category": "Fitness",
+  "subCategory": "Hip",
+  "title": "Hip",
+  "summary": "Hip",
+  "content": "",
+  "contentUrl": "",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1664111022359"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1664111022359"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63305e67dde244347d3ef295"
+  },
+  "id": "1",
+  "category": "Golf",
+  "subCategory": "Female Golfer",
+  "title": "Female Golfer",
+  "summary": "Female Golfer",
+  "content": "",
+  "contentUrl": "",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1664114279825"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1664114551010"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63305f91dde244347d3ef2a5"
+  },
+  "id": "2",
+  "category": "Golf",
+  "subCategory": "Male Golfer",
+  "title": "Male Golfer",
+  "summary": "Male Golfer",
+  "content": "",
+  "contentUrl": "",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1664114577506"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1664114577506"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63305fccdde244347d3ef2a7"
+  },
+  "id": "3",
+  "category": "Golf",
+  "subCategory": "Lesson",
+  "title": "Golf Lesson",
+  "summary": "Golf Lesson",
+  "content": "",
+  "contentUrl": "",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1664114636173"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1664114787340"
+    }
+  },
+  "__v": 0
+}]

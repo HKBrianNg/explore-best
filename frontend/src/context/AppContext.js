@@ -3,7 +3,7 @@ import { createContext, useContext, useState } from 'react'
 const appContext = createContext()
 
 export const AppContextProvider = ({ children }) => {
-    const [isReady, setIsReady] = useState(false)
+    const [isReady, setIsReady] = useState(true)
     const [isAdmin, setIsAdmin] = useState(true)
     const [isEdit, setIsEdit] = useState(false)
     const [isLoading, setIsLoading] = useState(false)

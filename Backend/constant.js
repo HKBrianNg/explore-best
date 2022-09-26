@@ -24,4 +24,5 @@ export const httpMsg = [
   "400-Bad Request.",
   "404-Not found.",
   "500-Internal Server Error."
-];
+]
+

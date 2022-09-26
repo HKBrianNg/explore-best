@@ -1,7 +1,8 @@
 import { useState, useContext, createContext } from 'react'
 import axios from 'axios'
-import { defaultVideos } from '../data/Video/video'
-
+// import { defaultVideos } from '../data/Video/video-2022-9-26'
+import { defaultVideos } from '../data/Video/videos'
+import { videoUrl as url } from '../constant'
 
 const videoContext = createContext()
 const initialVideo = {
@@ -19,7 +20,6 @@ const initialVideo = {
 export const VideoContextProvider = ({ children }) => {
     const [video, setVideo] = useState(initialVideo)
     const [videos, setVideos] = useState(defaultVideos)
-    const url = "https://learning-bn-api.herokuapp.com"
 
     const getVideoAPI = async (id) => {
         try {

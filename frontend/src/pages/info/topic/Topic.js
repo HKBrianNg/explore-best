@@ -13,6 +13,7 @@ function Topic() {
         setSelectedSubCategory(name)
     }
 
+    console.log("category & topics:", selectedCategory, topics)
     const topicList = topics.filter((item) => (item.category === selectedCategory))
 
     return (
